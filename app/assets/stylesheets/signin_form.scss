@@ -1,11 +1,19 @@
 @import "bootstrap";
 
+a {
+  color: #A486B6;
+}
+
+a:hover {
+  color: #532E69;
+}
+
 body {
   background-color: #fff;
   padding-top: 30px;
 }
 
-.border-form-div {
+.container {
   max-width: 300px;
   padding: 30px 29px 29px;
   margin: 0 auto 20px;
@@ -20,36 +28,7 @@ body {
 }
 
 
-.border-form-div .form-signin-heading,
-.border-form-div .checkbox {
+.container .form-signin-heading,
+.container .checkbox {
   margin-bottom: 10px;
-}
-
-.border-form-div input[type="text"],
-.border-form-div input[type="email"],
-.border-form-div input[type="password"] {
-  font-size: 16px;
-  height: auto;
-  margin-bottom: 15px;
-  padding: 7px 9px;
-}
-
-.btn-purple {
-  @extend .btn-primary;
-  background-color: #D2ABE9;
-  border-color: #D2ABE9;
-}
-
-.btn-purple:hover {
-  @extend .btn-primary:hover;
-  background-color: #A486B6;
-  border-color: #A486B6;
-}
-
-a {
-  color: #A486B6;
-}
-
-a:hover {
-  color: #532E69;
 }

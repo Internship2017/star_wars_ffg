@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "signin_form" %>
 
-<div class= 'border-form-div'>
+<div class="container">
   <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,7 +22,7 @@
       </div>
 
     <% end -%>
-    <div class= "actions">
+    <div class="actions">
        <%= f.submit "Log in", :class => 'btn btn-purple' %>
     </div>
      
@@ -31,4 +31,3 @@
     <%= render "devise/shared/links" %>
   </a>
 </div>
-

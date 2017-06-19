@@ -13,3 +13,15 @@
  */
 
 @import "bootstrap";
+
+.btn-purple {
+  @extend .btn-primary;
+  background-color: #D2ABE9;
+  border-color: #D2ABE9;
+}
+
+.btn-purple:hover {
+  @extend .btn-primary:hover;
+  background-color: #A486B6;
+  border-color: #A486B6;
+}
