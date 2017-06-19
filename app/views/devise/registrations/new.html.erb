@@ -1,27 +1,56 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"input-group" }) do |f| %>
-  <%= devise_error_messages! %>
-
-    <%= f.label :email %><br />
-    <%= f.email_field :email, { autofocus: true, class: "form-control" } %>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, { autofocus: "off", class: "form-control" } %>
+<div class="container-fluid">
+  
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+      <h2>Sign Up</h2>
+      </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, { autofocus: "off", class: "form-control" } %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, { autofocus: true, class: "form-control" } %>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, { autocomplete: "off", class: "form-control" } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, { autocomplete: "off", class: "form-control" } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+        <%= f.submit "Sign up", {class: "btn btn-primary" } %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
