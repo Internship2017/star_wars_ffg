@@ -57,4 +57,4 @@ services:
       DATABASE_URL: "postgres://postgres:password@db:5432/star_wars_ffg_dev"
 
     links:
-      - db
+- db
