@@ -1,46 +1,43 @@
-version: '2'
+version: "2"
 
 volumes:
-
   postgres-data:
     driver: local
   gems:
     driver: local
 
 services:
-
   db:
     image: postgres:latest
     ports:
-      - 5444:5432
+      - 5433:5432
     volumes:
-      - postgres-data:/var/lib/postresql/data
+      - postgres-data:/var/lib/postgresql/data
     environment:
       LC_ALL: C.UTF-8
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: P4Ssw0rD!
 
   test:
-    image: jarmc/star_wars_fg:development
+    image: internship/star_wars:development
     command: rspec spec/
     build:
-        context: .
-        dockerfile: dev.Dockerfile
+      context: .
+      dockerfile: dev.Dockerfile
     working_dir: /code
     volumes:
-        - .:/code
-        - gems:/usr/local/bundle
+      - .:/code
+      - gems:/usr/local/bundle
     tty: true
     stdin_open: true
     environment:
-        DATABASE_URL: "postgres://postgres:password@db:5432/star_wars_ffg_test"
-        RACK_ENV: "test"
-        RAILS_ENV: "test"
-
+      DATABASE_URL: "postgres://postgres:P4Ssw0rD!@db:5432/star_wars_test"
+      RACK_ENV: "test"
+      RAILS_ENV: "test"
     links:
-        - db
+      - db
 
   web:
-    image: jarmc/star_wars_fg:development
+    image: internship/star_wars:development
     command: rails server -p 3000 -b 0.0.0.0
     ports:
       - 3000:3000
@@ -54,7 +51,6 @@ services:
     tty: true
     stdin_open: true
     environment:
-      DATABASE_URL: "postgres://postgres:password@db:5432/star_wars_ffg_dev"
-
+      DATABASE_URL: "postgres://postgres:P4Ssw0rD!@db:5432/star_wars"
     links:
 - db
