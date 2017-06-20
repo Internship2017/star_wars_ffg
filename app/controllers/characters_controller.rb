@@ -1,10 +1,12 @@
 class CharactersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_character, only: [:edit, :update]
+  before_action :verify_character, only: [:edit, :update]
+  
   def edit
-    @character = Character.find(params[:id])
   end
 
   def update
-    @character = Character.find(params[:id])
     if @character.update(character_params)
       redirect_to edit_user_registration_path
     else
@@ -13,6 +15,14 @@ class CharactersController < ApplicationController
   end
 
   private
+
+  def set_character
+    @character = current_user.characters.find_by(id: params[:id])
+  end
+
+  def verify_character
+    redirect_to edit_user_registration_path if @character.nil?
+  end
 
   def character_params
     params.require(:character).permit(:name, :force_rating, :emotional_strength, :emotional_weakness, 
