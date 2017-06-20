@@ -1,4 +1,4 @@
-<div class="container mt-40">
+<div class="container_forgot_password mt-20">
   <div class="row">
     <div class="col-xd-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
       <h2>Forgot your password?</h2>
@@ -9,16 +9,16 @@
 
           <%= devise_error_messages! %>
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
-              <div class="form-group mt-20">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="field mt-20 form-group">
                 <%= f.label :email, :class => "mb-20" %><br/>
-                <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+                <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
               </div>
             </div>
           </div>
 
-          <div class="actions col-md-12 btn">
-            <%= f.submit "Send me reset password instructions", :class => "btn btn-purple" %>
+          <div class="actions mt-20 offset-md-2">
+            <%= f.submit "Send me reset password instructions", :class => "btn access_button" %>
           </div>
       <% end %>
 

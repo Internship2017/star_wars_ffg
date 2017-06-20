@@ -10,13 +10,13 @@
       <%= f.hidden_field :reset_password_token %>
 
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
-          <div class="field">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="field mt-20 form-group">
             <%= f.label :password, "New password" %><br/>
             <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em><br/>
             <% end %>
-            <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+            <%= f.password_field :password, autofocus: true, autocomplete: "off", :class => 'form-conrol' %>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
           <div class="actions">
-            <%= f.submit "Change my password" %>
+            <%= f.submit "Change my password", :class => 'btn access_button' %>
           </div>
         </div>
       </div>
