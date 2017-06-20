@@ -3,6 +3,10 @@
   <head>
     <title>StarWarsFfg</title>
     <%= csrf_meta_tags %>
+    
+		<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,17 +19,11 @@
 			<a class="navbar-brand" href="#">Star Wars</a>
 		  <div class="navbar" id="navbarNav">
 		    <ul class="nav nav-pills">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="/users/sign_in">Log in</a>
-		      </li>
-
-		      <li class="nav-item">
-		        <a class="nav-link" href="/users/sign_up">Sign up</a>
-		      </li>
-
-		      <li class="nav-item">
-		        <a class="nav-link" href="/users/sign_up">Log out</a>
-		      </li>
+		      <% if user_signed_in? %>
+		      <%= render 'user_navbar' %>
+					<% else %>
+					<%= render 'guest_navbar' %>
+					<% end %>
 		    </ul>
 		  </div>
 		</div>
