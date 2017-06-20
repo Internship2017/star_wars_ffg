@@ -1,10 +1,10 @@
-<div class="char-header">
-	<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %><span class="space">CHARACTERS</span></h1>
+<div class="characters-header">
+	<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %><span class="space_between_image">CHARACTERS</span></h1>
 </div>
 
-<div class="row">
+<div class="row characters-row">
 	<% @characters.each do |character| %>
-		<div class="col-sm-4 char-col">
+		<div class="col-sm-4 characters-col">
 			<div class="card" style="width: 20rem;">
 			  <div class="card-block">
 			    <h4 class="card-title"><%= character.name %></h4>

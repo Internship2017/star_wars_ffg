@@ -36,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 
-gem 'bootstrap-sass'
-
 gem 'jquery-rails'
 
 group :development, :test do

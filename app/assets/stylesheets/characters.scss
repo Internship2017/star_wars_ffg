@@ -2,18 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.row {
+.characters-row {
 	padding-top: 20px;
 }
-.char-col {
+
+.characters-col {
 	padding-bottom: 20px;
 }
 
-.char-header {
+.characters-header {
 	color: #C09448;
 	padding-top: 20px;
 }
 
-.space {
+.space_between_image {
 	padding-left: 60px;
 }
