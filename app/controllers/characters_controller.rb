@@ -3,6 +3,10 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:edit, :update]
   before_action :verify_character, only: [:edit, :update]
 
+  def index
+		@characters = current_user.characters
+	end
+
   def edit; end
 
   def update
