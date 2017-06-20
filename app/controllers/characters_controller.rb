@@ -24,7 +24,7 @@ class CharactersController < ApplicationController
   end
 
   def verify_character
-    redirect_to edit_user_registration_path if !@character
+    redirect_to edit_user_registration_path, flash: { danger: "YOU SHALL NOT SEE OTHER'S CHARACTERS" } if !@character
   end
 
   def character_params
