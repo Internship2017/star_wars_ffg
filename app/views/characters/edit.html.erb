@@ -1,0 +1,232 @@
+<div class="container">
+  
+  <div class="row mt-20 mb-20">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h2>Edit Character</h2>
+      </div>
+  </div>
+
+  <%= form_for(@character) do |f| %>
+
+    <ul class="nav nav-pills" role="tablist">
+      <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#basic-info">Basic Info</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#physical-info">Physical Info</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#characteristics">Characteristics</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#stats">Personal Stats</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#resources">Resources</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#background">Background</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active mt-20" id="basic-info" role="tabpanel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, { autofocus: true, class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :age %><br />
+                <%= f.number_field :age, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :species %><br />
+                <%= f.text_field :species, { class: "form-control" } %>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane mt-20" id="physical-info" role="tabpanel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :height %><br />
+                <%= f.text_field :height, { autofocus: true, class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :build %><br />
+                <%= f.text_field :build, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :hair %><br />
+                <%= f.text_field :hair, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :eyes %><br />
+                <%= f.text_field :eyes, { class: "form-control" } %>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane mt-20" id="characteristics" role="tabpanel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :brawn %><br />
+                <%= f.number_field :brawn, { autofocus: true, class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :agility %><br />
+                <%= f.number_field :agility, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :intellect %><br />
+                <%= f.number_field :intellect, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :cunning %><br />
+                <%= f.number_field :cunning, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :will_power %><br />
+                <%= f.number_field :will_power, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :presence %><br />
+                <%= f.number_field :presence, { class: "form-control" } %>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane mt-20" id="stats" role="tabpanel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :threshold_wounds %><br />
+                <%= f.number_field :threshold_wounds, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :current_wounds %><br />
+                <%= f.number_field :current_wounds, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :threshold_strain %><br />
+                <%= f.number_field :threshold_strain, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :current_strain %><br />
+                <%= f.number_field :current_strain, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :soak_value %><br />
+                <%= f.number_field :soak_value, { autofocus: true, class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :ranged_defense %><br />
+                <%= f.number_field :ranged_defense, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :melee_defense %><br />
+                <%= f.number_field :melee_defense, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <%= f.label :force_rating %><br />
+                <%= f.number_field :force_rating, { class: "form-control" } %>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane mt-20" id="resources" role="tabpanel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :credits %><br />
+                <%= f.number_field :credits, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :available_xp %><br />
+                <%= f.number_field :available_xp, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :total_xp %><br />
+                <%= f.number_field :total_xp, { class: "form-control" } %>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane mt-20" id="background" role="tabpanel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :emotional_strength %><br />
+                <%= f.text_area :emotional_strength, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :emotional_weakness %><br />
+                <%= f.text_area :emotional_weakness, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :notable_features %><br />
+                <%= f.text_area :notable_features, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :motivations %><br />
+                <%= f.text_area :motivations, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :morality %><br />
+                <%= f.number_field :morality, { class: "form-control" } %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div class="form-group">
+                <%= f.label :conflict %><br />
+                <%= f.number_field :conflict, { class: "form-control" } %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <%= f.submit "Update", { class: "btn-primary btn" } %>
+      </div>
+    </div>
+  <% end %>
+</div>
