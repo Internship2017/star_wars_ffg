@@ -36,6 +36,16 @@
 	<div class="container">
 		<%= yield %>
 	</div>
+
+	<% flash.each do |key, value| %>
+		<div class="container mt-20">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<%= content_tag(:div, "<strong> Danger! </strong> #{value}".html_safe , class: "alert alert-#{key}") %>
+				</div>
+			</div>
+		</div>
+    <% end %>
     
   </body>
 </html>
