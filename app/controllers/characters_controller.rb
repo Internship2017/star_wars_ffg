@@ -2,9 +2,8 @@ class CharactersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_character, only: [:edit, :update]
   before_action :verify_character, only: [:edit, :update]
-  
-  def edit
-  end
+
+  def edit; end
 
   def update
     if @character.update(character_params)
@@ -21,7 +20,7 @@ class CharactersController < ApplicationController
   end
 
   def verify_character
-    redirect_to edit_user_registration_path if @character.nil?
+    redirect_to edit_user_registration_path if !@character
   end
 
   def character_params
