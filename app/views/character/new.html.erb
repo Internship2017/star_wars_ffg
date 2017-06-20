@@ -1,190 +1,195 @@
 <h1>New Character</h1>
- <%= form_for @character do |f| %>
-	<ul class="nav nav-tabs">
-		<li class="nav-item">
-			<a class="nav-link active" href="#profile">Name</a>
-			<div class ="form-group">
-				<p><%= f.text_field :name, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#force_rating">Force Rating</a>
-			<div class ="form-group">
-				<p><%= f.text_field :force_rating, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#user_id">User ID</a>
-			<div class ="form-group">
-				<p><%= f.text_field :user_id, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#emotional_strength">Emotional Strength</a>
-			<div class ="form-group">
-				<p><%= f.text_field :emotional_strength, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" href="#emotional_weakness">Emotional Weakness</a>
-			<div class ="form-group">
-				<p><%= f.text_field :emotional_weakness, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#conflict">Conflict</a>
-			<div class ="form-group">
-				<p><%= f.text_field :conflict, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#morality">Morality</a>
-			<div class ="form-group">
-				<p><%= f.text_field :morality, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#gender">Gender</a>
-			<div class ="form-group">
-				<p><%= f.text_field :gender, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#age">Age</a>
-			<div class ="form-group">
-				<p><%= f.text_field :age, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#height">Height</a>
-			<div class ="form-group">
-				<p><%= f.text_field :build, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#hair">Hair</a>
-			<div class ="form-group">
-				<p><%= f.text_field :hair, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#eyes">Eyes</a>
-			<div class ="form-group">
-				<p><%= f.text_field :eyes, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#notable_features">Notable Features</a>
-			<div class ="form-group">
-				<p><%= f.text_field :notable_features, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#total_xp">Total XP</a>
-			<div class ="form-group">
-				<p><%= f.text_field :available_xp, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#soak_values">Soak Value</a>
-			<div class ="form-group">
-				<p><%= f.text_field :soak_value, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">	
-			<a class="nav-link" href="#threshold_wounds">Threshold Wounds</a>
-			<div class ="form-group">
-				<p><%= f.text_field :threshold_wounds, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#current_wounds">Current Wounds</a>
-			<div class ="form-group">
-				<p><%= f.text_field :current_wounds, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#threshold_strain">Threshold Strain</a>
-			<div class ="form-group">
-				<p><%= f.text_field :threshold_strain, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#current_strain">Current Strain</a>
-			<div class ="form-group">
-				<p><%= f.text_field :current_strain, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#ranged_defense">Ranged Defense</a>
-			<div class ="form-group">
-				<p><%= f.text_field :ranged_defense, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#melee_defense">Melee Defense</a>
-			<div class ="form-group">
-				<p><%= f.label :melee_defense %></p><br>
-				<p><%= f.text_field :melee_defense, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#brawn">Brawn</a>
-			<div class ="form-group">
-				<p><%= f.text_field :brawn, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#agility">Agility</a>
-			<div class ="form-group">
-				<p><%= f.text_field :agility, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#intellect">Intellect</a>
-			<div class ="form-group">
-				<p><%= f.text_field :intellect, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#cunning">Cunning</a>
-			<div class ="form-group">
-				<p><%= f.text_field :cunning, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#willpower">Willpower</a>
-			<div class ="form-group">
-				<p><%= f.text_field :will_power, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#presence">Presence</a>
-			<div class ="form-group">
-				<p><%= f.text_field :presence, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#credits">Credits</a>
-			<div class ="form-group">
-				<p><%= f.text_field :credits, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#motivations">Motivations</a>
-			<div class ="form-group">
-				<p><%= f.text_field :motivations, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#species">Species</a>
-			<div class ="form-group">
-				<p><%= f.text_field :species, :class => "form-control" %></p><br>
-			</div>
-		</li>
-		<%= f.submit %>
-	</ul>
-<% end %>
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" href="#profile">Name</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#force_rating">Force Rating</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#user_id">User ID</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#emotional_strength">Emotional Strength</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="#emotional_weakness">Emotional Weakness</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#conflict">Conflict</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#morality">Morality</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#gender">Gender</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#age">Age</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#height">Height</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#hair">Hair</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#eyes">Eyes</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#notable_features">Notable Features</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#total_xp">Total XP</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#soak_values">Soak Value</a>
+	</li>
+	<li class="nav-item">	
+		<a class="nav-link" href="#threshold_wounds">Threshold Wounds</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#current_wounds">Current Wounds</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#threshold_strain">Threshold Strain</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#current_strain">Current Strain</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#ranged_defense">Ranged Defense</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#melee_defense">Melee Defense</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#brawn">Brawn</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#agility">Agility</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#intellect">Intellect</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#cunning">Cunning</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#willpower">Willpower</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#presence">Presence</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#credits">Credits</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#motivations">Motivations</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#species">Species</a>
+	</li>
+</ul>
+<!-- Tab Content -->
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane fade in active" id="name">some content</div>
+	<%= form_for @character do |f| %>
+	<div role="tabpanel" class="tab-pane fade in active" id="name">
+		<p><%= f.text_field :name, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="force_rating">
+		<p><%= f.text_field :force_rating, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="user_id">
+		<p><%= f.text_field :user_id, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="emotional_strength">
+		<p><%= f.text_field :emotional_strength, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="emotional_weakness">
+		<p><%= f.text_field :emotional_weakness, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="conflict">
+		<p><%= f.text_field :conflict, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="morality">
+		<p><%= f.text_field :morality, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="gender">
+		<p><%= f.text_field :gender, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="age">
+		<p><%= f.text_field :age, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="build">
+		<p><%= f.text_field :height, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="hair">
+		<p><%= f.text_field :hair, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="eyes">
+		<p><%= f.text_field :eyes, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="notable_features">
+		<p><%= f.text_field :notable_features, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="total_xp">
+		<p><%= f.text_field :total_xp, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="available_xp">
+		<p><%= f.text_field :available_xp, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="soak_value">
+		<p><%= f.text_field :soak_value, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="threshold_wounds">
+		<p><%= f.text_field :threshold_wounds, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="current_wounds">
+		<p><%= f.text_field :current_wounds, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="threshold_strain">
+		<p><%= f.text_field :threshold_strain, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="current_strain">
+		<p><%= f.text_field :current_strain, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="ranged_defense">
+		<p><%= f.text_field :ranged_defense, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="melee_defense">
+		<p><%= f.text_field :melee_defense, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="brawn">
+		<p><%= f.text_field :brawn, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="agility">
+		<p><%= f.text_field :agility, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="intellect">
+		<p><%= f.text_field :intellect, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="cunning">
+		<p><%= f.text_field :cunning, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="will_power">
+		<p><%= f.text_field :will_power, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="presence">
+		<p><%= f.text_field :presence, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="credits">
+		<p><%= f.text_field :credits, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="motivations">
+		<p><%= f.text_field :motivations, :class => "form-control" %></p><br>
+	</div>
+	<div role="tabpanel" class="tab-pane fade in active" id="species">
+		<p><%= f.text_field :species, :class => "form-control" %></p><br>
+	</div>
 </div>
+<%= f.submit %>
+<% end %>
+
+
+
