@@ -1,8 +1,9 @@
-<%= stylesheet_link_tag "signin_form" %>
+<% content_for :head do %>
+      <%= stylesheet_link_tag "signin_form" %>
+  <% end %>
 
 <div class="container">
   <h2>Log in</h2>
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
@@ -23,7 +24,7 @@
 
     <% end -%>
     <div class="actions">
-       <%= f.submit "Log in", :class => 'btn btn-purple' %>
+       <%= f.submit "Log in", :class => 'btn access_button' %>
     </div>
      
   <% end %>

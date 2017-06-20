@@ -1,0 +1,11 @@
+.access_button {
+  @extend .btn-primary;	
+  background-color: #D2ABE9;
+  border-color: #D2ABE9;
+}
+
+.access_button:hover {
+  @extend .btn-primary:hover;
+  background-color: #A486B6;
+  border-color: #A486B6;
+}
