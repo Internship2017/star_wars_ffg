@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
 
   def update
     if @character.update(character_params)
-      redirect_to edit_user_registration_path
+      redirect_to characters_path
     else
       render :edit
     end
