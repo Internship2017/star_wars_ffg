@@ -1,0 +1,24 @@
+<div class="char-header">
+	<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %><span class="space">CHARACTERS</span></h1>
+</div>
+
+<div class="row">
+	<% @characters.each do |character| %>
+		<div class="col-sm-4 char-col">
+			<div class="card" style="width: 20rem;">
+			  <div class="card-block">
+			    <h4 class="card-title"><%= character.name %></h4>
+			    <h6><%= character.user.name %></h6>
+			    <ul class="card-text">
+			    	<li>Species: <%= character.species %></li>
+					<li>Gender: <%= character.gender %></li>
+					<li>Age: <%= character.age %></li>
+			    </ul>
+			    <a href="#" class="btn access_button">Show</a>
+			    <a href="#" class="btn btn-primary">Edit</a>
+			    <a href="#" class="btn btn-danger">Destroy</a>
+			  </div>
+			</div>
+		</div>
+	<% end %>
+</div>
