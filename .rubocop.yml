@@ -16,6 +16,8 @@ AllCops:
     - spec/spec_helper.rb
     - config.ru
     - Rakefile
+    - config/routes.rb
+    - spec/factories/*
 
 Documentation:
   Enabled: false
