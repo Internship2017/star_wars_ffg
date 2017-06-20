@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
 
     if @character.save
-      redirect_to n@character, notice: 'Mentor was successfully created.'
+      redirect_to @character, notice: 'Character was successfully created.'
     else
       render :new
     end
@@ -18,11 +18,11 @@ class CharactersController < ApplicationController
 
   def character_params
     params.require(:character).permit(:name, :force_rating, :user, :emotional_strength, :emotional_weakness,
-                                       :conflict, :morality, :gender, :age, :height, :build, :hair, :eyes,
-                                       :notable_features, :total_xp, :available_xp, :soak_value, :threshold_wounds,
-                                       :current_wounds, :threshold_strain, :current_strain, :ranged_defense,
-                                       :melee_defense, :brawn, :agility, :intellect, :cunning, :will_power,
-                                       :presence, :credits, :motivations, :species)
+                                      :conflict, :morality, :gender, :age, :height, :build, :hair, :eyes,
+                                      :notable_features, :total_xp, :available_xp, :soak_value, :threshold_wounds,
+                                      :current_wounds, :threshold_strain, :current_strain, :ranged_defense,
+                                      :melee_defense, :brawn, :agility, :intellect, :cunning, :will_power,
+                                      :presence, :credits, :motivations, :species)
   end
 
 end
