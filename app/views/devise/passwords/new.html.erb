@@ -1,5 +1,5 @@
-<div class="container mt-40"> 
- <div class="row">
+<div class="container mt-40">
+  <div class="row">
     <div class="col-xd-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
       <h2>Forgot your password?</h2>
     </div>
@@ -8,14 +8,14 @@
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f| %>
 
           <%= devise_error_messages! %>
-					<div class="row">
-									<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
-													<div class="form-group mt-20">
-																		<%= f.label :email, :class => "mb-20"  %><br/>
-																		<%= f.email_field :email, autofocus: true, :class =>"form-control" %>
-													</div>
-									</div>
-					</div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-4">
+              <div class="form-group mt-20">
+                <%= f.label :email, :class => "mb-20" %><br/>
+                <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+              </div>
+            </div>
+          </div>
 
           <div class="actions col-md-12 btn">
             <%= f.submit "Send me reset password instructions", :class => "btn btn-purple" %>
