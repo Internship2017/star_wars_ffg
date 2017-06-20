@@ -8,7 +8,7 @@ FactoryGirl.define do
     conflict 0
     morality 50
     gender "male"
-    age { (rand() * 100).to_i }
+    age { (rand * 100).to_i }
     height { "1.90 mts" }
     build "robust"
     hair "ginger"
