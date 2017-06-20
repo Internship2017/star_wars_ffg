@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_character, only: [:edit, :update]
-  before_action :verify_character, only: [:edit, :update]
+  before_action :set_character, only: [:edit, :update, :show]
+  before_action :verify_character, only: [:edit, :update, :show]
 
   def index
 		@characters = current_user.characters
@@ -17,10 +17,7 @@ class CharactersController < ApplicationController
     end
   end
   
-  def show
-  	@character = current_user.characters.find_by(id: params[:id])
-    verify_character
-  end
+  def show; end
 
   private
 
