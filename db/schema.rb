@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619190245) do
+ActiveRecord::Schema.define(version: 20170620173515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "force_rating"
+    t.bigint "user_id"
+    t.string "emotional_strength"
+    t.string "emotional_weakness"
+    t.string "conflict"
+    t.integer "morality"
+    t.string "gender"
+    t.integer "age"
+    t.string "height"
+    t.string "build"
+    t.string "hair"
+    t.string "eyes"
+    t.text "notable_features"
+    t.integer "total_xp"
+    t.integer "available_xp"
+    t.integer "soak_value"
+    t.integer "threshold_wounds"
+    t.integer "current_wounds"
+    t.integer "threshold_strain"
+    t.integer "current_strain"
+    t.integer "ranged_defense"
+    t.integer "melee_defense"
+    t.integer "brawn"
+    t.integer "agility"
+    t.integer "intellect"
+    t.integer "cunning"
+    t.integer "will_power"
+    t.integer "presence"
+    t.integer "credits"
+    t.text "motivations"
+    t.string "species"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_characters_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,4 +71,5 @@ ActiveRecord::Schema.define(version: 20170619190245) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "characters", "users"
 end
