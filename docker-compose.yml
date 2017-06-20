@@ -53,4 +53,4 @@ services:
     environment:
       DATABASE_URL: "postgres://postgres:P4Ssw0rD!@db:5432/star_wars"
     links:
-        - db
+      - db
