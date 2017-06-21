@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621191057) do
+ActiveRecord::Schema.define(version: 20170621200610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20170621191057) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "careers", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "free_ranks"
+    t.integer "source_page"
+    t.string "source_book"
+    t.string "career_skills", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,7 +80,9 @@ ActiveRecord::Schema.define(version: 20170621191057) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "campaign_id"
+    t.bigint "career_id"
     t.index ["campaign_id"], name: "index_characters_on_campaign_id"
+    t.index ["career_id"], name: "index_characters_on_career_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
@@ -106,5 +119,6 @@ ActiveRecord::Schema.define(version: 20170621191057) do
   add_foreign_key "character_weapons", "characters"
   add_foreign_key "character_weapons", "weapons"
   add_foreign_key "characters", "campaigns"
+  add_foreign_key "characters", "careers"
   add_foreign_key "characters", "users"
 end
