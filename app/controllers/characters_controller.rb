@@ -5,11 +5,11 @@ class CharactersController < ApplicationController
   before_action :verify_character, only: [:edit, :update]
 
   def new
-    @character = Character.new
+    @character = current_user.characters.build
   end
 
   def create
-    @character = Character.new(character_params)
+    @character = current_user.characters.build(character_params)
 
     if @character.save
       redirect_to @character, notice: 'Character was successfully created.'

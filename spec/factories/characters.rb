@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :characters do
+  factory :character do
     name { FFaker::Name.name }
     force_rating 1
     user
