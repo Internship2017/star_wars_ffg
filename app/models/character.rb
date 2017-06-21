@@ -1,6 +1,8 @@
 class Character < ApplicationRecord
   belongs_to :user
-
+  has_many :character_weapons
+  has_many :weapons, through: :character_weapons
+  
   validates :name, :species, :motivations, :emotional_strength, :emotional_weakness, 
             :notable_features, :gender, :height, :hair, :eyes, :user, :build, presence: true
 
