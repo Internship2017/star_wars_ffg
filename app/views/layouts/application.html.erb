@@ -23,13 +23,6 @@
         </button>
             <a class="navbar-brand" href="#">Star Wars</a>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <% if user_signed_in? %>
-                      <span class="nav-item active">
-                          <%= link_to "Characters", characters_path, { class: 'nav-link'} %>
-                      </span>
-                    <% end %>
-                </ul>
                 <% if user_signed_in? %>
                     <%= render 'user_navbar' %>
                 <% else %>

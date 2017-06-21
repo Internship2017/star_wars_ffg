@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620173515) do
+ActiveRecord::Schema.define(version: 20170621161231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170620173515) do
     t.bigint "user_id"
     t.string "emotional_strength"
     t.string "emotional_weakness"
-    t.string "conflict"
+    t.integer "conflict"
     t.integer "morality"
     t.string "gender"
     t.integer "age"
