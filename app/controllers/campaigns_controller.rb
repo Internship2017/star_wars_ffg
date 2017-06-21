@@ -16,7 +16,6 @@ class CampaignsController < ApplicationController
     end
   end
 
-
   def index
     @characters = current_user.characters
   end
@@ -43,6 +42,5 @@ class CampaignsController < ApplicationController
   def campaign_params
     params.require(:campaign).permit(:name)
   end
-
 
 end
