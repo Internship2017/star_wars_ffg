@@ -16,6 +16,7 @@ AllCops:
     - spec/spec_helper.rb
     - config.ru
     - Rakefile
+    - config/routes.rb
     - spec/factories/*
 
 Documentation:
@@ -76,4 +77,7 @@ Style/SpaceBeforeComment:
   Enabled: false
 
 Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+"Style/SymbolArray":
   Enabled: false
