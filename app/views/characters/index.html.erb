@@ -15,7 +15,7 @@
 					<li>Age: <%= character.age %></li>
 			    </ul>
 			    <a href="#" class="btn access_button">Show</a>
-			    <a href="#" class="btn btn-primary">Edit</a>
+			    <%= link_to "Edit", edit_character_path(character), class: "btn btn-primary" %>
 			    <a href="#" class="btn btn-danger">Destroy</a>
 			  </div>
 			</div>

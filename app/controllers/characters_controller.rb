@@ -1,8 +1,8 @@
 class CharactersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_character, only: [:edit, :update]
-  before_action :verify_character, only: [:edit, :update]
+  before_action :set_character, only: [:edit, :update, :show]
+  before_action :verify_character, only: [:edit, :update, :show]
 
   def new
     @character = current_user.characters.build
@@ -26,11 +26,13 @@ class CharactersController < ApplicationController
 
   def update
     if @character.update(character_params)
-      redirect_to edit_user_registration_path
+      redirect_to characters_path
     else
       render :edit
     end
   end
+  
+  def show; end
 
   private
 
