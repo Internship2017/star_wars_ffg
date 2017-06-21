@@ -21,7 +21,7 @@ class CharactersController < ApplicationController
 
   def destroy
     @character.destroy
-    redirect_to characters_path
+    redirect_to characters_path, flash: { notice: "Character has been destroyed" }
   end
 
   private
