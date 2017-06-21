@@ -17,8 +17,6 @@ AllCops:
     - config.ru
     - Rakefile
     - config/routes.rb
-    - spec/factories/*
-    - spec/models/character_spec.rb
 
 Documentation:
   Enabled: false
@@ -43,6 +41,11 @@ Style/BlockComments:
 
 Style/BlockDelimiters:
   Enabled: false
+
+Style/BlockLength:
+  Exclude:
+    - spec/factories/*
+    - spec/models/*
 
 Style/CaseIndentation:
   Enabled: false
