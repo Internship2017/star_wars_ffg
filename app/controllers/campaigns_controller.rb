@@ -10,11 +10,12 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
 
     if @campaign.save
-      redirect_to @campaign
+      redirect_to characters_path
     else
       render 'new'
     end
   end
+
 
   def index
     @characters = current_user.characters
@@ -24,10 +25,24 @@ class CampaignsController < ApplicationController
     @campaign = current_user.characters.find_by(id: params[:id])
   end
 
-  private
 
+  def edit
+    @campaign = Campaign.find(params[:id])
+  end
+
+  def update
+    if @campaign.update(campaign_params)
+      redirect_to characters_path
+    else
+      render :edit
+    end
+  end
+
+  private
 
   def campaign_params
     params.require(:campaign).permit(:name)
   end
+
+
 end
