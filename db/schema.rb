@@ -15,18 +15,6 @@ ActiveRecord::Schema.define(version: 20170621200610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "character_weapons", force: :cascade do |t|
-    t.bigint "weapon_id"
-    t.bigint "character_id"
-    t.integer "damage"
-    t.integer "crit"
-    t.text "special"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_character_weapons_on_character_id"
-    t.index ["weapon_id"], name: "index_character_weapons_on_weapon_id"
-  end
-
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -42,6 +30,18 @@ ActiveRecord::Schema.define(version: 20170621200610) do
     t.string "career_skills", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "character_weapons", force: :cascade do |t|
+    t.bigint "weapon_id"
+    t.bigint "character_id"
+    t.integer "damage"
+    t.integer "crit"
+    t.text "special"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_character_weapons_on_character_id"
+    t.index ["weapon_id"], name: "index_character_weapons_on_weapon_id"
   end
 
   create_table "characters", force: :cascade do |t|

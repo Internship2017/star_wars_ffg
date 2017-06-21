@@ -17,6 +17,7 @@ AllCops:
     - config.ru
     - Rakefile
     - config/routes.rb
+    - app/channels/application_cable/*
 
 Documentation:
   Enabled: false
