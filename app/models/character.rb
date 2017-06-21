@@ -1,10 +1,11 @@
 class Character < ApplicationRecord
   belongs_to :user
+  belongs_to :campaign
   has_many :character_weapons, dependent: :destroy
   has_many :weapons, through: :character_weapons
-  
-  validates :name, :species, :motivations, :emotional_strength, :emotional_weakness, 
-            :notable_features, :gender, :height, :hair, :eyes, :user, :build, presence: true
+
+  validates :name, :species, :motivations, :emotional_strength, :emotional_weakness,
+            :notable_features, :gender, :height, :hair, :eyes, :user, :build, :campaign, presence: true
 
   validates :age, :credits, :total_xp, :available_xp, numericality: { only_integer: true, 
                                                                       greater_than_or_equal_to: 0 }

@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20170621191057) do
     t.index ["weapon_id"], name: "index_character_weapons_on_weapon_id"
   end
 
+  create_table "campaigns", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "force_rating"
@@ -62,6 +68,8 @@ ActiveRecord::Schema.define(version: 20170621191057) do
     t.string "species"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "campaign_id"
+    t.index ["campaign_id"], name: "index_characters_on_campaign_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
@@ -97,5 +105,6 @@ ActiveRecord::Schema.define(version: 20170621191057) do
 
   add_foreign_key "character_weapons", "characters"
   add_foreign_key "character_weapons", "weapons"
+  add_foreign_key "characters", "campaigns"
   add_foreign_key "characters", "users"
 end

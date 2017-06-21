@@ -14,7 +14,7 @@
 					<li>Gender: <%= character.gender %></li>
 					<li>Age: <%= character.age %></li>
 			    </ul>
-			    <%= link_to "Show", character, class: "btn access_button" %>
+			    <%= link_to "Show", character_path(character), class: "btn access_button" %>
 			    <%= link_to "Edit", edit_character_path(character), class: "btn btn-primary" %>
 			    <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 			  </div>

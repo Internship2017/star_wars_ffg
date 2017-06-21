@@ -32,5 +32,6 @@ FactoryGirl.define do
     credits 500
     motivations { FFaker::Lorem.paragraph }
     species "human"
+    campaign
   end
 end
