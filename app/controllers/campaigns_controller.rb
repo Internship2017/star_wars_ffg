@@ -7,10 +7,22 @@ class CampaignsController < ApplicationController
 		@campaign = Campaign.new(campaign_params)
 
 			if @campaign.save
-					redirect_to @campaign
+					redirect_to characters_path
 				else
 					render 'new'
 			end
+	end
+	
+	def edit
+		 @campaign = Campaign.find(params[:id])
+	end
+
+	def update
+		if @campaign.update(campaign_params)
+			redirect_to characters_path
+		else
+			render :edit
+		end
 	end
 
 	private

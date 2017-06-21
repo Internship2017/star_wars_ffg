@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'campaigns/new'
-
-  get 'campaigns/create'
-
-	resources :campaigns, only: [:new, :create]
+	resources :campaigns, only: [:new, :create, :edit, :update]
 	
   resources :characters
 
