@@ -16,7 +16,7 @@
 			    </ul>
 			    <%= link_to "Show", character, class: "btn access_button" %>
 			    <%= link_to "Edit", edit_character_path(character), class: "btn btn-primary" %>
-			    <a href="#" class="btn btn-danger">Destroy</a>
+			    <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 			  </div>
 			</div>
 		</div>
