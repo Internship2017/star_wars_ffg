@@ -5,8 +5,10 @@ class Character < ApplicationRecord
 
   after_create :assign_skills
 
+  
+
   def assign_skills
-  	Skill.new.parse_skills.each do |skill|
+  	Skill.parse_skills.each do |skill|
   		skills << Skill.create(name: skill["Name"], 
   								description: skill["Description"]["General"], 
   								difficulty: skill["Description"]["Difficulty"], 
