@@ -1,0 +1,21 @@
+<div class="campaign-header">
+  <h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %>
+    <span class="space_between_image">CHARACTERS</span></h1>
+</div>
+
+<div class="row campaign-row">
+  <% @characters.each do |character| %>
+      <div class="col-sm-4 campaign-col">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"><%= character.name %></h4>
+            <h6><%= character.campaign.name %></h6>
+
+            <%= link_to "Show", campaign_path(character), class: "btn access_button" %>
+            <%= link_to "Edit", edit_campaign_path(character), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
