@@ -5,7 +5,7 @@
     <title>StarWarsFfg</title>
     <%= csrf_meta_tags %>
     
-		<!-- Required meta tags -->
+        <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,36 +16,41 @@
   </head>
 
   <body>
-	
-	<nav class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded">
-		<div class="container">
-			<a class="navbar-brand" href="#">Star Wars</a>
-		  <div class="navbar" id="navbarNav">
-		    <ul class="nav nav-pills">
-		      <% if user_signed_in? %>
-		      <%= render 'user_navbar' %>
-					<% else %>
-					<%= render 'guest_navbar' %>
-					<% end %>
-		    </ul>
-		  </div>
-		</div>
-	  
-	</nav>
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <a class="navbar-brand" href="#">Star Wars</a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <% if user_signed_in? %>
+                      <span class="nav-item active">
+                          <%= link_to "Characters", characters_path, { class: 'nav-link'} %>
+                      </span>
+                    <% end %>
+                </ul>
+                <% if user_signed_in? %>
+                    <%= render 'user_navbar' %>
+                <% else %>
+                    <%= render 'guest_navbar' %>
+                <% end %>
+          </div>
+    </nav>
 
-	<% flash.each do |key, value| %>
-		<div class="container mt-20">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<%= content_tag(:div, "<strong> #{key.titleize}!</strong> #{value}".html_safe , class: "alert alert-#{key}") %>
-				</div>
-			</div>
-		</div>
+    <% flash.each do |key, value| %>
+        <div class="container mt-20">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <%= content_tag(:div, "<strong> #{key.titleize}!</strong> #{value}".html_safe , class: "alert alert-#{key}") %>
+                </div>
+            </div>
+        </div>
     <% end %>
 
-	<div class="container">
-		<%= yield %>
-	</div>
+    <div class="container">
+        <%= yield %>
+    </div>
     
   </body>
 </html>
