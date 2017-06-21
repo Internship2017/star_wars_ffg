@@ -1,8 +1,8 @@
 class CharactersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_character, only: [:edit, :update, :show]
-  before_action :verify_character, only: [:edit, :update, :show]
+  before_action :set_character, only: [:edit, :update, :show, :destroy]
+  before_action :verify_character, only: [:edit, :update, :show, :destroy]
 
   def new
     @character = current_user.characters.build
@@ -33,6 +33,11 @@ class CharactersController < ApplicationController
   end
   
   def show; end
+
+  def destroy
+    @character.destroy
+    redirect_to characters_path, flash: { notice: "Character has been destroyed" }
+  end
 
   private
 
