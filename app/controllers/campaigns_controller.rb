@@ -24,7 +24,6 @@ class CampaignsController < ApplicationController
     @campaign = current_user.characters.find_by(id: params[:id])
   end
 
-
   def edit
     @campaign = Campaign.find(params[:id])
   end
