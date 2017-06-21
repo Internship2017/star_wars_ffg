@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :campaign do
-    name { FFaker::Name.name }
+    name { FFaker::Book.title }
   end
 end

@@ -1,5 +1,5 @@
 class Campaign < ApplicationRecord
-  has_many :characters, dependant: :destroy
+  has_many :characters
 
 
 end
