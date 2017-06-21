@@ -18,6 +18,8 @@ class CampaignsController < ApplicationController
 	end
 
 	def update
+		  @campaign = Campaign.find(params[:id])			
+
 		if @campaign.update(campaign_params)
 			redirect_to characters_path
 		else
