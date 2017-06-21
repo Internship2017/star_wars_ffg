@@ -19,15 +19,13 @@ RSpec.describe Career, type: :model do
   it { should validate_numericality_of(:free_ranks).only_integer }
   it { should have_many(:characters) }
   it "validates length of career_skills is 6" do
-  	career = FactoryGirl.create(:career)
-  	expect(career).to be_valid
+    career = FactoryGirl.create(:career, career_skills: %w[Warrior Guardian Healer Sniper Tank Paladin])
+    expect(career).to be_valid
   end
 
   it "validates length of career_skills is not 6" do
-  	career = FactoryGirl.build(:career, career_skills: ["Warrior", "Guardian"])
-  	expect(career).not_to be_valid
+    career = FactoryGirl.build(:career, career_skills: %w[Warrior Guardian])
+    expect(career).not_to be_valid
   end
-
-
  
 end
