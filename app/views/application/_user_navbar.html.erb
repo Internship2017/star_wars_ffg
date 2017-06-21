@@ -1,3 +1,6 @@
 <li class="nav-item">
+	<%= link_to "Create New Character", new_character_path, { class: 'nav-link' } %>
+</li>
+<li class="nav-item">
 	<%= link_to "Log out", destroy_user_session_path, { class: 'nav-link', method: 'delete' } %>
 </li>
