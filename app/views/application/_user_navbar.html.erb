@@ -1,3 +1,14 @@
-<li class="nav-item">
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+      <%= link_to "Characters", characters_path, { class: 'nav-link'} %>
+  </li>
+</ul>
+
+<span class="nav-item">
+	<%= link_to "Create New Character", new_character_path, { class: 'nav-link' } %>
+</span>
+
+<span class="nav-item">
 	<%= link_to "Log out", destroy_user_session_path, { class: 'nav-link', method: 'delete' } %>
-</li>
+</span>
+
