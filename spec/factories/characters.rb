@@ -33,5 +33,6 @@ FactoryGirl.define do
     motivations { FFaker::Lorem.paragraph }
     species "human"
     campaign
+    career
   end
 end

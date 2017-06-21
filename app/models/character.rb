@@ -1,6 +1,7 @@
 class Character < ApplicationRecord
   belongs_to :user
   belongs_to :campaign
+  belongs_to :career
 
   validates :name, :species, :motivations, :emotional_strength, :emotional_weakness,
             :notable_features, :gender, :height, :hair, :eyes, :user, :build, :campaign, presence: true
