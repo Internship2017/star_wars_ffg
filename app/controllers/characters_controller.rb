@@ -1,16 +1,27 @@
 class CharactersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_character, only: [:edit, :update]
-  before_action :verify_character, only: [:edit, :update]
+  before_action :set_character, only: [:edit, :update, :show, :destroy]
+  before_action :verify_character, only: [:edit, :update, :show, :destroy]
+
+  def index
+		@characters = current_user.characters
+	end
 
   def edit; end
 
   def update
     if @character.update(character_params)
-      redirect_to edit_user_registration_path
+      redirect_to characters_path
     else
       render :edit
     end
+  end
+  
+  def show; end
+
+  def destroy
+    @character.destroy
+    redirect_to characters_path, flash: { notice: "Character has been destroyed" }
   end
 
   private

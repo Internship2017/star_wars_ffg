@@ -57,6 +57,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     codeclimate-engine-rb (0.4.0)
@@ -251,6 +254,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap!
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   database_cleaner
