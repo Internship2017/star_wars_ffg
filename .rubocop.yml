@@ -18,6 +18,7 @@ AllCops:
     - Rakefile
     - config/routes.rb
     - spec/factories/*
+    - spec/models/character_spec.rb
 
 Documentation:
   Enabled: false
