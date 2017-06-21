@@ -36,4 +36,5 @@ RSpec.describe Character, type: :model do
   it { should validate_presence_of(:motivations) }
   it { should validate_presence_of(:species) }
   it { should validate_presence_of(:campaign) }
+  it { should have_many(:skills) }
 end

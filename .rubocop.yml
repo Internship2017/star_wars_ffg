@@ -17,6 +17,8 @@ AllCops:
     - config.ru
     - Rakefile
     - config/routes.rb
+    - lib/data/*
+    - spec/models/skill_spec.rb
 
 Documentation:
   Enabled: false
