@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :characters
+
   devise_for :users
 
-  resources :characters, only: [:edit, :update, :index, :show, :destroy]
 end

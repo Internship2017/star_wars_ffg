@@ -1,0 +1,116 @@
+<h1>New Character</h1>
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" href="#stats">Stats</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#characteristics">Characteristics</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#description">Description</a>
+	</li>
+</ul>
+<!-- Tab Content -->
+<div class="tab-content">
+	<%= form_for @character do |f| %>
+		<div role="tabpanel" class="tab-pane fade in active" id="stats">
+			<div class="form-group">
+				<p><%= f.label :name %></p>
+				<p><%= f.text_field :name, :class => "form-control" %></p><br>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="force_rating">
+			<p><%= f.text_field :force_rating, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="user_id">
+			<p><%= f.text_field :user_id, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="emotional_strength">
+			<p><%= f.text_field :emotional_strength, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="emotional_weakness">
+			<p><%= f.text_field :emotional_weakness, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="conflict">
+			<p><%= f.text_field :conflict, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="morality">
+			<p><%= f.text_field :morality, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="gender">
+			<p><%= f.text_field :gender, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="age">
+			<p><%= f.text_field :age, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="build">
+			<p><%= f.text_field :height, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="hair">
+			<p><%= f.text_field :hair, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="eyes">
+			<p><%= f.text_field :eyes, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="notable_features">
+			<p><%= f.text_field :notable_features, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="total_xp">
+			<p><%= f.text_field :total_xp, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="available_xp">
+			<p><%= f.text_field :available_xp, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="soak_value">
+			<p><%= f.text_field :soak_value, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="threshold_wounds">
+			<p><%= f.text_field :threshold_wounds, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="current_wounds">
+			<p><%= f.text_field :current_wounds, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="threshold_strain">
+			<p><%= f.text_field :threshold_strain, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="current_strain">
+			<p><%= f.text_field :current_strain, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="ranged_defense">
+			<p><%= f.text_field :ranged_defense, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="melee_defense">
+			<p><%= f.text_field :melee_defense, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="brawn">
+			<p><%= f.text_field :brawn, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="agility">
+			<p><%= f.text_field :agility, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="intellect">
+			<p><%= f.text_field :intellect, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="cunning">
+			<p><%= f.text_field :cunning, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="will_power">
+			<p><%= f.text_field :will_power, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="presence">
+			<p><%= f.text_field :presence, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="credits">
+			<p><%= f.text_field :credits, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="motivations">
+			<p><%= f.text_field :motivations, :class => "form-control" %></p><br>
+		</div>
+		<div role="tabpanel" class="tab-pane fade in active" id="species">
+			<p><%= f.text_field :species, :class => "form-control" %></p><br>
+		</div>
+</div>
+<%= f.submit %>
+<% end %>
+
+
