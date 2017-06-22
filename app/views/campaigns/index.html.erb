@@ -4,12 +4,12 @@
 </div>
 
 <div class="row campaign-row">
-  <% @campaigns.each do |campaign| %>
+  <% @characters_campaigns.campaigns.each do |campaign| %>
       <div class="col-sm-4 campaign-col">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title">Character: <%= campaign[:character] %></h4>
-            <h6>Campaign Name: <%= campaign[:campaign] %></h6>
+            <h6 class="card-title">Campaign Name: <%= campaign.name %></h6>
+            <h4>Characters in Party: <%= campaign.characters.size %></h4>
 
             <%= link_to "Edit", edit_campaign_path(campaign[:id]), class: "btn access_button" %>
           </div>
