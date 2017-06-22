@@ -6,7 +6,6 @@ class CharactersController < ApplicationController
 
   def new
     @character = current_user.characters.build
-    @campaigns = Campaign.all
   end
 
   def create
