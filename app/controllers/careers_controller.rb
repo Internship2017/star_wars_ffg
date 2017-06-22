@@ -1,11 +1,11 @@
 class CareersController < ApplicationController
+  before_action :set_career, except: [:index, :new, :create]
+
   def index
     @careers = Career.all
   end
 
-  def show
-    @career = Career.find(params[:id])
-  end
+  def show; end
 
   def new
     @career = Career.new
@@ -20,12 +20,9 @@ class CareersController < ApplicationController
     end
   end
 
-  def edit
-    @career = Career.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @career = Career.find(params[:id])
     if @career.update(career_params)
       redirect_to careers_path
     else
@@ -34,11 +31,14 @@ class CareersController < ApplicationController
   end
 
   def destroy
-    @career = Career.find(params[:id])
     @career.destroy
   end
 
   private
+
+  def set_career
+    @career = Career.find(params[:id])
+  end
 
   def career_params
     params.require(:career).permit(:name, :description, :free_ranks, :source_page, :source_book, career_skills: [])
