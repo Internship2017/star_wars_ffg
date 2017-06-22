@@ -1,5 +1,5 @@
 class Career < ApplicationRecord
-  before_validation  :set_free_ranks
+  before_validation :set_free_ranks
 
   SKILLS = %w[Astrogation Athletics Charm Coercion Computers Cool Coordination Deception 
               Discipline Leadership Mechanics Medicine Negotiation Perception 
