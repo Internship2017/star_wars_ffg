@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // A94D2C
 
-
 .characters-row {
 	padding-top: 20px;
 }
@@ -19,6 +18,8 @@
 .characters-header {
 	color: #C09448;
 	font-family: 'Poller One', cursive;
+	justify-content: center;
+	text-align: center;
 	padding-top: 20px;
 }
 
@@ -29,3 +30,4 @@
 .card {
 	width: 20rem;
 }
+

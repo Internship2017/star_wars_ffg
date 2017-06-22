@@ -1,0 +1,217 @@
+<div class="mt-5">
+	<div class="card-deck">
+		<div class="card">
+				<div class="card-block">
+					<h2 class="card-title"><%= @character.name %></h2>
+			    <p><em>Species:</em> <%= @character.species %></p>
+			    <p><em>Career:</em> -</p>
+			    <p><em>Specialization:</em> -</p>
+			    <p><em>Credits:</em> <%= @character.credits %></p>
+			  </div>
+		</div>
+		<div class="card">
+				<div class="card-block">
+					<h3 class="card-title">Character Description</h3>
+			    <p><em>Gender:</em> <%= @character.gender %></p>
+			    <p><em>Age:</em> <%= @character.age %></p>
+			    <p><em>Height:</em> <%= @character.height %></p>
+			    <p><em>Build:</em> <%= @character.build %></p>
+			    <p><em>Hair:</em> <%= @character.hair %></p>
+			    <p><em>Eyes:</em> <%= @character.eyes %></p>
+			  </div>
+		</div>
+		<div class="card" style="width: 20rem;">
+		  <img class="card-img-top" src="http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" alt="Logo">
+		  <div class="card-block text-center">
+		    <h4 class="card-title"><%= @character.user.name %></h4>
+		    <em>Player</em>
+		  </div>
+		</div>
+	</div>	
+</div>
+
+
+<div class="mt-2">
+	<div class="card-deck text-center">
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Soak Value</h4>
+	      <h3 class="card-text">
+	      	<%= @character.soak_value %>
+	      </h3>
+	    </div>
+	  </div>
+	  <div class="card">
+	  	<div class="card-block">
+	  		<h4 class="card-title">Force rating</h4>
+	  		<h3 class="card-text">
+	  			<%= @character.force_rating %>
+	  		</h3>
+	  	</div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Wounds</h4>
+	      <div class="row">
+	      	<div class="col-md-6">
+	      		<h3 class="card-text">
+	      			<%= @character.threshold_wounds %>
+	      		</h3>
+	      		<em class="small">Threshold</em>
+	      	</div>
+	      	<div class="col-md-6">
+	      		<h3 class="card-text">
+	      			<%= @character.current_wounds %>
+	      		</h3>
+	      		<em class="small">Current</em>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Strain</h4>
+	      <div class="row">
+	      	<div class="col-md-6">
+	      		<h3 class="card-text">
+	      			<%= @character.threshold_strain %>
+	      		</h3>
+	      		<em class="small">Threshold</em>
+	      	</div>
+	      	<div class="col-md-6">
+	      		<h3 class="card-text">
+	      			<%= @character.current_strain %>
+	      		</h3>
+	      		<em class="small">Current</em>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Defense</h4>
+	      <div class="row">
+	      	<div class="col-md-6">
+	      		<h3 class="card-text">
+	      			<%= @character.ranged_defense %>
+	      		</h3>
+	      		<em class="small">Ranged</em>
+	      	</div>
+	      	<div class="col-md-6">
+	      		<h3 class="card-text">
+	      			<%= @character.melee_defense %>
+	      		</h3>
+	      		<em class="small">Melee</em>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<div class="mt-2">
+	<div class="card-deck text-center">
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Brawn</h4>
+	      <h3 class="card-text">
+	      	<%= @character.brawn %>
+	      </h3>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Agility</h4>
+	      <h3 class="card-text">
+	      	<%= @character.agility %>
+	      </h3>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Intellect</h4>
+	      <h3 class="card-text">
+	      	<%= @character.intellect %>
+	      </h3>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Cunning</h4>
+	      <h3 class="card-text">
+	      	<%= @character.cunning %>
+	      </h3>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Will Power</h4>
+	      <h3 class="card-text">
+	      	<%= @character.will_power %>
+	      </h3>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-block">
+	      <h4 class="card-title">Presence</h4>
+	      <h3 class="card-text">
+	      	<%= @character.presence %>
+	      </h3>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<div class="mt-2 text-center">
+	<div class="card-deck">
+		<div class="card col-md-4">
+				<div class="card-block">
+					<h4 class="card-title">Motivation</h4>
+			    <p class="card-text">
+			    	<%= @character.motivations %>
+			    </p>
+			  </div>
+		</div>
+		<div class="card">
+				<div class="card-block">
+					<h3 class="card-title">Morality</h3>
+					<div class="card-deck">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Emotional strength</h4>
+								<p class="card-text">
+						    	<%= @character.emotional_strength %>
+						    </p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Conflict</h4>
+								<h3 class="card-text">
+						    	<%= @character.conflict %>
+						    </h3>
+							</div>
+						</div>
+					</div>
+					<div class="card-deck mt-2">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Emotional weakness</h4>
+								<p class="card-text">
+						    	<%= @character.emotional_weakness %>
+						    </p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Morality</h4>
+								<h3 class="card-text">
+						    	<%= @character.morality %>
+						    </h3>
+							</div>
+						</div>
+					</div>
+			  </div>
+		</div>
+	</div>
+</div>
