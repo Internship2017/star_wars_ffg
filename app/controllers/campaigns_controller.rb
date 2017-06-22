@@ -20,7 +20,8 @@ class CampaignsController < ApplicationController
     @campaigns = []
     characters = current_user.characters
     characters.each do |character|
-      @campaigns << { id: character.campaign.id, campaign: character.campaign.name, character: character.name }
+      character_info = character.campaign
+      @campaigns << { id: character_info.id, campaign: character_info.name, character: character.name }
     end
   end
 
