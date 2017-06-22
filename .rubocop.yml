@@ -17,7 +17,9 @@ AllCops:
     - config.ru
     - Rakefile
     - config/routes.rb
-    - app/channels/application_cable/*
+    - lib/data/*
+    - spec/models/skill_spec.rb
+
 
 Documentation:
   Enabled: false

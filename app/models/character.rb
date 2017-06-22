@@ -5,6 +5,8 @@ class Character < ApplicationRecord
   has_many :character_weapons, dependent: :destroy
   has_many :weapons, through: :character_weapons
 
+  has_many :skills, dependent: :destroy
+
   validates :name, :species, :motivations, :emotional_strength, :emotional_weakness,
             :notable_features, :gender, :height, :hair, :eyes, :user, :build, :campaign, presence: true
 
@@ -23,4 +25,11 @@ class Character < ApplicationRecord
   validates :morality, numericality: { only_integer: true, greater_than_or_equal_to: 0,
                                        less_than_or_equal_to: 100 }
 
+  after_create :assign_skills
+
+  def assign_skills
+    JsonSkill.skills.each do |json_skill|
+      skills.create(json_skill.attributes)
+    end
+  end
 end
