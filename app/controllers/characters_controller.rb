@@ -6,12 +6,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = current_user.characters.build
-		@campaigns = Campaign.all
+    @campaigns = Campaign.all
   end
 
   def create
     @character = current_user.characters.build(character_params)
-
+    @campaigns = Campaign.all
     if @character.save
       redirect_to @character, notice: 'Character was successfully created.'
     else
@@ -56,6 +56,6 @@ class CharactersController < ApplicationController
                                       :eyes, :notable_features, :total_xp, :available_xp, :soak_value,
                                       :threshold_wounds, :current_wounds, :threshold_strain, :current_strain,
                                       :ranged_defense, :melee_defense, :brawn, :agility, :intellect, :cunning,
-                                      :will_power, :presence, :credits, :motivations, :species, :campaign)
+                                      :will_power, :presence, :credits, :motivations, :species, :campaign_id)
   end
 end

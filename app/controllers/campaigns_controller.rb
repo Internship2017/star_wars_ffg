@@ -1,6 +1,5 @@
 class CampaignsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_campaign, only: [:edit, :update, :show, :destroy]
 
   def new
     @campaign = Campaign.new
@@ -17,13 +16,17 @@ class CampaignsController < ApplicationController
   end
 
   def index
-    @characters = current_user.characters
+    @campaigns = []
+    characters = current_user.characters
+    characters.each do |character|
+      campaign_info = character.campaign
+      @campaigns << { id: campaign_info.id, campaign: campaign_info.name, character: character.name }
+    end
   end
 
   def show
-    @campaign = current_user.characters.find_by(id: params[:id])
-  end
-
+  	@campaign = Campaign.find(params[:id])
+	end
 
   def edit
     @campaign = Campaign.find(params[:id])

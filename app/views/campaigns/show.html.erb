@@ -1,0 +1,9 @@
+<div class="container mt-20 text-center">
+	<h4><%= @campaign.name %></h4>
+	<hr>
+		<ul>
+			<% @campaign.characters.each do |character| %> 	
+					<li><%= character.name %></li>
+			<% end %>
+		</ul>
+</div>
