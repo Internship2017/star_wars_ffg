@@ -1,5 +1,7 @@
 class CampaignsController < ApplicationController
+
   before_action :authenticate_user!
+  before_action :set_campaign, only: [:edit, :show]
 
   def new
     @campaign = Campaign.new
@@ -19,13 +21,9 @@ class CampaignsController < ApplicationController
     @characters_campaigns = UserCampaignsWithCharacters.new(current_user)
   end
 
-  def show
-    @campaign = Campaign.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @campaign = Campaign.find(params[:id])
-  end
+  def edit; end
 
   def update
     if @campaign.update(campaign_params)
@@ -39,6 +37,10 @@ class CampaignsController < ApplicationController
 
   def campaign_params
     params.require(:campaign).permit(:name)
+  end
+
+  def set_campaign
+    @campaign = Campaign.find(params[:id])
   end
 
 end
