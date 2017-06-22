@@ -2,6 +2,8 @@ class Character < ApplicationRecord
   belongs_to :user
   belongs_to :campaign
   belongs_to :career
+  has_many :character_weapons, dependent: :destroy
+  has_many :weapons, through: :character_weapons
 
   has_many :skills, dependent: :destroy
 

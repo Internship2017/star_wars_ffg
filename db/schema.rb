@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20170621200610) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "character_weapons", force: :cascade do |t|
+    t.bigint "weapon_id"
+    t.bigint "character_id"
+    t.integer "damage"
+    t.integer "crit"
+    t.text "special"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_character_weapons_on_character_id"
+    t.index ["weapon_id"], name: "index_character_weapons_on_weapon_id"
+  end
+
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "force_rating"
@@ -105,6 +117,20 @@ ActiveRecord::Schema.define(version: 20170621200610) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weapons", force: :cascade do |t|
+    t.string "name"
+    t.string "skill"
+    t.text "range"
+    t.integer "encum"
+    t.integer "hp"
+    t.integer "price"
+    t.integer "rarity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "character_weapons", "characters"
+  add_foreign_key "character_weapons", "weapons"
   add_foreign_key "characters", "campaigns"
   add_foreign_key "characters", "careers"
   add_foreign_key "characters", "users"
