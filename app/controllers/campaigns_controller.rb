@@ -16,17 +16,12 @@ class CampaignsController < ApplicationController
   end
 
   def index
-    @campaigns = []
-    characters = current_user.characters
-    characters.each do |character|
-      campaign_info = character.campaign
-      @campaigns << { id: campaign_info.id, campaign: campaign_info.name, character: character.name }
-    end
+    @characters_campaigns = UserCampaignsWithCharacters.new(current_user)
   end
 
   def show
-  	@campaign = Campaign.find(params[:id])
-	end
+    @campaign = Campaign.find(params[:id])
+  end
 
   def edit
     @campaign = Campaign.find(params[:id])
