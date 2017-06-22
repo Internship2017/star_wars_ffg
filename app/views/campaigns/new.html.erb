@@ -1,11 +1,11 @@
 <div class="container mt-40 mb-40">
-	<h1 class="text-center">Create New Campaign</h1>
-	<hr class="mt-20">
-	<%= form_for @campaign do |f| %>
-		<div class="form-group">
-			<%= f.label :name %>
-			<%= f.text_field :name, :class => "form-control" %>
-		</div>
-		<%= f.submit "Create", :class => "btn access_button" %>
-<% end %>
+  <h1 class="text-center">Create New Campaign</h1>
+  <hr class="mt-20">
+  <%= form_for @campaign do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => "form-control" %>
+      </div>
+      <%= f.submit "Create", :class => "btn access_button" %>
+  <% end %>
 </div>

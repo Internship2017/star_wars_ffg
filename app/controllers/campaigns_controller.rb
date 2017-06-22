@@ -17,7 +17,11 @@ class CampaignsController < ApplicationController
   end
 
   def index
-    @characters = current_user.characters
+    @campaigns = []
+    characters = current_user.characters
+    characters.each do |character|
+      @campaigns << { id: character.campaign.id, campaign: character.campaign.name, character: character.name }
+    end
   end
 
   def show
