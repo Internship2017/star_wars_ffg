@@ -6,7 +6,7 @@
 					<th>General Skills</th>
 					<th>Rank</th>
 				</tr>
-				<% @character.skills.order(:name).select{ |type_skill| type_skill.type_of_skill == "General" }.each do |skill|  %>
+				<% select_type("General").each do |skill|  %>
 				<tr>
 					<td><%= skill.name %></td>
 					<td><%= skill.rank %></td>
@@ -23,7 +23,7 @@
 					<th>Combat Skills</th>
 					<th>Rank</th>
 				</tr>
-				<% @character.skills.order(:name).select{ |type_skill| type_skill.type_of_skill == "Combat" }.each do |skill|  %>
+				<% select_type("Combat").each do |skill|  %>
 				<tr>
 					<td><%= skill.name %></td>
 					<td><%= skill.rank %></td>
@@ -41,7 +41,7 @@
 					<th>Knowledge Skills</th>
 					<th>Rank</th>
 				</tr>
-				<% @character.skills.order(:name).select{ |type_skill| type_skill.type_of_skill == "Knowledge" }.each do |skill|  %>
+				<% select_type("Knowledge").each do |skill|  %>
 				<tr>
 					<td><%= skill.name %></td>
 					<td><%= skill.rank %></td>
