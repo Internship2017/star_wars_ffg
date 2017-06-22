@@ -32,7 +32,9 @@ class CharactersController < ApplicationController
     end
   end
   
-  def show; end
+  def show
+    @character_weapons = @character.character_weapons
+  end
 
   def destroy
     @character.destroy
