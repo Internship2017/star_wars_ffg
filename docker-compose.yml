@@ -33,8 +33,10 @@ services:
       DATABASE_URL: "postgres://postgres:P4Ssw0rD!@db:5432/star_wars_test"
       RACK_ENV: "test"
       RAILS_ENV: "test"
+      LC_ALL: C.UTF-8
     links:
       - db
+    
 
   web:
     image: internship/star_wars:development
@@ -52,5 +54,7 @@ services:
     stdin_open: true
     environment:
       DATABASE_URL: "postgres://postgres:P4Ssw0rD!@db:5432/star_wars"
+      LC_ALL: C.UTF-8
     links:
       - db
+  
