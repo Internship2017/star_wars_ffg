@@ -25,12 +25,8 @@ class Character < ApplicationRecord
   after_create :assign_skills
 
   def assign_skills
-  	Skill.parse_skills.each do |skill|
-  		skills << Skill.create(name: skill["Name"], 
-  								description: skill["Description"]["General"], 
-  								difficulty: skill["Description"]["Difficulty"], 
-  								characteristic: skill["Characteristic"], 
-  								type_of_skill: skill["Type"])
-  	end
+    JsonSkill.skills.each do |json_skill|
+      skills.create(json_skill.attributes)
+    end
   end
 end
