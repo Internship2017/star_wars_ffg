@@ -1,5 +1,4 @@
 class CampaignsController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_campaign, only: [:edit, :show]
 
@@ -9,7 +8,6 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params)
-
     if @campaign.save
       redirect_to characters_path
     else
