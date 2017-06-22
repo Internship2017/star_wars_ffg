@@ -2,10 +2,10 @@
   <h1 class="text-center">Edit Campaign</h1>
   <hr class="mb-20">
   <%= form_for @campaign do |f| %>
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, :class => "form-control" %>
-      </div>
-      <%= f.submit "Edit", :class => "btn access_button" %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <%= f.submit "Edit", class: "btn access_button" %>
   <% end %>
 </div>
