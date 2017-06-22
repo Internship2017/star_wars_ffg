@@ -46,18 +46,6 @@ class JsonWeapon
   end
 
   def attributes
-    {
-      name: name, 
-      skill: skill,
-      range: range,
-      encum: encum,
-      hp: hp,
-      price: price,
-      rarity: rarity,
-      default_damage: default_damage,
-      default_crit: default_crit
-    }
-    
+    { name: name, skill: skill, range: range, encum: encum, hp: hp, price: price, rarity: rarity, default_damage: default_damage, default_crit: default_crit }
   end
 end
-

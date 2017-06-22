@@ -19,6 +19,8 @@ AllCops:
     - config/routes.rb
     - lib/data/*
     - spec/models/skill_spec.rb
+    - spec/models/weapon_spec.rb
+    - spec/services/json_weapon_spec.rb
 
 
 Documentation:
@@ -35,7 +37,7 @@ Style/FrozenStringLiteralComment:
 
 Style/DefWithParentheses:
   Enabled: false
-    
+
 Metrics/LineLength:
   Enabled: false
 
@@ -52,7 +54,7 @@ Style/BlockLength:
 
 Style/CaseIndentation:
   Enabled: false
-    
+
 Style/EmptyLinesAroundAccessModifier:
   Enabled: false
 

@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 JsonWeapon.weapons.each do |json_weapon|
-    Weapon.create(json_weapon.attributes)
+  Weapon.create(json_weapon.attributes)
 end
