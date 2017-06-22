@@ -7,5 +7,7 @@ FactoryGirl.define do
     hp 1
     price 200
     rarity 5
+    default_damage 1
+    default_crit 1
   end
 end

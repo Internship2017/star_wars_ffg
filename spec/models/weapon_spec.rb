@@ -10,6 +10,8 @@ RSpec.describe Weapon, type: :model do
   it { should validate_numericality_of(:encum).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(99) }
   it { should validate_numericality_of(:hp).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(99) }
   it { should validate_numericality_of(:rarity).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(99) }
+  it { should validate_numericality_of(:default_damage).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(99) }
+  it { should validate_numericality_of(:default_crit).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(99) }
   it { should have_many(:character_weapons) }
   it { should have_many(:characters).through(:character_weapons) }
 end
