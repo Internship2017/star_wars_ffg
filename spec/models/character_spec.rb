@@ -36,7 +36,10 @@ RSpec.describe Character, type: :model do
   it { should validate_presence_of(:motivations) }
   it { should validate_presence_of(:species) }
   it { should validate_presence_of(:campaign) }
+  it { should have_many(:skills) }
   it { should belong_to(:career) }
   it { should belong_to(:campaign) }
+  it { should have_many(:character_weapons) }
   it { should have_many(:weapons).through(:character_weapons) }
 end
+
