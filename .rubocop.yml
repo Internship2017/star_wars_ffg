@@ -20,6 +20,7 @@ AllCops:
     - lib/data/*
     - spec/models/skill_spec.rb
 
+
 Documentation:
   Enabled: false
 
