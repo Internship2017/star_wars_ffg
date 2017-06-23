@@ -68,5 +68,4 @@ RSpec.describe Career, type: :model do
       expect(Career.find_by(name: "Warrior").career_skills.first).to eql "Lightsaber"
     end
   end
- 
 end

@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<table class="table table-striped skills-table">
+				<tr>
+					<th>General Skills</th>
+					<th>Rank</th>
+				</tr>
+				<% select_skill_type(@character, "General").each do |skill|  %>
+				<tr>
+					<td><%= link_to skill.name, skill_path(skill.id) %></td>
+					<td><%= skill.rank %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+
+
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<table class="table table-striped c-skills-table">
+				<tr>
+					<th>Combat Skills</th>
+					<th>Rank</th>
+				</tr>
+				<% select_skill_type(@character, "Combat").each do |skill|  %>
+				<tr>
+					<td><%= skill.name %></td>
+					<td><%= skill.rank %></td>
+					
+				</tr>
+				<% end %>
+			</table>
+		</div>
+
+
+
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<table class="table table-striped k-skills-table">
+				<tr>
+					<th>Knowledge Skills</th>
+					<th>Rank</th>
+				</tr>
+				<% select_skill_type(@character, "Knowledge").each do |skill|  %>
+				<tr>
+					<td><%= skill.name %></td>
+					<td><%= skill.rank %></td>
+					
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
