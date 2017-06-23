@@ -1,5 +1,5 @@
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <ul class="nav nav-pills" role="tablist">
       <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#character-summary">Character summary</a></li>
       <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#weapons">Weapons</a></li>
@@ -9,12 +9,10 @@
       <div class="tab-pane active mt-20" id="character-summary" role="tabpanel">
         <%= render 'character_summary' %>
       </div>
-      <div class="tab-pane active mt-20" id="weapons" role="tabpanel">
+      <div class="tab-pane mt-20" id="weapons" role="tabpanel">
         <%= render 'character_weapons' %>
       </div>
-    </div>
-    
+    </div>   
 </div>
 
 
-<%= link_to 'Back', characters_path, class: 'btn btn-primary' %>

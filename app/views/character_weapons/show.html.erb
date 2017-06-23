@@ -5,17 +5,39 @@
 	  <h3 class="card-header"><%= @weapon.name %></h3>
 	  <div class="card-block">
 	    <div class="card-text">
-			<h5>Damage: <%= @character_weapon.damage %></h5>
-	    	<h5>Crit: <%= @character_weapon.crit %></h5>
-	    	<h5>Special: <%= @character_weapon.special %></h5>
-	    	<h5>Skill: <%= @weapon.skill %></h5>
-	    	<h5>Range: <%= @weapon.range %></h5>
-	    	<h5>Price: <%= @weapon.price %></h5>
-	    	<h5>Encum: <%= @weapon.encum %></h5>
-	    	<h5>Rarity: <%= @weapon.rarity %></h5>
-	    	<h5>HP: <%= @weapon.hp %></h5>
+	    	<div class="row">
+	    		<div class="col-md-4">
+	    			<h5>Damage:</h5>
+	    			<p><%= @character_weapon.damage %></p>
+	    			<h5>Crit:</h5>
+	    			<p><%= @character_weapon.crit %></p>
+	    			<h5>Special:</h5>
+	    			<p><%= @character_weapon.special %></p>
+	    		</div>
+
+	    		<div class="col-md-4">
+	    			<h5>Skill:</h5>
+	    			<p><%= @weapon.skill %></p>
+			    	<h5>Range:</h5>
+			    	<p><%= @weapon.range %></p>
+			    	<h5>Price:</h5>
+			    	<p><%= @weapon.price %></p>
+	    		</div>
+
+	    		<div class="col-md-4">
+	    			<h5>Encum:</h5>
+			    	<p><%= @weapon.encum %></p>
+			    	<h5>Rarity:</h5>
+			    	<p><%= @weapon.rarity %></p>
+			    	<h5>HP:</h5>
+			    	<p><%= @weapon.hp %></p>
+	    		</div>
+	    	</div>
+			
+	    	
 	    </div>
-	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    <%= link_to 'Back', @character_weapon.character, class: 'btn btn-primary' %>
 	  </div>
 	</div>
 </div>
+
