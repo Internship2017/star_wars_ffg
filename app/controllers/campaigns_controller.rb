@@ -1,5 +1,4 @@
 class CampaignsController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_campaign, only: [:edit, :show]
 
@@ -42,5 +41,4 @@ class CampaignsController < ApplicationController
   def set_campaign
     @campaign = Campaign.find(params[:id])
   end
-
 end
