@@ -1,0 +1,33 @@
+<div class="specializations-header">
+	<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %><span class="space_between_image">SPECIALIZATIONS</span></h1>
+</div>
+
+<div class="row specializations-row">
+	<% @specializations.each do |specialization| %>
+		<div class="col-sm-4 specializations-col">
+			<div class="card">
+			  <div class="card-block">
+			    <h4 class="card-title"><%= specialization.name %></h4>
+			    <ul class="card-text">
+					<li>Source Page: <%= specialization.source_page %></li>
+					<li>Source Book: <%= specialization.source_book %></li>
+					<li>Description: <%= specialization.description %></li>
+					<li>Career: <%= specialization.career.name %></li>
+					<li>Skills</li>
+					<ul>
+						<% specialization.career_skills.each do |skill| %>
+							<li> <%= skill %> </li>
+						<% end %>
+					</ul>
+
+			    </ul>
+			    <div data-turbolinks="false">
+			    <%= link_to "Show", specialization_path(specialization), class: "btn access_button" %>
+			    <%= link_to "Edit", edit_specialization_path(specialization), class: "btn btn-primary" %>
+			    <%= link_to 'Destroy', specialization, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	<% end %>
+</div>
