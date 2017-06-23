@@ -51,6 +51,7 @@ Style/BlockLength:
   Exclude:
     - spec/factories/*
     - spec/models/*
+    - spec/services/*
 
 Style/CaseIndentation:
   Enabled: false
@@ -89,4 +90,7 @@ Style/SpaceInsideBlockBraces:
   Enabled: false
 
 "Style/SymbolArray":
+  Enabled: false
+
+EndOfLine:
   Enabled: false

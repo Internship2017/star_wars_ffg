@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Character, type: :model do
-  let(:character) { FactoryGirl.create :character }
+  let(:character) { create :character }
 
   it { should validate_presence_of(:name) }
   it { should validate_numericality_of(:force_rating).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(5) }
@@ -41,5 +41,6 @@ RSpec.describe Character, type: :model do
   it { should belong_to(:campaign) }
   it { should have_many(:character_weapons) }
   it { should have_many(:weapons).through(:character_weapons) }
+  
 end
 

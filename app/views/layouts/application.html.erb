@@ -22,7 +22,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
             <a class="navbar-brand" href="#">Star Wars</a>
-            <div class="collapse navbar-collapse" id="navbarText">
+            <div class="collapse navbar-collapse" id="navbarText" data-turbolinks="false">
                 <% if user_signed_in? %>
                     <%= render 'user_navbar' %>
                 <% else %>
@@ -30,16 +30,19 @@
                 <% end %>
           </div>
     </nav>
-
-    <% flash.each do |key, value| %>
-        <div class="container mt-20">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <%= content_tag(:div, "<strong> #{key.titleize}!</strong> #{value}".html_safe , class: "alert alert-#{key}") %>
-                </div>
+    <br>
+    <div id='main' class='container'>
+        <div class='row'>
+            <div class='col-md-8 col-md-offset-2'>
+                <% flash.each do |name, msg| %>
+                    <div class='alert alert-<%= name %>'>
+                        <%= msg %>
+                    </div>
+                <% end %>
             </div>
         </div>
-    <% end %>
+        
+    </div>
 
     <div class="container">
         <%= yield %>

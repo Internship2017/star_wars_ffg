@@ -1,0 +1,32 @@
+<div class="careers-header">
+	<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %><span class="space_between_image">CAREERS</span></h1>
+</div>
+
+<div class="row careers-row">
+	<% @careers.each do |career| %>
+		<div class="col-sm-4 careers-col">
+			<div class="card">
+			  <div class="card-block">
+			    <h4 class="card-title"><%= career.name %></h4>
+			    <ul class="card-text">
+					<li>Source Page: <%= career.source_page %></li>
+					<li>Source Book: <%= career.source_book %></li>
+					<li>Description: <%= career.description %></li>
+					<li>Skills</li>
+					<ul>
+						<% career.career_skills.each do |skill| %>
+							<li> <%= skill %> </li>
+						<% end %>
+					</ul>
+
+			    </ul>
+			    <div data-turbolinks="false">
+			    <%= link_to "Show", career_path(career), class: "btn access_button" %>
+			    <%= link_to "Edit", edit_career_path(career), class: "btn btn-primary" %>
+			    <%= link_to 'Destroy', career, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	<% end %>
+</div>
