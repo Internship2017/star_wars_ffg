@@ -3,39 +3,6 @@
 	<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#character_skills">Skills</a></li>
 </ul>
 
-<div class="mt-5">
-	<%= link_to 'Back', characters_path, class: 'btn btn-primary mb-20' %>
-	<div class="card-deck">
-		<div class="card">
-				<div class="card-block">
-					<h2 class="card-title"><%= @character.name %></h2>
-			    <p><em>Species:</em> <%= @character.species %></p>
-			    <p><em>Career:</em> -</p>
-			    <p><em>Specialization:</em> -</p>
-			    <p><em>Credits:</em> <%= @character.credits %></p>
-			  </div>
-		</div>
-		<div class="card">
-				<div class="card-block">
-					<h3 class="card-title">Character Description</h3>
-			    <p><em>Gender:</em> <%= @character.gender %></p>
-			    <p><em>Age:</em> <%= @character.age %></p>
-			    <p><em>Height:</em> <%= @character.height %></p>
-			    <p><em>Build:</em> <%= @character.build %></p>
-			    <p><em>Hair:</em> <%= @character.hair %></p>
-			    <p><em>Eyes:</em> <%= @character.eyes %></p>
-			  </div>
-		</div>
-		<div class="card" style="width: 20rem;">
-		  <img class="card-img-top" src="http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" alt="Logo">
-		  <div class="card-block text-center">
-		    <h4 class="card-title"><%= @character.user.name %></h4>
-		    <em>Player</em>
-		  </div>
-		</div>
-	</div>	
-</div>
-
 <div class="tab-content">
 	<div class="tab-pane mt-20" id="character_skills" role="tabpanel">
 		<div class="characters-header">
@@ -48,7 +15,6 @@
 	<div class="tab-pane active mt-20" id="character_summary" role="tabpanel">
         <%= render 'character_summary' %>
      </div>
-
 </div>
 
 <%= link_to 'Back', characters_path, class: 'btn btn-primary' %>
