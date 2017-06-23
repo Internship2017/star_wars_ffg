@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :campaigns, only: [:new, :create, :edit, :update, :index, :show]
+
+  resources :campaigns, except: [:delete]
   resources :characters
-  resources :careers
+  resources :careers do
+    post :upload, on: :collection
+  end
 
   devise_for :users
 

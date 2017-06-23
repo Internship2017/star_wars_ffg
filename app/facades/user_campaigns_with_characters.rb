@@ -11,7 +11,7 @@ class UserCampaignsWithCharacters
   end
 
   def campaigns
-    @campaigns = Campaign.find(campaign_ids)
+    @campaigns ||= Campaign.find(campaign_ids)
   end
 
   private

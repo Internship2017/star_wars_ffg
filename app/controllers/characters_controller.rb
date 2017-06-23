@@ -1,5 +1,4 @@
 class CharactersController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_character, only: [:edit, :update, :show, :destroy]
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
@@ -10,7 +9,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = current_user.characters.build(character_params)
-    @campaigns = Campaign.all
+
     if @character.save
       redirect_to @character, notice: 'Character was successfully created.'
     else

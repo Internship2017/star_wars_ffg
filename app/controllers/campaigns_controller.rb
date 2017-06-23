@@ -8,7 +8,6 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params)
-
     if @campaign.save
       redirect_to characters_path
     else
