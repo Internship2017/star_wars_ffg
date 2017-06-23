@@ -8,7 +8,7 @@
 				</tr>
 				<% select_skill_type(@character, "General").each do |skill|  %>
 				<tr>
-					<td><%= link_to skill.name, skill_path(skill.id) %></td>
+					<td><%= link_to skill.name, skill_path(skill) %></td>
 					<td><%= skill.rank %></td>
 				</tr>
 				<% end %>
