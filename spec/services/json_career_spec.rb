@@ -11,7 +11,6 @@ RSpec.describe "JsonCareer", type: :service do
 
   it "should create 2 JsonCareer objects from the json" do
     expect(@json_careers_array.count).to eql 2
-    expect(@json_careers_array.first.class).to eql JsonCareer
   end
 
   it "should store the correct name" do
