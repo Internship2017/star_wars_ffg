@@ -30,5 +30,4 @@ RSpec.describe Career, type: :model do
     career = FactoryGirl.create(:career)
     expect(career.free_ranks).to eql 3
   end
- 
 end

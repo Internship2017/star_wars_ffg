@@ -15,10 +15,7 @@ class Skill < ApplicationRecord
   end
 
   scope :by_name, -> { order(:name) }
-  scope :by_skill, ->(skill_name) { where(type_of_skill: skill_name) }
 
-  def select_skill_type(skill_type)
-    @character.skills.by_name.by_type_of_skill(skill_type)
-  end
+  scope :with_skill_type, ->(skill_name) { where(type_of_skill: skill_name) }
 
 end

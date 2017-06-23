@@ -10,6 +10,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = current_user.characters.build(character_params)
+    @character.assign_skills
 
     if @character.save
       redirect_to @character, notice: 'Character was successfully created.'
