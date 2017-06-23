@@ -19,8 +19,7 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def create
-  	@weapon = current_weapon
-  	@character_weapon = CharacterWeapon.new(character: current_character, weapon: @weapon, damage: @weapon.default_damage, crit: @weapon.default_crit, special: "Common")
+  	@character_weapon = CharacterWeapon.new(new_character_weapon_params)
    
     if @character_weapon.save
       redirect_to current_character, notice: 'Weapon was successfully created.'
@@ -44,5 +43,16 @@ class CharacterWeaponsController < ApplicationController
 
   def current_weapon
   	Weapon.find(params[:weapon_id])
+  end
+
+  def new_character_weapon_params
+  	weapon = current_weapon
+  	{	
+  		character: current_character, 
+  		weapon: weapon,
+  		damage: weapon.default_damage,
+  		crit: weapon.default_crit,
+  		special: "Common" 
+  	}
   end
 end
