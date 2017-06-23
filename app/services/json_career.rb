@@ -30,12 +30,13 @@ class JsonCareer
     @attr_career["FreeRanks"]
   end
 
-  def self.careers(json_careers_array)
+  def self.to_a(json_careers_array)
     json_careers_array.map { |career| JsonCareer.new(career) }
   end
 
   def attributes
     {
+      name: name,
       description: description,
       source_page: source_page,
       source_book: source_book,

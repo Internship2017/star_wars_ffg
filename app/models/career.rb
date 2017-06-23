@@ -22,9 +22,9 @@ class Career < ApplicationRecord
   end
 
   def self.upload(file)
-    json_careers_array = JSON.parse(file.read)["Careers"]
-    JsonCareer.careers(json_careers_array).each do |career|
-      Career.where(name: career.name).first_or_create(career.attributes).update(career.attributes)
+    json_data = JSON.parse(file.read)["Careers"]
+    JsonCareer.to_a(json_data).each do |json_career|
+      Career.where(name: json_career.name).first_or_create(json_career.attributes).update(json_career.attributes)
     end
   end
 
