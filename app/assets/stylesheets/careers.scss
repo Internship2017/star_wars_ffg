@@ -4,12 +4,8 @@
 // A94D2C
 
 
-.careers-row {
-	padding-top: 20px;
-}
-
-.container-fluid.careers-section {
- padding: 30px 0;
+.card {
+	width: 20rem;
 }
 
 .careers-col {
@@ -22,12 +18,12 @@
 	padding-top: 20px;
 }
 
-.space_between_image {
-	padding-left: 60px;
+.careers-row {
+	padding-top: 20px;
 }
 
-.card {
-	width: 20rem;
+.container-fluid.careers-section {
+ padding: 30px 0;
 }
 
 .img-size {
@@ -41,4 +37,8 @@
 	list-style-type: none;
 	position: relative;
 	right: 40px;
+}
+
+.space_between_image {
+	padding-left: 60px;
 }
