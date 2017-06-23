@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Weapon, type: :model do
-  let(:weapon) { FactoryGirl.create :weapon }
+  let(:weapon) { create :weapon }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:skill) }

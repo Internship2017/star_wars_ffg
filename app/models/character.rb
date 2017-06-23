@@ -4,8 +4,9 @@ class Character < ApplicationRecord
   belongs_to :career
   has_many :character_weapons, dependent: :destroy
   has_many :weapons, through: :character_weapons
-
   has_many :skills, dependent: :destroy
+
+  GENDERS = ["Other", "Male", "Female", "Not Sure", "Why do you care?", "Either way", "Why is this a field?", "Testing"].freeze
 
   validates :name, :species, :motivations, :emotional_strength, :emotional_weakness,
             :notable_features, :gender, :height, :hair, :eyes, :user, :build, :campaign, presence: true

@@ -59,6 +59,10 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     chosen-rails (1.5.2)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -256,6 +260,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap!
   byebug
+  carrierwave
   chosen-rails
   coffee-rails (~> 4.2)
   database_cleaner
