@@ -26,8 +26,6 @@ class Character < ApplicationRecord
   validates :morality, numericality: { only_integer: true, greater_than_or_equal_to: 0,
                                        less_than_or_equal_to: 100 }
 
-  after_create :assign_skills
-
   def assign_skills
     JsonSkill.skills.each do |json_skill|
       skills.create(json_skill.attributes)

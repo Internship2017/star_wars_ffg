@@ -1,7 +1,9 @@
 class Skill < ApplicationRecord
   belongs_to :character
 
-  validates :name, :description, :difficulty, :characteristic, :type_of_skill, presence: true
+  validates :name, :characteristic, :type_of_skill, presence: true
+
+  validates :description, :difficulty, presence: { allow_blank: true }
 
   validates :rank,
             numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
@@ -11,4 +13,9 @@ class Skill < ApplicationRecord
     data_hash = JSON.parse(file)
     data_hash["Skills"]["Skill"]
   end
+
+  scope :by_name, -> { order(:name) }
+
+  scope :with_skill_type, ->(skill_name) { where(type_of_skill: skill_name) }
+
 end
