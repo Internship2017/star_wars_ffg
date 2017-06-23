@@ -1,5 +1,5 @@
 class Career < ApplicationRecord
-  before_create :set_free_ranks
+  before_validation :set_free_ranks, on: :create
 
   SKILLS = %w[Astrogation Athletics Charm Coercion Computers Cool Coordination Deception 
               Discipline Leadership Mechanics Medicine Negotiation Perception 
@@ -16,8 +16,16 @@ class Career < ApplicationRecord
 
   has_many :characters
 
+
   def set_free_ranks
     self.free_ranks = 3
+  end
+
+  def self.upload(file)
+    json_careers_array = JSON.parse(file.read)["Careers"]
+    JsonCareer.careers(json_careers_array).each do |career|
+      Career.where(name: career.name).first_or_create(career.attributes).update(career.attributes)
+    end
   end
 
 end
