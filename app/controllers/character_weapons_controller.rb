@@ -1,42 +1,42 @@
 class CharacterWeaponsController < ApplicationController
-	before_action :authenticate_user!
-	before_action :set_character_weapon, only: [:destroy, :show, :edit, :update]
+  before_action :authenticate_user!
+  before_action :set_character_weapon, only: [:destroy, :show, :edit, :update]
   before_action :verify_character_weapon, only: [:destroy, :show, :edit, :update]
 
   def destroy
-  	weapon_name = @character_weapon.weapon.name
-  	@character_weapon.destroy
+    weapon_name = @character_weapon.weapon.name
+    @character_weapon.destroy
     redirect_to @character_weapon.character, flash: { notice: "Weapon #{weapon_name} has been destroyed" }
   end
 
   def show
-  	@weapon = @character_weapon.weapon
+    @weapon = @character_weapon.weapon
   end
 
   def new
-  	@weapons = Weapon.all.order(rarity: :desc, price: :desc)
-  	@character = current_character
+    @weapons = Weapon.all.order(rarity: :desc, price: :desc)
+    @character = current_character
   end
 
   def create
-  	@character_weapon = CharacterWeapon.new(new_character_weapon_params)
-   
+    @character_weapon = CharacterWeapon.new(new_character_weapon_params)
+
     if @character_weapon.save
       redirect_to current_character, notice: 'Weapon was successfully created.'
     else
-      render :new, flash: {danger: @character_weapon.errors}
+      render :new, flash: { danger: @character_weapon.errors }
     end
   end
 
   def edit
-  	@weapon = @character_weapon.weapon
+    @weapon = @character_weapon.weapon
   end
 
   def update
     if @character_weapon.update(character_weapon_params)
       redirect_to @character_weapon.character
     else
-      render :edit, flash: {danger: @character_weapon.errors}
+      render :edit, flash: { danger: @character_weapon.errors }
     end
   end
 
@@ -50,25 +50,25 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def current_character
-  	Character.find(params[:character_id])
+    Character.find(params[:character_id])
   end
 
   def current_weapon
-  	Weapon.find(params[:weapon_id])
+    Weapon.find(params[:weapon_id])
   end
 
   def new_character_weapon_params
-  	weapon = current_weapon
-  	{	
-  		character: current_character, 
-  		weapon: weapon,
-  		damage: weapon.default_damage,
-  		crit: weapon.default_crit,
-  		special: "Common" 
-  	}
+    weapon = current_weapon
+    {
+      character: current_character,
+      weapon: weapon,
+      damage: weapon.default_damage,
+      crit: weapon.default_crit,
+      special: "Common"
+    }
   end
 
   def character_weapon_params
-  	params.require(:character_weapon).permit(:damage, :crit, :special)
+    params.require(:character_weapon).permit(:damage, :crit, :special)
   end
 end
