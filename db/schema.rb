@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621200610) do
+ActiveRecord::Schema.define(version: 20170623204626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,27 @@ ActiveRecord::Schema.define(version: 20170621200610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["character_id"], name: "index_skills_on_character_id"
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "source_page"
+    t.string "source_book"
+    t.integer "brawn"
+    t.integer "agility"
+    t.integer "intellect"
+    t.integer "cunning"
+    t.integer "willpower"
+    t.integer "presence"
+    t.integer "wound_threshold"
+    t.integer "strain_threshold"
+    t.integer "experience"
+    t.string "skill_name"
+    t.integer "skill_start_rank"
+    t.integer "skill_limit_rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
