@@ -1,20 +1,20 @@
 <div class="campaign-header">
   <h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %>
-    <span class="space_between_image">Campaigns</span></h1>
+    <span class="space_between_image">Campaigns</span>
+  </h1>
 </div>
 
 <div class="row campaign-row">
   <% @characters_campaigns.campaigns.each do |campaign| %>
-      <div class="col-sm-4 campaign-col">
-        <div class="card">
-          <div class="card-block">
-            <h6 class="card-title">Campaign Name: <%= campaign.name %></h6>
-            <h4>Characters in Party: <%= campaign.characters.size %></h4>
-
-            <%= link_to "Edit", edit_campaign_path(campaign), class: "btn access_button" %>
-            <%= link_to "Show", campaign_path(campaign), class: "btn access_button" %>
-          </div>
+    <div class="col-sm-4 campaign-col">
+      <div class="card">
+        <div class="card-block">
+          <h6 class="card-title">Campaign Name: <%= campaign.name %></h6>
+          <h4>Characters in Party: <%= campaign.characters.size %></h4>
+          <%= link_to "Edit", edit_campaign_path(campaign), class: "btn access_button" %>
+          <%= link_to "Show", campaign_path(campaign), class: "btn access_button" %>
         </div>
       </div>
+    </div>
   <% end %>
 </div>
