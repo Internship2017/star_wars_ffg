@@ -1,0 +1,35 @@
+<div class="mt-5">
+	<div>
+		<img class="card-img-top img-size mb-20" src="http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" alt="Logo">
+
+	</div>
+	<div class="card-deck">
+		<div class="card">
+				<div class="card-block">
+					<h2 class="card-title"><%= Career %></h2>
+			    <p><strong><em>Name:</em></strong> <%= @career.name %></p>
+			    <p><strong><em>Source Page:</em></strong> <%= @career.source_page %></p>
+			    <p><strong><em>Source Book:</em></strong> <%= @career.source_book %></p>
+			  </div>
+		</div>
+		<div class="card">
+				<div class="card-block">
+					<h3 class="card-title">Description</h3>
+			    <p><%= @career.description %></p>
+			  </div>
+		</div>
+		<div class="card" style="width: 20rem;">
+		  	<div class="card-block	">
+			    <h4 class="card-title">Skills</h4>
+			    <ul class="skill-list">
+					<% @career.career_skills.each do |skill| %>
+						<li> <%= skill %> </li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>	
+	<%= link_to 'Back', careers_path, class: 'btn btn-primary mt-20' %>
+
+</div>
+
