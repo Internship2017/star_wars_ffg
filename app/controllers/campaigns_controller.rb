@@ -40,5 +40,4 @@ class CampaignsController < ApplicationController
   def set_campaign
     @campaign = Campaign.find(params[:id])
   end
-
 end
