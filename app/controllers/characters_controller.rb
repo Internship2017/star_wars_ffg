@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
     @character = current_user.characters.build(character_params)
 
     if @character.save
+      @character.assign_skills
       redirect_to @character, notice: 'Character was successfully created.'
     else
       render :new
