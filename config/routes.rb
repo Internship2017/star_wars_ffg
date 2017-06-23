@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :careers do
     post :upload, on: :collection
   end
+  resources :specializations
 
   devise_for :users
 
