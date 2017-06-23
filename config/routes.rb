@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :careers do
     post :upload, on: :collection
   end
+  resources :skills [:show]
 
   devise_for :users
-
-  get "/skills/:id" => "skills#show", as: :skill
 end
