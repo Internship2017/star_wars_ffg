@@ -6,6 +6,6 @@ RSpec.describe Campaign, type: :model do
 
   it { should respond_to :name }
   it { should validate_presence_of :name }
-  it { should be_valid() }
+  it { should be_valid }
   it { should validate_uniqueness_of :name }
 end
