@@ -1,0 +1,13 @@
+<div class="container mt-20 text-center">
+  <h4><%= @campaign.name %></h4>
+  <hr>
+  <div class="col-md-12 text-center">
+    <ul>
+      <% @campaign.characters.each do |character| %>
+        <li>
+          <span><%= character.name %></span>  <%= link_to "Show", character_path(character), class: "btn access_button" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
