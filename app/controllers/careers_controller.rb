@@ -24,7 +24,7 @@ class CareersController < ApplicationController
 
   def update
     if @career.update(career_params)
-      redirect_to careers_path, flash: { success: "Character successfully edited!" }
+      redirect_to careers_path, flash: { success: "Career successfully edited!" }
     else
       render :edit
     end

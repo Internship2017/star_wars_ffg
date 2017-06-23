@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post :upload, on: :collection
   end
   resources :skills, only: [:show]
+  resources :specializations
 
   devise_for :users
 end
