@@ -22,7 +22,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
             <a class="navbar-brand" href="#">Star Wars</a>
-            <div class="collapse navbar-collapse" id="navbarText">
+            <div class="collapse navbar-collapse" id="navbarText" data-turbolinks="false">
                 <% if user_signed_in? %>
                     <%= render 'user_navbar' %>
                 <% else %>
