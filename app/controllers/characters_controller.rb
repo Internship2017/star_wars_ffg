@@ -1,5 +1,4 @@
 class CharactersController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_character, only: [:edit, :update, :show, :destroy]
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
@@ -10,7 +9,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = current_user.characters.build(character_params)
-    
+
     if @character.save
       redirect_to @character, notice: 'Character was successfully created.'
     else
@@ -55,6 +54,6 @@ class CharactersController < ApplicationController
                                       :eyes, :notable_features, :total_xp, :available_xp, :soak_value,
                                       :threshold_wounds, :current_wounds, :threshold_strain, :current_strain,
                                       :ranged_defense, :melee_defense, :brawn, :agility, :intellect, :cunning,
-                                      :will_power, :presence, :credits, :motivations, :species, :campaign)
+                                      :will_power, :presence, :credits, :motivations, :species, :campaign_id)
   end
 end

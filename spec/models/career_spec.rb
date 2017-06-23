@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Career, type: :model do
-  let(:career) { FactoryGirl.create :career }
+  let(:career) { create :career }
 
   it { should respond_to(:name) }
   it { should respond_to(:description) }
@@ -16,6 +16,7 @@ RSpec.describe Career, type: :model do
   it { should validate_presence_of(:career_skills) }
   it { should validate_numericality_of(:source_page).only_integer }
   it { should have_many(:characters) }
+
   it "validates length of career_skills as 6 is valid" do
     career = FactoryGirl.build(:career, career_skills: %w[Warrior Guardian Healer Sniper Tank Paladin])
     expect(career).to be_valid
@@ -42,7 +43,7 @@ RSpec.describe Career, type: :model do
   end
 
   it "should validate free_ranks is set as 3 after creation" do
-    career = FactoryGirl.create(:career)
+    career = create(:career)
     expect(career.free_ranks).to eql 3
   end
 
