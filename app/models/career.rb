@@ -10,7 +10,7 @@ class Career < ApplicationRecord
   validates :name, :description, :source_page, :source_book, 
             :career_skills, :free_ranks, presence: true
 
-  validates :career_skills, length: { is: 6 }
+  validates :career_skills, length: { in: 1..10 }
 
   validates :source_page, :free_ranks, numericality: { only_integer: true }
 

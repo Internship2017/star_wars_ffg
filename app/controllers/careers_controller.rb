@@ -36,6 +36,7 @@ class CareersController < ApplicationController
 
   def upload
     Career.upload(params[:upload][:file])
+    redirect_to careers_path
   end
 
   private
