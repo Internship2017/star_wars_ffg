@@ -16,6 +16,7 @@ RSpec.describe Career, type: :model do
   it { should validate_presence_of(:career_skills) }
   it { should validate_numericality_of(:source_page).only_integer }
   it { should have_many(:characters) }
+  it { should have_many(:specializations) }
 
   it "validates length of career_skills as 6 is valid" do
     career = FactoryGirl.build(:career, career_skills: %w[Warrior Guardian Healer Sniper Tank Paladin])

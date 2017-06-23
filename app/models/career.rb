@@ -15,6 +15,7 @@ class Career < ApplicationRecord
   validates :source_page, :free_ranks, numericality: { only_integer: true }
 
   has_many :characters
+  has_many :specializations
 
   scope :with_name, ->(name) { where(name: name) }
 
