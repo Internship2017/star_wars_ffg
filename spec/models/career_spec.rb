@@ -34,7 +34,7 @@ RSpec.describe Career, type: :model do
   describe "upload method" do
 
     before(:each) do
-      #File with 2 career objects
+      # File with 2 career objects
       json_file = File.open(Rails.root.join("spec/factories/assets/careers.js"))
       Career.upload(json_file)
     end
@@ -44,7 +44,7 @@ RSpec.describe Career, type: :model do
     end
 
     it "should create careers from a json file or update existing careers" do
-      #File with 2 career objects(1 with changes from first file and one new)
+      # File with 2 career objects(1 with changes from first file and one new)
       json_file_with_changes = File.open(Rails.root.join("spec/factories/assets/careers_change.js"))
       Career.upload(json_file_with_changes)
       expect(Career.count).to eql 3

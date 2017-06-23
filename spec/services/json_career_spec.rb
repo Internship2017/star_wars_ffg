@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "JsonCareer", type: :service do
 
   before(:all) do
-    #File with 2 career objects
+    # File with 2 career objects
     json_file = File.open(Rails.root.join("spec/factories/assets/careers.js"))
     json_data = JSON.parse(json_file.read)["Careers"]
     @json_careers_array = JsonCareer.to_a(json_data)
@@ -38,6 +38,5 @@ RSpec.describe "JsonCareer", type: :service do
   it "should store the correct career_skills" do
     expect(@json_career.career_skills).to match_array(%w[Athletics Brawl Cool Melee Perception Survival])
   end
-
 
 end

@@ -16,7 +16,6 @@ class Career < ApplicationRecord
 
   has_many :characters
 
-
   def set_free_ranks
     self.free_ranks = 3
   end
@@ -24,7 +23,8 @@ class Career < ApplicationRecord
   def self.upload(file)
     json_data = JSON.parse(file.read)["Careers"]
     JsonCareer.to_a(json_data).each do |json_career|
-      Career.where(name: json_career.name).first_or_create(json_career.attributes).update(json_career.attributes)
+      json_career_attrs = json_career.attributes
+      Career.where(name: json_career.name).first_or_create(json_career_attrs).update(json_career_attrs)
     end
   end
 
