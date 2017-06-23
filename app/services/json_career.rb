@@ -30,8 +30,9 @@ class JsonCareer
     @attr_career["FreeRanks"]
   end
 
-  def self.to_a(json_careers_array)
-    json_careers_array.map { |career| JsonCareer.new(career) }
+  def self.to_a(json_file)
+    json_data = JSON.parse(json_file.read)["Careers"]
+    json_data.map { |career| JsonCareer.new(career) }
   end
 
   def attributes

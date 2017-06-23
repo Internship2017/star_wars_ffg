@@ -5,8 +5,7 @@ RSpec.describe "JsonCareer", type: :service do
   before(:all) do
     # File with 2 career objects
     json_file = File.open(Rails.root.join("spec/factories/assets/careers.js"))
-    json_data = JSON.parse(json_file.read)["Careers"]
-    @json_careers_array = JsonCareer.to_a(json_data)
+    @json_careers_array = JsonCareer.to_a(json_file)
     @json_career = @json_careers_array.first
   end
 
