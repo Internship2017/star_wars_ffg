@@ -6,7 +6,7 @@
 					<th>General Skills</th>
 					<th>Rank</th>
 				</tr>
-				<% select_type("General").each do |skill|  %>
+				<% select_skill_type(@character, "General").each do |skill|  %>
 				<tr>
 					<td><%= skill.name %></td>
 					<td><%= skill.rank %></td>
@@ -23,7 +23,7 @@
 					<th>Combat Skills</th>
 					<th>Rank</th>
 				</tr>
-				<% select_type("Combat").each do |skill|  %>
+				<% select_skill_type(@character, "Combat").each do |skill|  %>
 				<tr>
 					<td><%= skill.name %></td>
 					<td><%= skill.rank %></td>
@@ -41,7 +41,7 @@
 					<th>Knowledge Skills</th>
 					<th>Rank</th>
 				</tr>
-				<% select_type("Knowledge").each do |skill|  %>
+				<% select_skill_type(@character, "Knowledge").each do |skill|  %>
 				<tr>
 					<td><%= skill.name %></td>
 					<td><%= skill.rank %></td>
@@ -52,5 +52,3 @@
 		</div>
 	</div>
 </div>
-	
-<!-- 21 general / 6 combat / 6 knowledge -->
