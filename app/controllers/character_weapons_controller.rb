@@ -1,12 +1,12 @@
 class CharacterWeaponsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_character_weapon, only: [:destroy, :show]
-  before_action :verify_character_weapon, only: [:destroy, :show]
+	before_action :set_character_weapon, only: [:destroy, :show, :edit, :update]
+  before_action :verify_character_weapon, only: [:destroy, :show, :edit, :update]
 
   def destroy
   	weapon_name = @character_weapon.weapon.name
   	@character_weapon.destroy
-    redirect_to characters_path, flash: { notice: "Weapon #{weapon_name} has been destroyed" }
+    redirect_to @character_weapon.character, flash: { notice: "Weapon #{weapon_name} has been destroyed" }
   end
 
   def show
@@ -25,6 +25,18 @@ class CharacterWeaponsController < ApplicationController
       redirect_to current_character, notice: 'Weapon was successfully created.'
     else
       render :new, flash: {danger: @character_weapon.errors}
+    end
+  end
+
+  def edit
+  	@weapon = @character_weapon.weapon
+  end
+
+  def update
+    if @character_weapon.update(character_weapon_params)
+      redirect_to @character_weapon.character
+    else
+      render :edit, flash: {danger: @character_weapon.errors}
     end
   end
 
@@ -54,5 +66,9 @@ class CharacterWeaponsController < ApplicationController
   		crit: weapon.default_crit,
   		special: "Common" 
   	}
+  end
+
+  def character_weapon_params
+  	params.require(:character_weapon).permit(:damage, :crit, :special)
   end
 end

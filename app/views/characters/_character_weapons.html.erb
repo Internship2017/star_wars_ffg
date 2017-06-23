@@ -9,7 +9,7 @@
 					<li>Crit: <%= character_weapon.crit %></li>
 			    </ul>
 			    <%= link_to "Show", character_weapon_path(character_weapon), class: "btn access_button" %>
-			    <button type="button" class="btn btn-primary">Edit</button>
+			    <%= link_to "Edit", edit_character_weapon_path(character_weapon), class: "btn btn-primary" %>
 			    <%= link_to 'Destroy', character_weapon, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 			  </div>
 			</div>
