@@ -38,7 +38,7 @@
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
               <div class="form-group">
                 <%= f.label :gender %><br />
-                <%= f.select :gender, ["Other", "Male", "Female", "Not Sure", "Why do you care?", "Either way", "Why is this a field?", "Testing"], { include_blank: false }, class: "chosen-select" %>
+                <%= f.select :gender, Character::GENDERS, { include_blank: false }, class: "chosen-select" %>
               </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
