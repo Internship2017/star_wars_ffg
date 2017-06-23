@@ -35,10 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
-
 gem 'chosen-rails'
-
 gem 'jquery-rails'
+gem "carrierwave"
 
 
 group :development, :test do

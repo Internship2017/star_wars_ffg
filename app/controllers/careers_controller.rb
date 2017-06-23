@@ -1,5 +1,5 @@
 class CareersController < ApplicationController
-  before_action :set_career, except: [:index, :new, :create]
+  before_action :set_career, except: [:index, :new, :create, :upload]
 
   def index
     @careers = Career.all
@@ -34,6 +34,10 @@ class CareersController < ApplicationController
     @career.destroy
   end
 
+  def upload
+    Career.upload(params[:upload][:file])
+  end
+
   private
 
   def set_career
@@ -41,6 +45,6 @@ class CareersController < ApplicationController
   end
 
   def career_params
-    params.require(:career).permit(:name, :description, :free_ranks, :source_page, :source_book, career_skills: [])
+    params.require(:career).permit(:name, :description, :source_page, :source_book, career_skills: [])
   end
 end
