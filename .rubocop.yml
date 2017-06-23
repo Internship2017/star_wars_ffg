@@ -89,3 +89,6 @@ Style/SpaceInsideBlockBraces:
 
 "Style/SymbolArray":
   Enabled: false
+
+EndOfLine:
+  Enabled: false
