@@ -41,8 +41,9 @@ class CharacterWeaponsController < ApplicationController
   end
 
   private
+
   def set_character_weapon
-    @character_weapon = CharacterWeapon.find_by(id: params[:id])
+    @character_weapon = CharacterWeapon.find(params[:id])
   end
 
   def verify_character_weapon
@@ -54,16 +55,15 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def current_weapon
-    Weapon.find(params[:weapon_id])
+    @current_weapon ||= Weapon.find(params[:weapon_id])
   end
 
   def new_character_weapon_params
-    weapon = current_weapon
     {
       character: current_character,
-      weapon: weapon,
-      damage: weapon.default_damage,
-      crit: weapon.default_crit,
+      weapon: current_weapon,
+      damage: current_weapon.default_damage,
+      crit: current_weapon.default_crit,
       special: "Common"
     }
   end

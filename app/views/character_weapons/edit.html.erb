@@ -1,44 +1,42 @@
 <h2>Edit Weapon</h2>
 <div class="row mt-5">
-	<div class="card col-md-12">
-		<%= form_for(@character_weapon) do |f| %>
-		  <h3 class="card-header"><%= @weapon.name %></h3>
-		  <div class="card-block">
-		    <div class="card-text">
-		    	<div class="row">
-		    		<div class="col-md-4">
-		    			<h5>Damage:</h5>
-		    			<%= f.number_field :damage,{ within: 0...100, autofocus: true, class: "form-control" } %>
-		    			<h5>Crit:</h5>
-		    			<%= f.number_field :crit, { within: 0...100, autofocus: true, class: "form-control" } %>
-		    			<h5>Special:</h5>
-		    			<%= f.text_field :special, { required: true, autofocus: true, class: "form-control" } %>
-		    		</div>
+  <div class="card col-md-12">
+    <%= form_for(@character_weapon) do |f| %>
+    <h3 class="card-header"><%= @weapon.name %></h3>
+    <div class="card-block">
+      <div class="card-text">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Damage:</h5>
+            <%= f.number_field :damage,{ within: 0...100, autofocus: true, class: "form-control" } %>
+            <h5>Crit:</h5>
+            <%= f.number_field :crit, { within: 0...100, autofocus: true, class: "form-control" } %>
+            <h5>Special:</h5>
+            <%= f.text_field :special, { required: true, autofocus: true, class: "form-control" } %>
+          </div>
 
-		    		<div class="col-md-4">
-		    			<h5>Skill:</h5>
-		    			<p><%= @weapon.skill %></p>
-				    	<h5>Range:</h5>
-				    	<p><%= @weapon.range %></p>
-				    	<h5>Price:</h5>
-				    	<p><%= @weapon.price %></p>
-		    		</div>
+          <div class="col-md-4">
+            <h5>Skill:</h5>
+            <p><%= @weapon.skill %></p>
+            <h5>Range:</h5>
+            <p><%= @weapon.range %></p>
+            <h5>Price:</h5>
+            <p><%= @weapon.price %></p>
+          </div>
 
-		    		<div class="col-md-4">
-		    			<h5>Encum:</h5>
-				    	<p><%= @weapon.encum %></p>
-				    	<h5>Rarity:</h5>
-				    	<p><%= @weapon.rarity %></p>
-				    	<h5>HP:</h5>
-				    	<p><%= @weapon.hp %></p>
-		    		</div>
-		    	</div>	
-		    </div>
-		    <%= f.submit "Update", { class: "btn-primary btn" } %>
-		    <%= link_to 'Cancel', @character_weapon.character, class: 'btn btn-danger' %>
-		  </div>
-		<% end %>
-	</div>
-	
+          <div class="col-md-4">
+            <h5>Encum:</h5>
+            <p><%= @weapon.encum %></p>
+            <h5>Rarity:</h5>
+            <p><%= @weapon.rarity %></p>
+            <h5>HP:</h5>
+            <p><%= @weapon.hp %></p>
+          </div>
+        </div>
+      </div>
+      <%= f.submit "Update", { class: "btn-primary btn" } %>
+      <%= link_to 'Cancel', @character_weapon.character, class: 'btn btn-danger' %>
+    </div>
+    <% end %>
+  </div>
 </div>
-
