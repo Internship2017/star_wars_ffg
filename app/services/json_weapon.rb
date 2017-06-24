@@ -55,7 +55,7 @@ class JsonWeapon
       price: price,
       rarity: rarity,
       default_damage: default_damage,
-      default_crit: default_crit
+      default_crit: default_critattributes
     }
   end
 end

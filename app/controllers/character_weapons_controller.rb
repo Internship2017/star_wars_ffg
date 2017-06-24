@@ -39,7 +39,6 @@ class CharacterWeaponsController < ApplicationController
     end
   end
 
-
   private
 
   def weapon_list
