@@ -19,8 +19,6 @@ AllCops:
     - config/routes.rb
     - lib/data/*
     - spec/models/skill_spec.rb
-    - spec/models/weapon_spec.rb
-    - spec/services/json_weapon_spec.rb
 
 
 Documentation:
@@ -29,6 +27,13 @@ Documentation:
 Metrics/ClassLength:
   Max: 150
 
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - app/services/json_weapon.rb
+
 Style/AsciiIdentifiers:
   Enabled: false
 
@@ -36,9 +41,6 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/DefWithParentheses:
-  Enabled: false
-
-Metrics/LineLength:
   Enabled: false
 
 Style/BlockComments:
