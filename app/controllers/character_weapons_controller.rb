@@ -13,7 +13,7 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def new
-    @weapons = Weapon.all.order(rarity: :desc, price: :desc)
+    @weapons = weapon_list
     @character = current_character
   end
 
@@ -39,7 +39,12 @@ class CharacterWeaponsController < ApplicationController
     end
   end
 
+
   private
+
+  def weapon_list
+    @weapon_list ||= Weapon.all.order(rarity: :desc, price: :desc)
+  end
 
   def set_character_weapon
     @character_weapon = CharacterWeapon.find(params[:id])
