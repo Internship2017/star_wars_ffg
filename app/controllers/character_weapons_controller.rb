@@ -1,12 +1,11 @@
 class CharacterWeaponsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_character_weapon, only: [:destroy, :show, :edit, :update]
-  before_action :verify_character_weapon, only: [:destroy, :show, :edit, :update]
+  before_action :set_character_weapon, except: :new
+  before_action :verify_character_weapon, except: :new
 
   def destroy
-    weapon_name = @character_weapon.weapon.name
     @character_weapon.destroy
-    redirect_to @character_weapon.character, flash: { notice: "Weapon #{weapon_name} has been destroyed" }
+    redirect_to @character_weapon.character, flash: { notice: "Weapon #{@character_weapon.weapon.name} has been destroyed" }
   end
 
   def show
