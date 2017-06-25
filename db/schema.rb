@@ -139,8 +139,8 @@ ActiveRecord::Schema.define(version: 20170623201230) do
     t.integer "rarity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "default_damage"
-    t.integer "default_crit"
+    t.integer "default_damage", default: 1
+    t.integer "default_crit", default: 1
   end
 
   add_foreign_key "character_weapons", "characters"
