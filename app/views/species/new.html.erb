@@ -1,0 +1,105 @@
+<div class="container mt-40 mb-40">
+	<h1 class="text-center">Create New Species</h1>
+	<hr>
+	<div class="row">
+		<div class="form-group col-sm-12">
+			<%= form_for(@specie) do |f| %>
+				<div class="row">
+					<div class="col-sm-3">
+						<%= f.label :name %>
+						<%= f.text_field :name, class: "form-control" %>
+					</div>
+					<div class="col-sm-3">
+						<%= f.label :description %>
+						<%= f.text_field :description, class: "form-control" %>
+					</div>
+					<div class="col-sm-3">
+						<%= f.label :source_book %>
+						<%= f.text_field :source_book, class: "form-control" %>
+					</div>
+					<div class="col-sm-3">
+						<%= f.label :skill_name %>
+						<%= f.text_field :skill_name, class: "form-control" %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-sm-1">
+				<%= f.text_field :source_page, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :brawn, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :agility, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :intellect, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :cunning, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :willpower, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :presence, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :wound_threshold, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :strain_threshold, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :experience, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :skill_start_rank, class: "form-control" %>
+			</div>
+			<div class="form-group col-sm-1">
+				<%= f.text_field :skill_limit_rank, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :source_page %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :brawn %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :agility %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :intellect %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :cunning %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :willpower %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :presence %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :wound_threshold %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :strain_threshold %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :experience %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :start_rank %>
+			</div>
+			<div class="form-group col-sm-1 text-center">
+				<%= f.label :limit_rank %>
+			</div>
+		</div>
+		<%= f.submit "Create", class: "btn access_button" %>
+	<% end %>
+</div>

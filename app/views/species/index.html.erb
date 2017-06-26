@@ -1,0 +1,10 @@
+<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %>
+	<span class="space_between_image">Species</span>
+</h1>
+<table class="table table-striped table-hover">
+	<% @species.each do |specie| %>
+		<tr>
+			<td><%= specie.name %></td>
+		</tr>
+	<% end %>
+</table>
