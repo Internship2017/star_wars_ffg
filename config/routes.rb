@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :specializations
   resources :skills, only: [:show]
 
+  get 'characters/skills_select' => 'characters#skills_select', as: 'skills_select'
+
   devise_for :users
 end

@@ -1,0 +1,2 @@
+$("#character_skills").empty()
+  .append("<%= escape_javascript(render :partial => 'skill', :locals => {:skills => @skills}) %>")

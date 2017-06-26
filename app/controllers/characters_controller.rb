@@ -1,8 +1,11 @@
 class CharactersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:skills_select]
   before_action :set_character, only: [:edit, :update, :show, :destroy]
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
 
+  def skills_select
+    @skills = Career.find_by(name: params[:career]).career_skills.map { |skill_name| Skill.find_by(name: skill_name) }
+  end
   def new
     @character = current_user.characters.build
   end
@@ -31,7 +34,7 @@ class CharactersController < ApplicationController
       render :edit
     end
   end
-  
+
   def show; end
 
   def destroy
