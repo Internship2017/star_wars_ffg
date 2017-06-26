@@ -40,12 +40,12 @@ RSpec.describe Talent, type: :model do
     expect(talent).to be_valid
   end
 
-  it "validates length of sources, as 11 is not valid" do
+  it "validates length of sources, as 11 is valid" do
     talent = FactoryGirl.build(:talent, sources: [{ page: 25, book: "This new book" }, { page: 26, book: "This newer book" }, 
                                                   { page: 40, book: "The newest book" }, { page: 200, book: "This old book" }, 
                                                   { page: 101, book: "This older book" }, { page: 202, book: "The oldest book" }, 
                                                   { page: 404, book: "This cool book" }, { page: 500, book: "This shitty book" }, 
                                                   { page: 502, book: "This rare book" }, { page: 510, book: "This big book" }])
-    expect(talent).not_to be_valid
+    expect(talent).to be_valid
   end
 end
