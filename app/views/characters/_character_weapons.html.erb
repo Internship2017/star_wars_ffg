@@ -7,6 +7,7 @@
         <ul class="card-text">
           <li>Damage: <%= character_weapon.damage %></li>
           <li>Crit: <%= character_weapon.crit %></li>
+          <li>Special: <%= character_weapon.special %></li>
         </ul>
         <%= link_to "Show", character_character_weapon_path(@character, character_weapon), class: "btn access_button" %>
         <%= link_to "Edit", edit_character_character_weapon_path(@character, character_weapon), class: "btn btn-primary" %>
