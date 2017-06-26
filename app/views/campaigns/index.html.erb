@@ -11,8 +11,8 @@
         <div class="card-block">
           <h6 class="card-title">Campaign Name: <%= campaign.name %></h6>
           <h4>Characters in Party: <%= campaign.characters.size %></h4>
-          <%= link_to "Edit", edit_campaign_path(campaign), class: "btn access_button" %>
           <%= link_to "Show", campaign_path(campaign), class: "btn access_button" %>
+          <%= link_to "Edit", edit_campaign_path(campaign), class: "btn btn-primary" %>
         </div>
       </div>
     </div>
