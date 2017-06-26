@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
   resources :specializations
   resources :skills, only: [:show]
+  resources :talents
+
   devise_for :users
 end
