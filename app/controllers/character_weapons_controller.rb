@@ -1,7 +1,7 @@
 class CharacterWeaponsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_character_weapon, except: :new
-  before_action :verify_character_weapon, except: :new
+  before_action :set_character_weapon, except: [:new, :create]
+  before_action :verify_character_weapon, except: [:new, :create]
 
   def destroy
     @character_weapon.destroy
@@ -21,7 +21,7 @@ class CharacterWeaponsController < ApplicationController
     @character_weapon = CharacterWeapon.new(new_character_weapon_params)
 
     if @character_weapon.save
-      redirect_to current_character, notice: 'Weapon was successfully created.'
+      redirect_to current_character, notice: "Weapon #{@character_weapon.weapon.name} was successfully created."
     else
       render :new, flash: { danger: @character_weapon.errors }
     end

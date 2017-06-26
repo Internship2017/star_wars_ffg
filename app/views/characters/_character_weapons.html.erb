@@ -5,17 +5,15 @@
       <div class="card-block">
         <h4 class="card-title"><%= character_weapon.weapon.name %></h4>
         <ul class="card-text">
-          <li>Damage:
-            <%= character_weapon.damage %></li>
-          <li>Crit:
-            <%= character_weapon.crit %></li>
+          <li>Damage: <%= character_weapon.damage %></li>
+          <li>Crit: <%= character_weapon.crit %></li>
         </ul>
-        <%= link_to "Show", character_weapon_path(character_weapon), class: "btn access_button" %>
-        <%= link_to "Edit", edit_character_weapon_path(character_weapon), class: "btn btn-primary" %>
-        <%= link_to 'Destroy', character_weapon, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <%= link_to "Show", character_character_weapon_path(character_id: @character.id, id: character_weapon.id), class: "btn access_button" %>
+        <%= link_to "Edit", edit_character_character_weapon_path(character_id: @character.id, id: character_weapon.id), class: "btn btn-primary" %>
+        <%= link_to 'Destroy', character_character_weapon_path(character_id: @character.id, id: character_weapon.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       </div>
     </div>
   </div>
   <% end %>
 </div>
-<%= link_to 'New Weapon', new_character_weapon_path(character_id: @character.id), class: 'btn btn-primary' %>
+<%= link_to 'New Weapon', new_character_character_weapon_path(character_id: @character.id), class: 'btn btn-primary' %>

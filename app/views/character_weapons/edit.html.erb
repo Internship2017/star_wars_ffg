@@ -1,7 +1,7 @@
 <h2>Edit Weapon</h2>
 <div class="row mt-5">
   <div class="card col-md-12">
-    <%= form_for(@character_weapon) do |f| %>
+    <%= form_for [@character_weapon.character, @character_weapon] do |f| %>
     <h3 class="card-header"><%= @weapon.name %></h3>
     <div class="card-block">
       <div class="card-text">
