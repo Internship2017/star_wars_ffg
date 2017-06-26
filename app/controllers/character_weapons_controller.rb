@@ -54,7 +54,7 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def current_character
-    Character.find(params[:character_id])
+    @current_character ||= Character.find(params[:character_id])
   end
 
   def current_weapon
