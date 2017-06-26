@@ -17,3 +17,4 @@
 //= require bootstrap-sprockets
 //= require chosen-jquery
 //= require chosen
+//= require jquery_nested_form
