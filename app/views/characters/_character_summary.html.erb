@@ -4,7 +4,7 @@
 				<div class="card-block">
 					<h2 class="card-title"><%= @character.name %></h2>
 			    <p><em>Species:</em> <%= @character.species %></p>
-			    <p><em>Career:</em> -</p>
+			    <p><em>Career:</em> <%= @character.career.name %></p>
 			    <p><em>Specialization:</em> -</p>
 			    <p><em>Credits:</em> <%= @character.credits %></p>
 			  </div>
@@ -24,7 +24,7 @@
 		  <img class="card-img-top" src="http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" alt="Logo">
 		  <div class="card-block text-center">
 		    <h4 class="card-title"><%= @character.user.name %></h4>
-		    <em>Player</em>
+		    <em><%= @character.user.name %></em>
 		  </div>
 		</div>
 	</div>	

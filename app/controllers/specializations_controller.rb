@@ -41,6 +41,6 @@ class SpecializationsController < ApplicationController
   end
 
   def specialization_params
-    params.require(:specialization).permit(:name, :description, :source_page, :source_book, career_skills: [])
+    params.require(:specialization).permit(:name, :career_id, :description, :source_page, :source_book, career_skills: [])
   end
 end
