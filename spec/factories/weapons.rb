@@ -5,8 +5,8 @@ FactoryGirl.define do
     range "medium"
     encum 1
     hp 1
-    price 200
-    rarity 5
+    price { rand(200...210) }
+    rarity { rand(1...7) }
     default_damage 1
     default_crit 1
   end

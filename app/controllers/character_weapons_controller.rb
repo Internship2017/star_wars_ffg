@@ -18,7 +18,8 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def create
-    @character_weapon = CharacterWeapon.new(new_character_weapon_params)
+    @character_weapon = CharacterWeapon.new
+    @character_weapon.new_basic_weapon(current_character, current_weapon)
 
     if @character_weapon.save
       redirect_to current_character, notice: "Weapon #{@character_weapon.weapon.name} was successfully created."
@@ -42,7 +43,7 @@ class CharacterWeaponsController < ApplicationController
   private
 
   def weapon_list
-    @weapon_list ||= Weapon.all.order(rarity: :desc, price: :desc)
+    @weapon_list ||= Weapon.order_by_rarity
   end
 
   def set_character_weapon
@@ -59,16 +60,6 @@ class CharacterWeaponsController < ApplicationController
 
   def current_weapon
     @current_weapon ||= Weapon.find(params[:weapon_id])
-  end
-
-  def new_character_weapon_params
-    {
-      character: current_character,
-      weapon: current_weapon,
-      damage: current_weapon.default_damage,
-      crit: current_weapon.default_crit,
-      special: "Common"
-    }
   end
 
   def character_weapon_params
