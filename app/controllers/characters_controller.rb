@@ -57,6 +57,6 @@ class CharactersController < ApplicationController
                                       :eyes, :notable_features, :total_xp, :available_xp, :soak_value,
                                       :threshold_wounds, :current_wounds, :threshold_strain, :current_strain,
                                       :ranged_defense, :melee_defense, :brawn, :agility, :intellect, :cunning,
-                                      :will_power, :presence, :credits, :motivations, :species, :campaign_id)
+                                      :will_power, :presence, :credits, :motivations, :species, :career_id, :campaign_id)
   end
 end
