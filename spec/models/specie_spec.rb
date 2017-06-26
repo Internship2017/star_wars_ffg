@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Species, type: :model do
-  let(:species) { create :species }
+RSpec.describe Specie, type: :model do
+  let(:specie) { create :specie }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
