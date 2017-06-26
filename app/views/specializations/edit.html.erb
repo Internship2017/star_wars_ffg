@@ -3,37 +3,36 @@
   <div class="row mt-20 mb-20">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <h2>Edit Specialization</h2>
-      <!-- Button trigger modal -->
     </div>
   </div>
   <hr>
   <%= form_for(@specialization) do |f| %>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-          <div class="form-group">
-            <%= f.label :name %><br />
-            <%= f.text_field :name, { autofocus: true, class: "form-control" } %>
-          </div>
+        <div class="form-group">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, { autofocus: true, class: "form-control" } %>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-          <div class="form-group">
-            <%= f.label :source_page %><br />
-            <%= f.number_field :source_page, { class: "form-control" } %>
-          </div>
+        <div class="form-group">
+          <%= f.label :source_page %><br />
+          <%= f.number_field :source_page, { class: "form-control" } %>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-          <div class="form-group">
-            <%= f.label :source_book %><br />
-            <%= f.text_field :source_book, { class: "form-control" } %>
-          </div>
+        <div class="form-group">
+          <%= f.label :source_book %><br />
+          <%= f.text_field :source_book, { class: "form-control" } %>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="form-group">
-            <%= f.label :description %><br />
-            <%= f.text_area :description, { class: "form-control" } %>
-          </div>
+        <div class="form-group">
+          <%= f.label :description %><br />
+          <%= f.text_area :description, { class: "form-control" } %>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -43,10 +42,10 @@
       </div>
     </div>
     <div class="row mb-20">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <%= f.label :specialization_skills %><br />
-          <%= f.select :career_skills, Specialization::SKILLS, {include_hidden: false}, { multiple: true, class: 'chosen-select' } %>
-        </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <%= f.label :specialization_skills %><br />
+        <%= f.select :career_skills, Specialization::SKILLS, {include_hidden: false}, { multiple: true, class: 'chosen-select' } %>
+      </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -55,5 +54,4 @@
       </div>
     </div>
   <% end %>
-
 </div>

@@ -4,27 +4,27 @@
   </div>
   <div class="card-deck">
     <div class="card">
-        <div class="card-block">
-          <h2 class="card-title"><%= Specialization %></h2>
-          <p><strong><em>Name:</em></strong> <%= @specialization.name %></p>
-          <p><strong><em>Source Page:</em></strong> <%= @specialization.source_page %></p>
-          <p><strong><em>Source Book:</em></strong> <%= @specialization.source_book %></p>
-          <p><strong><em>Career:</em></strong> <%= @specialization.career.name %></p>
-        </div>
+      <div class="card-block">
+        <h2 class="card-title"><%= Specialization %></h2>
+        <p><strong><em>Name:</em></strong> <%= @specialization.name %></p>
+        <p><strong><em>Source Page:</em></strong> <%= @specialization.source_page %></p>
+        <p><strong><em>Source Book:</em></strong> <%= @specialization.source_book %></p>
+        <p><strong><em>Career:</em></strong> <%= @specialization.career.name %></p>
+      </div>
     </div>
     <div class="card">
-        <div class="card-block">
-          <h3 class="card-title">Description</h3>
-          <p><%= @specialization.description %></p>
-        </div>
+      <div class="card-block">
+        <h3 class="card-title">Description</h3>
+        <p><%= @specialization.description %></p>
+      </div>
     </div>
-    <div class="card" style="width: 20rem;">
-        <div class="card-block  ">
-          <h4 class="card-title">Skills</h4>
-          <ul class="skill-list">
-          <% @specialization.career_skills.each do |skill| %>
-            <li> <%= skill %> </li>
-          <% end %>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Skills</h4>
+        <ul class="skill-list">
+        <% @specialization.career_skills.each do |skill| %>
+          <li> <%= skill %> </li>
+        <% end %>
         </ul>
       </div>
     </div>
