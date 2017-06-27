@@ -12,8 +12,8 @@
 					<td><%= link_to skill.name, skill_path(skill) %></td>
 					<td><%= skill.rank %></td>
 					<td>
-						<%=fa_icon "plus-circle"%>
-						<%=fa_icon "minus-circle"%>
+						<button><%=fa_icon "plus-circle", { data: { name: skill.name, character: @character.id } }%></button>
+						<button><%=fa_icon "minus-circle", { data: { name: skill.name, character: @character.id, } }%></button>
 					</td>
 				</tr>
 				<% end %>
@@ -33,10 +33,9 @@
 					<td><%= link_to skill.name, skill_path(skill) %></td>
 					<td><%= skill.rank %></td>
 					<td>
-						<%=fa_icon "plus-circle"%>
-						<%=fa_icon "minus-circle"%>
+						<button><%=fa_icon "plus-circle"%></button>
+						<button><%=fa_icon "minus-circle"%></button>
 					</td>
-					
 				</tr>
 				<% end %>
 			</table>
@@ -54,8 +53,8 @@
 					<td><%= link_to skill.name, skill_path(skill) %></td>
 					<td><%= skill.rank %></td>
 					<td>
-						<%=fa_icon "plus-circle"%>
-						<%=fa_icon "minus-circle"%>
+						<button><%=fa_icon "plus-circle"%></button>
+						<button><%=fa_icon "minus-circle"%></button>
 					</td>
 				</tr>
 				<% end %>

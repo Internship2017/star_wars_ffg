@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
-  before_action :authenticate_user!, except: [:skills_select]
+  protect_from_forgery prepend: true
+  before_action :authenticate_user!, except: [:increment_rank, :decrement_rank, :skills_select]
   before_action :set_character, only: [:edit, :update, :show, :destroy]
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
 
@@ -40,6 +41,14 @@ class CharactersController < ApplicationController
   def destroy
     @character.destroy
     redirect_to characters_path, flash: { notice: "Character has been destroyed" }
+  end
+
+  def increment_rank
+    Character.find(params[:character_id]).skills.find_by(name: params[:skill_name]).increment!(:rank, by = 1)
+  end
+
+  def decrement_rank
+    Character.find(params[:character_id]).skills.find_by(name: params[:skill_name]).decrement!(:rank, by = 1)
   end
 
   private

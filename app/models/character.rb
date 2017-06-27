@@ -40,4 +40,6 @@ class Character < ApplicationRecord
       self.skills.find_by(name: skill_name).increment!(:rank, by = 1)
     end
   end
+
+
 end
