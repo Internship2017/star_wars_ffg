@@ -1,12 +1,12 @@
-<div class="campaign-header">
+<div class="campaigns-header">
   <h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %>
-    <span class="space_between_image">Campaigns</span>
+    <span class="space_between_image">CAMPAIGNS</span>
   </h1>
 </div>
 
-<div class="row campaign-row">
+<div class="row campaigns-row">
   <% @characters_campaigns.campaigns.each do |campaign| %>
-    <div class="col-sm-4 campaign-col">
+    <div class="col-sm-4 campaigns-col">
       <div class="card">
         <div class="card-block">
           <h6 class="card-title">Campaign Name: <%= campaign.name %></h6>
