@@ -43,7 +43,7 @@ class CharacterWeaponsController < ApplicationController
   private
 
   def weapon_list
-    @weapon_list ||= Weapon.order_by_rarity
+    @weapon_list ||= Weapon. order_by_rarity. order_by_price
   end
 
   def set_character_weapon

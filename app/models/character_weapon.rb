@@ -11,6 +11,5 @@ class CharacterWeapon < ApplicationRecord
     self.weapon = weapon
     self.damage = weapon.default_damage
     self.crit = weapon.default_crit
-    self.special = "Common"
   end
 end

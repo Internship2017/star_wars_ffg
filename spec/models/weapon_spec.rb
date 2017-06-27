@@ -21,9 +21,9 @@ RSpec.describe Weapon, type: :model do
       expect(Weapon.order_by_rarity.first.rarity).to eql Weapon.maximum("rarity")
     end
 
-    it "should return the priciest weapon when the rarity is the same" do
+    it "should return the priciest weapon as the first element of the list" do
       5.times { FactoryGirl.create :weapon, rarity: 4 }
-      expect(Weapon.order_by_rarity.first.price).to eql Weapon.maximum("price")
+      expect(Weapon.order_by_price.first.price).to eql Weapon.maximum("price")
     end
   end
 

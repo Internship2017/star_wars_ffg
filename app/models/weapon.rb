@@ -5,7 +5,8 @@ class Weapon < ApplicationRecord
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :encum, :hp, :rarity, :default_damage, :default_crit, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 99 }
 
-  scope :order_by_rarity, -> { order(rarity: :desc, price: :desc) }
+  scope :order_by_rarity, -> { order(rarity: :desc) }
+  scope :order_by_price, -> { order(price: :desc) }
 
   def self.parse_weapons
     file = File.read(Rails.root.join('lib', 'data', 'Weapons.json'))
