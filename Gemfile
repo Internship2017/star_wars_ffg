@@ -38,6 +38,7 @@ gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'chosen-rails'
 gem 'jquery-rails'
 gem "carrierwave"
+gem "font-awesome-rails"
 
 
 group :development, :test do

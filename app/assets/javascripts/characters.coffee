@@ -1,6 +1,6 @@
 $ ->
   $(document).on 'click', '#character_career_chosen', (evt) ->
-    $.ajax '/characters/skills_select',
+    $.ajax 'skills_select',
       type: 'GET'
       dataType: 'script'
       data: {
