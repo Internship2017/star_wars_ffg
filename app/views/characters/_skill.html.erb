@@ -1,4 +1,7 @@
 <% skills.each do |skill| %>
-<% puts skill %>
-    <option value="<%= skill %>"><%= skill %></option>
+    <option value="<%= skill.name %>"><%= skill.name %></option>
 <% end %>
+
+<script>
+	$("#character_skills").trigger("chosen:updated");
+</script>

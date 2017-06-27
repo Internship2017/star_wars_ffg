@@ -4,8 +4,9 @@ class CharactersController < ApplicationController
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
 
   def skills_select
-    @skills = Career.find_by(name: params[:career]).career_skills.map { |skill_name| Skill.find_by(name: skill_name) }
+    @skills = Career.find_by(name: params[:career]).career_skills.map { |skill_name| Skill.find_by(name: skill_name) }.compact
   end
+
   def new
     @character = current_user.characters.build
   end
