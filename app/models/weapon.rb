@@ -8,10 +8,9 @@ class Weapon < ApplicationRecord
   scope :order_by_rarity, -> { order(rarity: :desc) }
   scope :order_by_price, -> { order(price: :desc) }
 
-  def self.parse_weapons
-    file = File.read(Rails.root.join('lib', 'data', 'Weapons.json'))
+  def self.parse_weapons(json_weapon_directory = 'lib/data/Weapons.json')
+    file = File.read(Rails.root.join(json_weapon_directory))
     data_hash = JSON.parse(file)
     data_hash["Weapons"]["Weapon"]
   end
-
 end
