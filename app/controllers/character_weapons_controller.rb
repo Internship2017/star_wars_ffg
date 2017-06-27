@@ -18,8 +18,7 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def create
-    @character_weapon = CharacterWeapon.new
-    @character_weapon.new_basic_weapon(current_character, current_weapon)
+    @character_weapon = CharacterWeapon.new_basic_weapon(current_character, current_weapon)
 
     if @character_weapon.save
       redirect_to current_character, notice: "Weapon #{@character_weapon.weapon.name} was successfully created."
@@ -43,7 +42,7 @@ class CharacterWeaponsController < ApplicationController
   private
 
   def weapon_list
-    @weapon_list ||= Weapon. order_by_rarity. order_by_price
+    @weapon_list ||= Weapon.order_by_rarity.order_by_price
   end
 
   def set_character_weapon

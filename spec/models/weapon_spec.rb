@@ -16,14 +16,28 @@ RSpec.describe Weapon, type: :model do
   it { should have_many(:characters).through(:character_weapons) }
 
   describe "Odered weapons by rarity" do
-    it "should return the rarest weapon as the first element of the list" do
-      5.times { FactoryGirl.create :weapon }
-      expect(Weapon.order_by_rarity.first.rarity).to eql Weapon.maximum("rarity")
+    it "should return a weapon list ordered by rarity" do
+      first_weapon = FactoryGirl.create :weapon, rarity: 4
+      second_weapon = FactoryGirl.create :weapon, rarity: 5
+      third_weapon = FactoryGirl.create :weapon, rarity: 6
+
+      expect(Weapon.order_by_rarity).to match_array [third_weapon, second_weapon, first_weapon]
     end
 
-    it "should return the priciest weapon as the first element of the list" do
-      5.times { FactoryGirl.create :weapon, rarity: 4 }
-      expect(Weapon.order_by_price.first.price).to eql Weapon.maximum("price")
+    it "should return a weapon list ordered by price" do
+      first_weapon = FactoryGirl.create :weapon, price: 4
+      second_weapon = FactoryGirl.create :weapon, price: 5
+      third_weapon = FactoryGirl.create :weapon, price: 6
+
+      expect(Weapon.order_by_price).to match_array [third_weapon, second_weapon, first_weapon]
+    end
+
+    it "should return a weapon list ordered by rarity and if it is the same rarity ordered by price" do
+      first_weapon = FactoryGirl.create :weapon, rarity: 5, price: 5
+      second_weapon = FactoryGirl.create :weapon, rarity: 5, price: 4
+      third_weapon = FactoryGirl.create :weapon, rarity: 6, price: 3
+
+      expect(Weapon.order_by_rarity.order_by_price).to match_array [third_weapon, first_weapon, second_weapon]
     end
   end
 
