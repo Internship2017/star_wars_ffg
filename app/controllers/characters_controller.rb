@@ -13,9 +13,8 @@ class CharactersController < ApplicationController
 
   def create
     @character = current_user.characters.build(character_params)
-
     if @character.save
-      @character.assign_skills
+      @character.assign_skills(params[:character][:skills])
       redirect_to @character, notice: 'Character was successfully created.'
     else
       render :new
@@ -59,6 +58,7 @@ class CharactersController < ApplicationController
                                       :eyes, :notable_features, :total_xp, :available_xp, :soak_value,
                                       :threshold_wounds, :current_wounds, :threshold_strain, :current_strain,
                                       :ranged_defense, :melee_defense, :brawn, :agility, :intellect, :cunning,
-                                      :will_power, :presence, :credits, :motivations, :species, :campaign_id)
+                                      :will_power, :presence, :credits, :motivations, :species, :career_id, :campaign_id)
   end
+
 end

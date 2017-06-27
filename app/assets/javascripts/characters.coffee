@@ -1,10 +1,10 @@
 $ ->
-  $(document).on 'click', '#character_career_chosen', (evt) ->
+  $(document).on 'click', '#character_career_id_chosen', (evt) ->
     $.ajax 'skills_select',
       type: 'GET'
       dataType: 'script'
       data: {
-        career: $("#character_career_chosen > a > span").text()
+        career: $("#character_career_id_chosen > a > span").text()
       }
       error: (jqXHR, textStatus, errorThrown) ->
         console.log("AJAX Error: #{textStatus}")

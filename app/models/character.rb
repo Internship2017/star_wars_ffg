@@ -26,9 +26,18 @@ class Character < ApplicationRecord
   validates :morality, numericality: { only_integer: true, greater_than_or_equal_to: 0,
                                        less_than_or_equal_to: 100 }
 
-  def assign_skills
+  def assign_skills(skills_names)
     JsonSkill.skills.each do |json_skill|
       skills.create(json_skill.attributes)
+    end
+    upgrade_skills(skills_names)
+  end
+
+  private
+
+  def upgrade_skills(skills_names)
+    skills_names.each do |skill_name|
+      self.skills.find_by(name: skill_name).increment!(:rank, by = 1)
     end
   end
 end

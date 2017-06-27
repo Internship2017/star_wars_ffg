@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623211731) do
+ActiveRecord::Schema.define(version: 20170626201001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,15 @@ ActiveRecord::Schema.define(version: 20170623211731) do
     t.index ["character_id"], name: "index_skills_on_character_id"
   end
 
+  create_table "sources", force: :cascade do |t|
+    t.integer "page"
+    t.string "book"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "talent_id"
+    t.index ["talent_id"], name: "index_sources_on_talent_id"
+  end
+
   create_table "specializations", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -111,10 +120,30 @@ ActiveRecord::Schema.define(version: 20170623211731) do
     t.index ["career_id"], name: "index_specializations_on_career_id"
   end
 
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "source_page"
+    t.string "source_book"
+    t.integer "brawn"
+    t.integer "agility"
+    t.integer "intellect"
+    t.integer "cunning"
+    t.integer "willpower"
+    t.integer "presence"
+    t.integer "wound_threshold"
+    t.integer "strain_threshold"
+    t.integer "experience"
+    t.string "skill_name"
+    t.integer "skill_start_rank"
+    t.integer "skill_limit_rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "talents", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.text "sources"
     t.string "ranked"
     t.string "activation_value"
     t.datetime "created_at", null: false
@@ -157,5 +186,6 @@ ActiveRecord::Schema.define(version: 20170623211731) do
   add_foreign_key "characters", "careers"
   add_foreign_key "characters", "users"
   add_foreign_key "skills", "characters"
+  add_foreign_key "sources", "talents"
   add_foreign_key "specializations", "careers"
 end
