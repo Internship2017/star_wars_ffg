@@ -1,10 +1,26 @@
-<h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %>
-	<span class="space_between_image">Species</span>
-</h1>
-<table class="table table-striped table-hover">
-	<% @species.each do |specie| %>
-		<tr>
-			<td><%= specie.name %></td>
-		</tr>
-	<% end %>
-</table>
+<div class="container mt-40 mb-40">
+  <h1 class="text-center">Species Index</h1>
+  <hr>
+	<div class="row characters-row">
+		<% @species.each do |species| %>
+			<div class="col-sm-4 characters-col">
+				<div class="card">
+					<div class="card-block" data-turbolinks="false">
+						<h3 class="card-title"><%= species.name %></h3>
+						<ul class="card-text">
+							<li>Brawn: <%= species.brawn %></li>
+							<li>Agility: <%= species.agility %></li>
+							<li>Intellect: <%= species.intellect %></li>
+							<li>Cunning: <%= species.cunning %></li>
+							<li>Willpower: <%= species.willpower %></li>
+							<li>Presence: <%= species.presence %></li>
+						</ul>
+						<%= link_to "Show", species_path(species), class: "btn access_button" %>
+						<%= link_to "Edit", edit_species_path(species), class: "btn btn-primary" %>
+						<%= link_to 'Destroy', species, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

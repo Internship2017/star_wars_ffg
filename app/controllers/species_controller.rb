@@ -1,46 +1,56 @@
 class SpeciesController < ApplicationController
-before_action :authenticate_user!
-before_action :set_specie, except: [:index, :new, :create, :upload]
+  before_action :authenticate_user!
+  before_action :set_species, except: [:index, :new, :create, :upload]
 
-	def index
-		@species = Specie.all
-	end
+  def index
+    @species = Species.all
+  end
 
-	def show; end	
+  def show
+    @species = Species.find(params[:id])
+  end	
 
-	def new
-		@specie = Specie.new
-	end	
+  def new
+    @species = Species.new
+  end	
 
-	def create
-		@specie = Specie.new(specie_params)
-		if @specie.save
-			redirect_to species_path
-		else
-			render :new
-		end
-	end
+  def create
+    @species = Species.new(species_params)
+    if @species.save
+      redirect_to @species
+    else
+      render :new
+    end
+  end
 
-	def edit; end
-	
-	def update
-		if @specie.update(specie_params)
-			redirect_to species_path, flash: { success: "Specie has been updated!" }
-		else
-			render :edit
-		end
-	end
+  def edit
+    @species = Species.find(params[:id])
+  end
 
-	def upload
-	end
+  def update
+    if @species.update(species_params)
+      redirect_to @species, flash: { success: "The species has been updated!" }
+    else
+      render :edit
+    end
+  end
 
-	private
+  def upload
+    Species.upload(params[:upload][:file])
+    redirect_to @species, flash: { success: "File uploaded" }
+  end
 
-	def set_specie
-		@specie = Specie.find(params[:id])
-	end
+  def destroy
+    @species.destroy
+  end
 
-	def specie_params
-		params.require(:specie).permit(:name, :description, :source_page, :source_book, :brawn, :agility, :intellect, :cunning, :willpower, :presence, :wound_threshold, :strain_threshold, :experience, :skill_name, :skill_start_rank, :skill_limit_rank)
-	end
+  private
+
+  def set_species
+    @species = Species.find(params[:id])
+  end
+
+  def species_params
+    params.require(:species).permit(:name, :description, :source_page, :source_book, :brawn, :agility, :intellect, :cunning, :willpower, :presence, :wound_threshold, :strain_threshold, :experience, :skill_name, :skill_start_rank, :skill_limit_rank)
+  end
 end
