@@ -5,7 +5,7 @@ class CreateCharacterWeapons < ActiveRecord::Migration[5.1]
       t.references :character, foreign_key: true
       t.integer :damage
       t.integer :crit
-      t.text :special
+      t.text :special, default: "common"
 
       t.timestamps
     end
