@@ -32,6 +32,7 @@ class TalentsController < ApplicationController
 
   def destroy
     @talent.destroy
+    redirect_to talents_path
   end
 
   private
@@ -41,6 +42,6 @@ class TalentsController < ApplicationController
   end
 
   def talent_params
-    params.require(:talent).permit(:name, :description, :activation_value, :ranked, sources: [])
+    params.require(:talent).permit(:name, :description, :activation_value, :ranked, sources_attributes: [ :id, :page, :book, :_destroy ])
   end
 end
