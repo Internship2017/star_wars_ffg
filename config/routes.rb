@@ -12,6 +12,5 @@ Rails.application.routes.draw do
 
   resources :specializations
   resources :skills, only: [:show]
-
   devise_for :users
 end
