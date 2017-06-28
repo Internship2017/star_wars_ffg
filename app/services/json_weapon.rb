@@ -1,5 +1,5 @@
 class JsonWeapon
-  attr_reader :name, :skill, :default_damage, :default_crit, :range, :encum, :hp, :price, :rarity
+  attr_reader :name, :weapon_type, :skill, :default_damage, :default_crit, :range, :encum, :hp, :price, :rarity
 
   def initialize(attr_weapons)
     @attr_weapons = attr_weapons
@@ -7,6 +7,10 @@ class JsonWeapon
 
   def name
     @attr_weapons["Name"]
+  end
+
+  def weapon_type
+    @attr_weapons["Type"]
   end
 
   def skill
@@ -48,6 +52,7 @@ class JsonWeapon
   def attributes
     {
       name: name,
+      weapon_type: weapon_type,
       skill: skill,
       range: range,
       encum: encum,
