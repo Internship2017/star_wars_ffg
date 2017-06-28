@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+	resources :species
   resources :campaigns, except: [:delete]
   resources :characters
   resources :careers do

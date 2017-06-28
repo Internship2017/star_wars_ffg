@@ -1,0 +1,20 @@
+<div class="container mt-40 mb-40">
+  <h1 class="text-center">Create New Species</h1>
+  <hr>
+  <% if @species.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@species.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @species.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render 'form' %>
+
+</div>

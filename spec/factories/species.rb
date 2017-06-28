@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :specie do
-    name { FFaker::Lorem.paragraph }
+  factory :species do
+    name { FFaker::Book.title }
     description { FFaker::Lorem.paragraph }
     source_page { (rand * 100).to_i }
     source_book "Force and Destiny Core Rulebook"
