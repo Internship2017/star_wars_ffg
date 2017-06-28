@@ -1,0 +1,22 @@
+<div class="row characters-row">
+  <% @character_gears.each do |character_gear| %>
+  <div class="col-sm-4 characters-col">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title"><%= character_gear.gear.name %></h4>
+        <ul class="card-text">
+          <li>Price: <%= character_gear.gear.price %></li>
+          <li>Rarity: <%= character_gear.gear.rarity %></li>
+          <li>Type: <%= character_gear.gear.gear_type %></li>
+        </ul>
+        <button type="button" class="btn access_button">Show</button>
+        <button type="button" class="btn btn-primary">Edit</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+        
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<button type="button" class="btn btn-primary">New</button>
+
