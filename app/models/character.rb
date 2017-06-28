@@ -5,6 +5,8 @@ class Character < ApplicationRecord
   has_many :character_weapons, dependent: :destroy
   has_many :weapons, through: :character_weapons
   has_many :skills, dependent: :destroy
+  has_many :character_gears, dependent: :destroy
+  has_many :gears, through: :character_gears
 
   GENDERS = ["Other", "Male", "Female", "Not Sure", "Why do you care?", "Either way", "Why is this a field?", "Testing"].freeze
 

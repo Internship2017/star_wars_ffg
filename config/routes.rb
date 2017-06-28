@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'character_gears/show'
+
   resources :campaigns, except: [:delete]
   resources :characters do
     resources :character_weapons
