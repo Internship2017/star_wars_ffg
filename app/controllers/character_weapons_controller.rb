@@ -13,12 +13,12 @@ class CharacterWeaponsController < ApplicationController
   end
 
   def new
-    @weapons = weapon_list
+    @weapons = Weapon.order_by_rarity.order_by_price
     @character = current_character
   end
 
   def create
-    @character_weapon = CharacterWeapon.new_basic_weapon(current_character, current_weapon)
+    @character_weapon = CharacterWeapon.new(character: current_character, weapon: current_weapon, damage: current_weapon.default_damage, crit: current_weapon.default_crit)
 
     if @character_weapon.save
       redirect_to current_character, notice: "Weapon #{@character_weapon.weapon.name} was successfully created."
@@ -40,10 +40,6 @@ class CharacterWeaponsController < ApplicationController
   end
 
   private
-
-  def weapon_list
-    @weapon_list ||= Weapon.order_by_rarity.order_by_price
-  end
 
   def set_character_weapon
     @character_weapon = CharacterWeapon.find(params[:id])
