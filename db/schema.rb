@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626201001) do
+ActiveRecord::Schema.define(version: 20170628191843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 20170626201001) do
     t.datetime "updated_at", null: false
     t.integer "default_damage", default: 1
     t.integer "default_crit", default: 1
+    t.string "weapon_type", default: "normal"
   end
 
   add_foreign_key "character_weapons", "characters"
