@@ -36,6 +36,20 @@
   UncommunicativeModuleName:
     enabled: false
 
+"app/services":
+  TooManyMethods:
+    max_methods: 20
+  InstanceVariableAssumption:
+      enabled: false
+  IrresponsibleModule:
+    enabled: false
+  NestedIterators:
+    max_allowed_nesting: 2
+  UnusedPrivateMethod:
+    enabled: false
+  UncommunicativeModuleName:
+      enabled: false
+
 "lib/":
   IrresponsibleModule:
     enabled: false

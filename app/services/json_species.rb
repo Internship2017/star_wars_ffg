@@ -75,8 +75,7 @@ class JsonSpecies
   end
 
   def self.to_a(json_file)
-    json_data = JSON.parse(json_file.read)
-    json_data = json_data["Species"]
+    json_data = JSON.parse(json_file.read)["Species"]
     json_data.map { |species| JsonSpecies.new(species) }
   end
 

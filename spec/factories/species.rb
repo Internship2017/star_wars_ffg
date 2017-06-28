@@ -14,7 +14,7 @@ FactoryGirl.define do
     strain_threshold 50
     experience 50
     skill_name { FFaker::Name.name }
-    skill_start_rank 1
+    skill_start_rank 0
     skill_limit_rank 1
   end
 end

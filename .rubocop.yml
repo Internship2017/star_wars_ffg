@@ -27,6 +27,15 @@ Documentation:
 Metrics/ClassLength:
   Max: 150
 
+Metrics/MethodLength:
+  Exclude:
+    - app/services/json_species.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - app/services/json_species.rb
+
+
 Style/AsciiIdentifiers:
   Enabled: false
 
