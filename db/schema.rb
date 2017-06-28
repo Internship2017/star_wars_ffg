@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628192108) do
+ActiveRecord::Schema.define(version: 20170628194630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20170628192108) do
     t.integer "encum"
     t.integer "price"
     t.integer "rarity"
-    t.string "type"
+    t.string "gear_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

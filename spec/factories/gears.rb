@@ -4,6 +4,6 @@ FactoryGirl.define do
     encum 1
     price { rand(200...210) }
     rarity { rand(1...7) }
-    type "Communications"
+    gear_type "Communications"
   end
 end
