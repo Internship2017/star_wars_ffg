@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :specializations
   resources :skills, only: [:show]
+  resources :home, only: [:index]
   devise_for :users
 end
