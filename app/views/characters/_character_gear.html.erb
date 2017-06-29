@@ -9,7 +9,7 @@
           <li>Rarity: <%= character_gear.gear.rarity %></li>
           <li>Type: <%= character_gear.gear.gear_type %></li>
         </ul>
-        <button type="button" class="btn access_button">Show</button>
+        <%= link_to "Show", character_character_gear_path(@character, character_gear), class: "btn access_button" %>
         <%= link_to 'Delete', character_character_gear_path(@character, character_gear), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       </div>
     </div>

@@ -1,9 +1,10 @@
 class CharacterGearsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_character_gear, only: [:destroy]
-  before_action :verify_character_gear, only: [:destroy]
+	before_action :set_character_gear, only: [:destroy, :show]
+  before_action :verify_character_gear, only: [:destroy, :show]
 
   def show
+  	@gear = @character_gear.gear
   end
 
   def new
