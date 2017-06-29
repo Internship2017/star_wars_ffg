@@ -8,7 +8,7 @@ class CharacterGearsController < ApplicationController
   end
 
   def new
-  	@gears = Gear.all
+  	@gears = Gear.order_by_rarity.order_by_price
   	@character = Character.find(params[:character_id])
   end
 
