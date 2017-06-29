@@ -10,9 +10,7 @@
           <li>Type: <%= character_gear.gear.gear_type %></li>
         </ul>
         <button type="button" class="btn access_button">Show</button>
-        <button type="button" class="btn btn-primary">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-        
+        <%= link_to 'Delete', character_character_gear_path(@character, character_gear), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       </div>
     </div>
   </div>
