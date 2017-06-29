@@ -5,7 +5,8 @@ class CharactersController < ApplicationController
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
 
   def skills_select
-    @skills = Career.find_by(name: params[:career]).career_skills.map { |skill_name| Skill.find_by(name: skill_name) }.compact
+    career_skills = Career.find_by(name: params[:career]).career_skills
+    @skills = career_skills.map { |skill_name| Skill.find_by(name: skill_name) }.compact
   end
 
   def new
@@ -15,7 +16,8 @@ class CharactersController < ApplicationController
   def create
     @character = current_user.characters.build(character_params)
     if @character.save
-      @character.assign_skills(params[:character][:skills])
+      @character.assign_skills
+      @character.upgrade_skills(params[:character][:skills])
       redirect_to @character, notice: 'Character was successfully created.'
     else
       render :new
@@ -44,11 +46,15 @@ class CharactersController < ApplicationController
   end
 
   def increment_rank
-    Character.find(params[:character_id]).skills.find_by(name: params[:skill_name]).increment!(:rank, by = 1)
+    @character = Character.find(params[:character_id])
+    @skill = @character.skills.find_by(name: params[:skill_name])
+    @character.set_rank(@skill, "increment")
   end
 
   def decrement_rank
-    Character.find(params[:character_id]).skills.find_by(name: params[:skill_name]).decrement!(:rank, by = 1)
+    @character = Character.find(params[:character_id])
+    @skill = @character.skills.find_by(name: params[:skill_name])
+    @character.set_rank(@skill, "decrement")
   end
 
   private
@@ -69,5 +75,4 @@ class CharactersController < ApplicationController
                                       :ranged_defense, :melee_defense, :brawn, :agility, :intellect, :cunning,
                                       :will_power, :presence, :credits, :motivations, :species, :career_id, :campaign_id)
   end
-
 end

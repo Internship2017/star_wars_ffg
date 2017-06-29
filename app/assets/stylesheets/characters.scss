@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // A94D2C
 
+.flex{
+	display: flex;
+	justify-content: space-around;
+}
+
 .characters-row {
 	padding-top: 20px;
 }
@@ -30,3 +35,7 @@
 	width: 20rem;
 }
 
+.xp {
+	text-align: center;
+	color: #806330;
+}

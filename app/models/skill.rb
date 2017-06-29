@@ -18,4 +18,14 @@ class Skill < ApplicationRecord
 
   scope :with_skill_type, ->(skill_name) { where(type_of_skill: skill_name) }
 
+  def career_skill
+    rank = self.rank.to_i
+    (rank+1)*5
+  end
+
+  def normal_skill
+    rank = self.rank.to_i
+    ((rank+1)*5)+5
+  end
+
 end

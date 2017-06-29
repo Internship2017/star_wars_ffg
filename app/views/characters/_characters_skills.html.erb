@@ -10,10 +10,10 @@
 				<% select_skill_type(@character, "General").each do |skill|  %>
 				<tr>
 					<td><%= link_to skill.name, skill_path(skill) %></td>
-					<td><%= skill.rank %></td>
+					<td id="skill-<%= skill.id %>"><%= skill.rank %></td>
 					<td>
-						<button><%=fa_icon "plus-circle", { data: { name: skill.name, character: @character.id } }%></button>
-						<button><%=fa_icon "minus-circle", { data: { name: skill.name, character: @character.id, } }%></button>
+						<button><%=fa_icon "plus-circle", { data: { name: skill.name, character: @character.id, total_xp: @character.total_xp, available_xp: @character.available_xp } }%></button>
+						<button><%=fa_icon "minus-circle", { data: { name: skill.name, character: @character.id, total_xp: @character.total_xp, available_xp: @character.available_xp } }%></button>
 					</td>
 				</tr>
 				<% end %>
@@ -31,10 +31,10 @@
 				<% select_skill_type(@character, "Combat").each do |skill|  %>
 				<tr>
 					<td><%= link_to skill.name, skill_path(skill) %></td>
-					<td><%= skill.rank %></td>
+					<td id="skill-<%= skill.id %>"><%= skill.rank %></td>
 					<td>
-						<button><%=fa_icon "plus-circle"%></button>
-						<button><%=fa_icon "minus-circle"%></button>
+						<button><%=fa_icon "plus-circle", { data: { name: skill.name, character: @character.id, total_xp: @character.total_xp, available_xp: @character.available_xp } }%></button>
+						<button><%=fa_icon "minus-circle", { data: { name: skill.name, character: @character.id, total_xp: @character.total_xp, available_xp: @character.available_xp } }%></button>
 					</td>
 				</tr>
 				<% end %>
@@ -51,10 +51,10 @@
 				<% select_skill_type(@character, "Knowledge").each do |skill|  %>
 				<tr>
 					<td><%= link_to skill.name, skill_path(skill) %></td>
-					<td><%= skill.rank %></td>
+					<td id="skill-<%= skill.id %>"><%= skill.rank %></td>
 					<td>
-						<button><%=fa_icon "plus-circle"%></button>
-						<button><%=fa_icon "minus-circle"%></button>
+						<button><%=fa_icon "plus-circle", { data: { name: skill.name, character: @character.id, total_xp: @character.total_xp, available_xp: @character.available_xp } }%></button>
+						<button><%=fa_icon "minus-circle", { data: { name: skill.name, character: @character.id, total_xp: @character.total_xp, available_xp: @character.available_xp } }%></button>
 					</td>
 				</tr>
 				<% end %>

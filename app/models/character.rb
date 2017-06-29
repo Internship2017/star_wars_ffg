@@ -26,20 +26,49 @@ class Character < ApplicationRecord
   validates :morality, numericality: { only_integer: true, greater_than_or_equal_to: 0,
                                        less_than_or_equal_to: 100 }
 
-  def assign_skills(skills_names)
+  def assign_skills
     JsonSkill.skills.each do |json_skill|
       skills.create(json_skill.attributes)
     end
-    upgrade_skills(skills_names)
   end
 
-  private
-
   def upgrade_skills(skills_names)
-    skills_names.each do |skill_name|
-      self.skills.find_by(name: skill_name).increment!(:rank, by = 1)
+    self.skills.where(name: skills_names).update_all("rank = rank + 1")
+  end
+
+  def set_rank(skill, status)
+    if (self.career_skill?(skill.name))
+      if self.enough_xp?(skill.career_skill)
+        self.set_xp(skill, skill.career_skill, status)
+      end
+    else 
+      if self.enough_xp?(skill.normal_skill)
+        self.set_xp(skill, skill.normal_skill, status)
+      end
     end
   end
 
+  def career_skill?(skill_name)
+    self.career.career_skills.include?(skill_name)
+  end
 
+  def set_xp(skill, xp, operation)
+    if operation == "increment"
+      self.decrement!(:available_xp, by = xp)
+      self.increment!(:total_xp, by = xp)
+      skill.increment!(:rank, by = 1)
+    else
+      self.increment!(:available_xp, by = xp - 5)
+      self.decrement!(:total_xp, by = xp - 5)
+      skill.decrement!(:rank, by = 1)
+    end
+  end
+
+  def enough_xp?(xp_to_decrement)
+    if (self.available_xp - xp_to_decrement) > 0 
+      return true
+    else 
+      return false
+    end
+  end
 end

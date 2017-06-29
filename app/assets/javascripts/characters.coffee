@@ -6,10 +6,6 @@ $ ->
       data: {
         career: $("#character_career_id_chosen > a > span").text()
       }
-      error: (jqXHR, textStatus, errorThrown) ->
-        console.log("AJAX Error: #{textStatus}")
-      success: (data, textStatus, jqXHR) ->
-        console.log("Dynamic market select OK!")
 
   $(document).on 'click', '.fa-plus-circle', (evt) ->
     $.ajax 'increment_rank',
@@ -18,11 +14,9 @@ $ ->
       data: { 
         skill_name: $(this).data("name"),
         character_id: $(this).data("character")
+        total_xp: $(this).data("total_xp")
+        available_xp: $(this).data("available_xp")
       }
-      error: (jqXHR, textStatus, errorThrown) ->
-        console.log("AJAX Error: #{textStatus}")
-      success: (data, textStatus, jqXHR) ->
-        console.log("Dynamic market select OK!")
 
   $(document).on 'click', '.fa-minus-circle', (evt) ->
     $.ajax 'decrement_rank',
@@ -31,8 +25,6 @@ $ ->
       data: { 
         skill_name: $(this).data("name")
         character_id: $(this).data("character")
+        total_xp: $(this).data("total_xp")
+        available_xp: $(this).data("available_xp")
       }
-      error: (jqXHR, textStatus, errorThrown) ->
-        console.log("AJAX Error: #{textStatus}")
-      success: (data, textStatus, jqXHR) ->
-        console.log("Dynamic market select OK!")

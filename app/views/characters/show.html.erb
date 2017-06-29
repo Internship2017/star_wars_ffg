@@ -8,6 +8,11 @@
 		<div class="characters-header">
 			<h1>SKILLS</h1>
 		</div>
+		<div class="flex">
+				<h6 class="xp">Total XP = <span id="total_xp"><%= @character.total_xp %></span></h6>   
+				<!-- <h6 class="xp">Total XP =</h6><h6 class="xp" id="total_xp"><%= @character.total_xp %></h6> -->   
+				<h6 class="xp">Available XP = <span id="available_xp"><%= @character.available_xp %></span></h6>
+		</div>
         <div class="row">
         	<%= render "characters_skills" %>
         </div>
