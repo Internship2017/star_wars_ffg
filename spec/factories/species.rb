@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :specie do
-    name { FFaker::Lorem.paragraph }
+  factory :species do
+    name { FFaker::Book.title }
     description { FFaker::Lorem.paragraph }
     source_page { (rand * 100).to_i }
     source_book "Force and Destiny Core Rulebook"
@@ -14,7 +14,7 @@ FactoryGirl.define do
     strain_threshold 50
     experience 50
     skill_name { FFaker::Name.name }
-    skill_start_rank 1
+    skill_start_rank 0
     skill_limit_rank 1
   end
 end
