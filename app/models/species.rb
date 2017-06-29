@@ -1,5 +1,4 @@
 class Species < ApplicationRecord
-
   validates :name, :description, :source_page, :source_book, :brawn, :agility, :intellect, :cunning, :willpower,
             :presence, :wound_threshold, :strain_threshold, :experience, :skill_name, :skill_start_rank,
             :skill_limit_rank, presence: true
@@ -17,4 +16,3 @@ class Species < ApplicationRecord
   scope :with_name, ->(name) { where(name: name) }
 
 end
-
