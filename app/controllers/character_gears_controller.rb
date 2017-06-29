@@ -9,10 +9,12 @@ class CharacterGearsController < ApplicationController
 
   def new
   	@gears = Gear.all
-  	@character = current_character
+  	@character = Character.find(params[:character_id])
   end
 
   def create
+  	current_character = Character.find(params[:character_id])
+  	current_gear = Gear.find(params[:gear_id])
     @character_gear = CharacterGear.new(character: current_character, gear: current_gear)
 
     if @character_gear.save
@@ -28,13 +30,6 @@ class CharacterGearsController < ApplicationController
   end
 
   private
-  def current_character
-    @current_character ||= Character.find(params[:character_id])
-  end
-
-   def current_gear
-    @current_gear ||= Gear.find(params[:gear_id])
-  end
 
   def set_character_gear
     @character_gear = CharacterGear.find(params[:id])
