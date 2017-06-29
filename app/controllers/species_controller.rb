@@ -36,7 +36,7 @@ class SpeciesController < ApplicationController
   end
 
   def upload
-    Species.upload(params[:upload][:file])
+    SpeciesUploader.new(params[:upload][:file]).run
     redirect_to species_index_path, flash: { success: "File uploaded" }
   end
 
