@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
   resources :specializations
   resources :skills, only: [:show]
-  resources :talents
   resources :home, only: [:index]
+  resources :talents do
+  	post :upload, on: :collection
+  end
   devise_for :users
 end

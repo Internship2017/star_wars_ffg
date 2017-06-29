@@ -12,3 +12,31 @@
   <hr>
   <%= render 'form', talent: @talent %>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="batchModal" tabindex="-1" role="dialog" aria-labelledby="batchModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="batchModalLabel">Upload Talents</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_tag upload_talents_path, multipart:true do %>
+        <div class="modal-body">
+            <fieldset class="form-group">
+              <legend>Talents Batch Upload</legend>
+              <label for="exampleInputFile">Select File</label>
+              <%= file_field_tag 'upload[file]', required:true, class:"form-control-file" %>
+              <small id="fileHelp" class="form-text text-muted">Select a JSON file to upload multiple talents</small>
+            </fieldset>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= submit_tag "Upload File", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
