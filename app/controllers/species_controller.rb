@@ -1,6 +1,6 @@
 class SpeciesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_species, except: [:index, :new, :create, :upload]
+  before_action :set_species, only: [:edit, :show]
 
   def index
     @species = Species.all

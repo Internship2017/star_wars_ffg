@@ -8,7 +8,7 @@ RSpec.describe "JsonSpecies", type: :service do
     @json_species = @json_species_array.first
   end
 
-  it "should create 2 JsonSpecies objects from the json" do
+  it "should create 69 JsonSpecies objects from the json" do
     expect(@json_species_array.count).to eql 69
   end
 
