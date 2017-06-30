@@ -30,7 +30,6 @@
   </div>  
 </div>
 
-
 <div class="mt-2">
   <div class="card-deck text-center">
     <div class="card">
@@ -165,53 +164,53 @@
 <div class="mt-2 text-center">
   <div class="card-deck">
     <div class="card col-md-4">
-        <div class="card-block">
-          <h4 class="card-title">Motivation</h4>
-          <h3 class="card-text">
-            <%= @character.motivations %>
-          </h3>
-        </div>
+      <div class="card-block">
+        <h4 class="card-title">Motivation</h4>
+        <p class="card-text">
+          <%= @character.motivations %>
+        </p>
+      </div>
     </div>
     <div class="card">
-        <div class="card-block">
-          <h3 class="card-title">Morality</h3>
-          <div class="card-deck">
-            <div class="card">
-              <div class="card-block">
-                <h4 class="card-title">Emotional strength</h4>
-                <h3 class="card-text">
-                  <%= @character.emotional_strength %>
-                  </h3>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-block">
-                <h4 class="card-title">Conflict</h4>
-                <h3 class="card-text">
-                  <%= @character.conflict %>
-                  </h3>
-              </div>
+      <div class="card-block">
+        <h3 class="card-title">Morality</h3>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Emotional strength</h4>
+              <p class="card-text">
+                <%= @character.emotional_strength %>
+              </p>
             </div>
           </div>
-          <div class="card-deck mt-2">
-            <div class="card">
-              <div class="card-block">
-                <h4 class="card-title">Emotional weakness</h4>
-                <h3 class="card-text">
-                  <%= @character.emotional_weakness %>
-                  </h3>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-block">
-                <h4 class="card-title">Morality</h4>
-                <h3 class="card-text">
-                  <%= @character.morality %>
-                </h3>
-              </div>
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Conflict</h4>
+              <h3 class="card-text">
+                <%= @character.conflict %>
+              </h3>
             </div>
           </div>
         </div>
+        <div class="card-deck mt-2">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Emotional weakness</h4>
+              <p class="card-text">
+                <%= @character.emotional_weakness %>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Morality</h4>
+              <h3 class="card-text">
+                <%= @character.morality %>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

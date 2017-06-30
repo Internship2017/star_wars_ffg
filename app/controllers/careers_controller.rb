@@ -1,4 +1,5 @@
 class CareersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_career, except: [:index, :new, :create, :upload]
 
   def index

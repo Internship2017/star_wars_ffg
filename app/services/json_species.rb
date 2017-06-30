@@ -1,13 +1,10 @@
 class JsonSpecies
-  attr_reader :id, :name, :description, :source_page, :source_book, :brawn, :agility, :intellect, :cunning, :willpower,
-              :presence, :wound_threshold, :strain_threshold, :experience, :skill_name, :skill_start_rank,
-              :skill_limit_rank
 
   def initialize(attr_species)
     @attr_species = attr_species
     @source = attr_species["Source"]
     @characteristics = attr_species["StartingChars"]
-    @attributes = @attr_species["StartingAttrs"]
+    @basic_attrs = @attr_species["StartingAttrs"]
   end
 
   def attributes
@@ -25,9 +22,9 @@ class JsonSpecies
     {
       name: @attr_species["Name"],
       description: @attr_species["Description"],
-      experience: @attr_species["Experience"],
-      wound_threshold: @attributes["WoundThreshold"].to_i,
-      strain_threshold: @attributes["StrainThreshold"].to_i
+      experience: @basic_attrs["Experience"].to_i,
+      wound_threshold: @basic_attrs ["WoundThreshold"].to_i,
+      strain_threshold: @basic_attrs ["StrainThreshold"].to_i
     }
   end
 

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   end
 
   resources :campaigns, except: [:delete]
-  resources :characters
+  resources :characters do
+    resources :character_weapons
+  end
   resources :careers do
     post :upload, on: :collection
   end
