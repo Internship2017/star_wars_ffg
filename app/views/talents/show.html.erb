@@ -1,0 +1,30 @@
+<div class="mt-5">
+  <div>
+    <img class="card-img-top img-size mb-20" src="http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" alt="Logo">
+  </div>
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-block">
+        <h2 class="card-title"><%= Talent %></h2>
+        <p><strong><em>Name:</em></strong> <%= @talent.name %></p>
+        <% @talent.sources.each do |source| %>
+          <p><strong><em>Source Page:</em></strong> <%= source.page %></p>
+          <p><strong><em>Source Book:</em></strong> <%= source.book %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">Description</h3>
+        <p><%= @talent.description %></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <p><strong><em>Ranked:</em></strong> <%= @talent.ranked %></p>
+        <p><strong><em>Activation:</em></strong> <%= @talent.activation_value %></p>
+      </div>
+    </div>
+  </div>  
+  <%= link_to 'Back', talents_path, class: 'btn btn-primary mt-20' %>
+</div>

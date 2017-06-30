@@ -34,6 +34,7 @@ class CharactersController < ApplicationController
   
   def show
     @character_weapons = @character.character_weapons
+    @character_gears = @character.character_gears
   end
 
   def destroy

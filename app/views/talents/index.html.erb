@@ -1,0 +1,28 @@
+<div class="mb-20">
+  <h1><%= image_tag "http://vignette3.wikia.nocookie.net/starwars/images/5/52/Force_and_Destiny_logo.png/revision/latest?cb=20151102133120" %><span class="space_between_image">Talents</span></h1>
+</div>
+<div class="row ">
+  <% @talents.each do |talent| %>
+    <div class="col-sm-4 ">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title"><%= talent.name %></h4>
+          <ul class="card-text">
+            <% talent.sources.each do |source| %>
+              <li>Source Page: <%= source.page %></li>
+              <li>Source Book: <%= source.book %></li>
+            <% end %>
+            <li>Description: <%= talent.description %></li>
+            <li>Ranked: <%= talent.ranked %></li>
+            <li>Activation: <%= talent.activation_value %></li>
+          </ul>
+          <div data-turbolinks="false">
+          <%= link_to "Show", talent_path(talent), class: "btn access_button" %>
+          <%= link_to "Edit", edit_talent_path(talent), class: "btn btn-primary" %>
+          <%= link_to 'Destroy', talent, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
