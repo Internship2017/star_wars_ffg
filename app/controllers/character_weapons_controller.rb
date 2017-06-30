@@ -23,7 +23,7 @@ class CharacterWeaponsController < ApplicationController
     @character_weapon = CharacterWeapon.new(character: character, weapon: weapon, damage: weapon.default_damage, crit: weapon.default_crit)
 
     if @character_weapon.save
-      redirect_to @character_weapon.character, notice: "Weapon #{@character_weapon.weapon.name} was successfully created."
+      redirect_to character, notice: "Weapon #{weapon.name} was successfully created."
     else
       render :new, flash: { danger: @character_weapon.errors }
     end

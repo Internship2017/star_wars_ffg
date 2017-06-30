@@ -16,14 +16,11 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <span class="navbar-brand"><%= link_to "Star Wars", controller: "home" %></span>
-      <div class="collapse navbar-collapse" id="navbarText" data-turbolinks="false">
         <% if user_signed_in? %>
           <%= render 'user_navbar' %>
         <% else %>
           <%= render 'guest_navbar' %>
         <% end %>
-      </div>
   </nav>
   <br>
   <div id='main' class='container'>
