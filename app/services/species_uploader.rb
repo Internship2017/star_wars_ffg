@@ -6,8 +6,13 @@ class SpeciesUploader
 
   def run
     JsonSpecies.to_a(@json_file).each do |json_specie|
-      json_specie_attrs = json_specie.attributes
-      Species.with_name(json_specie_attrs.name).first_or_create(json_specie_attrs).update(json_specie_attrs)
+      create_or_update_species(json_specie.attributes)
     end
+  end
+
+  private
+
+  def create_or_update_species json_specie_attributes
+    Species.with_name(json_specie_attributes["name"]).first_or_create(json_specie_attributes).update(json_specie_attributes)
   end
 end

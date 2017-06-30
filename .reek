@@ -40,7 +40,7 @@
   TooManyMethods:
     max_methods: 20
   InstanceVariableAssumption:
-      enabled: false
+    enabled: false
   IrresponsibleModule:
     enabled: false
   NestedIterators:
@@ -48,7 +48,9 @@
   UnusedPrivateMethod:
     enabled: false
   UncommunicativeModuleName:
-      enabled: false
+    enabled: false
+  UtilityFunction:
+    enabled: false
 
 "lib/":
   IrresponsibleModule:
