@@ -4,6 +4,5 @@ FactoryGirl.define do
     weapon
     damage 1
     crit 1
-    special { FFaker::Lorem.paragraph }
   end
 end
