@@ -9,47 +9,48 @@
 </span>
 
 -->
-
-
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Characters
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li class="dropdown-item"><%= link_to "See characters", controller: "characters" %></li>
-          <li class="dropdown-item"><%= link_to "New character", "new_characters_path" %></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Campaigns
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li class="dropdown-item"><%= link_to "See campaigns", controller: "campaigns" %></li>
-          <li class="dropdown-item"><%= link_to "New campaign", "new_campaigns_path" %></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Careers
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li class="dropdown-item"><%= link_to "See careers", controller: "careers" %></li>
-          <li class="dropdown-item"><%= link_to "New career", "new_careers_path" %></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Specializations
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li class="dropdown-item"><%= link_to "See specializations", controller: "specializations" %></li>
-          <li class="dropdown-item"><%= link_to "New specialization", "new_specializations_path" %></li>
-        </ul>
-      </li>
-    </ul>
+<span class="navbar-brand"><%= link_to "Star Wars", controller: "home" %></span>
+  <div class="collapse navbar-collapse" id="navbarText" data-turbolinks="false">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Characters
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="dropdown-item"><%= link_to "See characters", controller: "characters" %></li>
+            <li class="dropdown-item"><%= link_to "New character", new_character_path %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Campaigns
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="dropdown-item"><%= link_to "See campaigns", controller: "campaigns" %></li>
+            <li class="dropdown-item"><%= link_to "New campaign", new_campaign_path %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Careers
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="dropdown-item"><%= link_to "See careers", controller: "careers" %></li>
+            <li class="dropdown-item"><%= link_to "New career", new_career_path %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Specializations
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="dropdown-item"><%= link_to "See specializations", controller: "specializations" %></li>
+            <li class="dropdown-item"><%= link_to "New specialization", new_specialization_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
   <span class="nav-item">
 	  <%= link_to "Logout", destroy_user_session_path, { class: 'nav-link', method: 'delete' } %>
