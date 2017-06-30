@@ -38,7 +38,7 @@ RSpec.describe Gear, type: :model do
 
   describe "parse_gears" do
     it "should return all the gears as an array of hash wheb the input json is given" do
-      expect(Gear.parse_gears("spec/factories/assets/gear_test.json")).to eql  [{"Name"=>"Comlink (handheld)", "Description"=>"[H3]Comlink (handheld)[h3]Please see page 171 of the Edge of the Empire Core Rulebook, page 186 of the Age of Rebellion Core Rulebook, or page 180 of the Force and Destiny Core Rulebook, for details.", "Sources"=>{"Source"=>[{"page"=>"171", "source_book"=>"Edge of the Empire Core Rulebook"}, {"page"=>"186", "source_book"=>"Age of Rebellion Core Rulebook"}, {"page"=>"180", "source_book"=>"Force and Destiny Core Rulebook"}]}, "Short"=>"A small handheld communications device", "Encumbrance"=>"0", "Price"=>"25", "Rarity"=>"0", "Type"=>"Communications"}]
+      expect(Gear.parse_gears("spec/factories/assets/gear_test.json")).to eql  [{ "Name" => "Comlink (handheld)", "Description" => "[H3]Comlink (handheld)[h3]Please see page 171 of the Edge of the Empire Core Rulebook, page 186 of the Age of Rebellion Core Rulebook, or page 180 of the Force and Destiny Core Rulebook, for details.", "Sources" => { "Source" => [{ "page" => "171", "source_book" => "Edge of the Empire Core Rulebook" }, { "page" => "186", "source_book" => "Age of Rebellion Core Rulebook" }, { "page" => "180", "source_book" => "Force and Destiny Core Rulebook" }] }, "Short" => "A small handheld communications device", "Encumbrance" => "0", "Price" => "25", "Rarity" => "0", "Type" => "Communications" }]
     end
   end
 end

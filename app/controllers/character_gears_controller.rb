@@ -1,20 +1,20 @@
 class CharacterGearsController < ApplicationController
-	before_action :authenticate_user!
-	before_action :set_character_gear, only: [:destroy, :show]
+  before_action :authenticate_user!
+  before_action :set_character_gear, only: [:destroy, :show]
   before_action :verify_character_gear, only: [:destroy, :show]
 
   def show
-  	@gear = @character_gear.gear
+    @gear = @character_gear.gear
   end
 
   def new
-  	@gears = Gear.order_by_rarity.order_by_price
-  	@character = Character.find(params[:character_id])
+    @gears = Gear.order_by_rarity.order_by_price
+    @character = Character.find(params[:character_id])
   end
 
   def create
-  	character = Character.find(params[:character_id])
-  	gear = Gear.find(params[:gear_id])
+    character = Character.find(params[:character_id])
+    gear = Gear.find(params[:gear_id])
     @character_gear = CharacterGear.new(character: character, gear: gear)
 
     if @character_gear.save
