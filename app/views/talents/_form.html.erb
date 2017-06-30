@@ -1,0 +1,43 @@
+<%= nested_form_for(talent) do |f| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, { autofocus: true, class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="form-group">
+        <%= f.label :description %><br />
+        <%= f.text_field :description, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="form-group">
+          <%= f.label :activation_value %><br />
+          <%= f.text_field :activation_value, { class: "form-control" } %>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group">
+          <%= f.label :ranked %><br />
+          <%= f.text_area :ranked, { class: "form-control" } %>
+        </div>
+    </div>
+  </div>
+  <%= f.fields_for :sources do |s| %>
+    <%= render 'source_fields', s: s %>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.link_to_add "Add a source", :sources, class: "btn access_button mt-20 mb-20" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.submit "Submit", { class: "btn-primary btn" } %>
+    </div>
+  </div>
+<% end %>

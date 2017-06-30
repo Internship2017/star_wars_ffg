@@ -27,6 +27,13 @@ Documentation:
 Metrics/ClassLength:
   Max: 150
 
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - app/services/json_weapon.rb
+
 Style/AsciiIdentifiers:
   Enabled: false
 
@@ -34,9 +41,6 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/DefWithParentheses:
-  Enabled: false
-    
-Metrics/LineLength:
   Enabled: false
 
 Style/BlockComments:
@@ -50,10 +54,11 @@ Style/BlockLength:
     - spec/factories/*
     - spec/models/*
     - spec/services/*
+    - spec/controllers/*
 
 Style/CaseIndentation:
   Enabled: false
-    
+
 Style/EmptyLinesAroundAccessModifier:
   Enabled: false
 
