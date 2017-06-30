@@ -48,13 +48,13 @@ class CharactersController < ApplicationController
   def increment_rank
     @character = Character.find(params[:character_id])
     @skill = @character.skills.find_by(name: params[:skill_name])
-    @character.set_rank(@skill, "increment")
+    @character.verify_skill(@skill, "increment")
   end
 
   def decrement_rank
     @character = Character.find(params[:character_id])
     @skill = @character.skills.find_by(name: params[:skill_name])
-    @character.set_rank(@skill, "decrement")
+    @character.verify_skill(@skill, "decrement")
   end
 
   private

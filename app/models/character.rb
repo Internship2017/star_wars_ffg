@@ -36,20 +36,22 @@ class Character < ApplicationRecord
     skills.where(name: skills_names).update_all("rank = rank + 1")
   end
 
-  def set_rank(skill, status)
+  def verify_skill(skill, status)
     if (self.career_skill?(skill.name))
-      if self.enough_xp?(skill.career_skill)
-        self.set_xp(skill, skill.career_skill, status)
-      end
+      self.set_rank(skill, skill.career_skill, status)
     else 
-      if self.enough_xp?(skill.normal_skill)
-        self.set_xp(skill, skill.normal_skill, status)
-      end
+      self.set_rank(skill, skill.normal_skill, status)
+    end
+  end
+
+  def set_rank(skill, skill_xp, status)
+    if self.enough_xp?(skill_xp) || status == "decrement"
+      self.set_xp(skill, skill_xp, status)
     end
   end
 
   def career_skill?(skill_name)
-    self.career.career_skills.include?(skill_name)
+    career.career_skills.include?(skill_name)
   end
 
   def set_xp(skill, xp, operation)
@@ -65,6 +67,6 @@ class Character < ApplicationRecord
   end
 
   def enough_xp?(xp_to_decrement)
-    (self.available_xp - xp_to_decrement) > 0 
+    (available_xp - xp_to_decrement) >= 0 
   end
 end
