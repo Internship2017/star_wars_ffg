@@ -35,8 +35,8 @@ RSpec.describe TalentsController, type: :controller do
       get :new
     end
 
-    it "assigns a new talent to @talent" do
-      expect(assigns(:talent)).not_to eql nil
+    it "should build a new Talent" do
+      expect(assigns(:talent)).to be_a_new Talent
     end
 
     it "renders the correct template" do
@@ -67,7 +67,7 @@ RSpec.describe TalentsController, type: :controller do
     context "with valid attributes" do
 
       before(:each) do
-        @talent_attrs = FactoryGirl.attributes_for(:talent_with_sources)
+        @talent_attrs = attributes_for(:talent_with_sources)
         @talent_attrs[:sources_attributes] = { "1": { page: 95, book: "The new book", _destroy: false } }
       end
       it "creates a new talent" do
@@ -85,12 +85,12 @@ RSpec.describe TalentsController, type: :controller do
     context "with invalid attributes" do
       it "does not save the new talent" do
         expect{
-          post :create, params: { talent: FactoryGirl.attributes_for(:talent, name: nil) }
+          post :create, params: { talent: attributes_for(:talent, name: nil) }
         }.to_not change(Talent, :count)
       end
       
       it "re-renders the new method" do
-        post :create, params: { talent: FactoryGirl.attributes_for(:talent, name: nil) }
+        post :create, params: { talent: attributes_for(:talent, name: nil) }
         expect(response).to render_template :new
       end
     end 
@@ -98,43 +98,43 @@ RSpec.describe TalentsController, type: :controller do
 
   describe 'PATCH #update' do
     before(:each) do
-      @talent = create(:talent, name: "Parry", ranked: "true")
+      @talent = create(:talent, name: "Parry", ranked: true)
     end
     
     context "valid attributes" do
       it "located the requested @talent" do
-        patch :update, params: { id: @talent, talent: FactoryGirl.attributes_for(:talent, name: "Second Wind", ranked: "false") }
+        patch :update, params: { id: @talent, talent: attributes_for(:talent, name: "Second Wind", ranked: false) }
         expect(assigns(:talent)).to eq(@talent)      
       end
     
       it "changes @talent's attributes" do
-        patch :update, params: { id: @talent, talent: FactoryGirl.attributes_for(:talent, name: "Second Wind", ranked: "false") }
+        patch :update, params: { id: @talent, talent: attributes_for(:talent, name: "Second Wind", ranked: false) }
         @talent.reload
         expect(@talent.name).to eq("Second Wind")
-        expect(@talent.ranked).to eq("false")
+        expect(@talent.ranked).to eq(false)
       end
     
       it "redirects to the updated talent" do
-        patch :update, params: { id: @talent, talent: FactoryGirl.attributes_for(:talent, name: "Second Wind", ranked: "false") }
+        patch :update, params: { id: @talent, talent: attributes_for(:talent, name: "Second Wind", ranked: false) }
         expect(response).to redirect_to talents_url
       end
     end
     
     context "invalid attributes" do
       it "locates the requested @talent" do
-        patch :update, params: { id: @talent, talent: FactoryGirl.attributes_for(:talent, name: nil) }
+        patch :update, params: { id: @talent, talent: attributes_for(:talent, name: nil) }
         expect(assigns(:talent)).to eq(@talent)      
       end
       
       it "does not change @talent's attributes" do
-        patch :update, params: { id: @talent, talent: FactoryGirl.attributes_for(:talent, name: "Second Wind", ranked: nil) }
+        patch :update, params: { id: @talent, talent: attributes_for(:talent, name: "Second Wind", ranked: nil) }
         @talent.reload
         expect(@talent.name).not_to eq("Second Wind")
-        expect(@talent.ranked).to eq("true")
+        expect(@talent.ranked).to eq(true)
       end
       
       it "re-renders the edit method" do
-        patch :update, params: { id: @talent, talent: FactoryGirl.attributes_for(:talent, name: "Second Wind", ranked: nil) }
+        patch :update, params: { id: @talent, talent: attributes_for(:talent, name: "Second Wind", ranked: nil) }
         expect(response).to render_template :edit
       end
     end
