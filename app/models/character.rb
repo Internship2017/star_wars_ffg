@@ -33,4 +33,47 @@ class Character < ApplicationRecord
       skills.create(json_skill.attributes)
     end
   end
+
+  def upgrade_skills(skills_names)
+    skills.where(name: skills_names).update_all("rank = rank + 1")
+  end
+
+  def career_skill?(skill_name)
+    career.career_skills.include?(skill_name)
+  end
+
+  def increase_rank(skill)
+    if career_skill?(skill.name)
+      increase_xp(skill.career_skill)
+    else
+      increase_xp(skill.normal_skill)
+     end
+  end
+
+  def decrease_rank(skill)
+    if career_skill?(skill.name)
+      decrease_xp(skill.career_skill)
+    else
+      descrease_xp(skill.normal_skill)
+    end
+  end
+
+  def decrease_xp(xp)
+    xp -= 5
+    increment!(:available_xp, xp)
+    decrement!(:total_xp, xp)
+    skill.rank.decrement!
+  end
+
+  def increase_xp(xp)
+    if enough_xp?(skill_xp)
+      decrement!(:available_xp, xp)
+      increment!(:total_xp, xp)
+      skill.rank.increment!
+    end
+  end
+
+  def enough_xp?(xp_to_decrement)
+    (available_xp - xp_to_decrement) >= 0 
+  end
 end

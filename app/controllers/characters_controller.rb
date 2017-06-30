@@ -1,7 +1,13 @@
 class CharactersController < ApplicationController
-  before_action :authenticate_user!
+  protect_from_forgery prepend: true
+  before_action :authenticate_user!, except: [:increment_rank, :decrement_rank, :skills_select]
   before_action :set_character, only: [:edit, :update, :show, :destroy]
   before_action :verify_character, only: [:edit, :update, :show, :destroy]
+
+  def skills_select
+    career_skills = Career.find_by(name: params[:career]).career_skills
+    @skills = Skill.where(name: career_skills)
+  end
 
   def new
     @character = current_user.characters.build
@@ -9,9 +15,9 @@ class CharactersController < ApplicationController
 
   def create
     @character = current_user.characters.build(character_params)
-
     if @character.save
       @character.assign_skills
+      @character.upgrade_skills(params[:character][:skills])
       redirect_to @character, notice: 'Character was successfully created.'
     else
       render :new
@@ -31,6 +37,8 @@ class CharactersController < ApplicationController
       render :edit
     end
   end
+
+  def show; end
   
   def show
     @character_weapons = @character.character_weapons
@@ -40,6 +48,18 @@ class CharactersController < ApplicationController
   def destroy
     @character.destroy
     redirect_to characters_path, flash: { notice: "Character has been destroyed" }
+  end
+
+  def increment_rank
+    @character = Character.find(params[:character_id])
+    @skill = @character.skills.find_by(name: params[:skill_name])
+    @character.increase_rank(@skill)
+  end
+
+  def decrement_rank
+    @character = Character.find(params[:character_id])
+    @skill = @character.skills.find_by(name: params[:skill_name])
+    @character.decrease_rank(@skill)
   end
 
   private

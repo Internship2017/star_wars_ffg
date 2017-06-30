@@ -14,15 +14,19 @@
     </li>
   </ul>
 
-  <div class="tab-content">
-    <div class="tab-pane mt-20" id="character_skills" role="tabpanel">
-      <div class="characters-header">
-        <h1>SKILLS</h1>
-      </div>
-      <div class="row">
-        <%= render "characters_skills" %>
-      </div>
-    </div>
+<div class="tab-content">
+	<div class="tab-pane mt-20" id="character_skills" role="tabpanel">
+		<div class="characters-header">
+			<h1>SKILLS</h1>
+		</div>
+		<div class="xp">
+				<h6>Total XP = <span id="total_xp"><%= @character.total_xp %></span></h6>   
+				<h6>Available XP = <span id="available_xp"><%= @character.available_xp %></span></h6>
+		</div>
+        <div class="row">
+        	<%= render "characters_skills" %>
+        </div>
+	</div>
     <div class="tab-pane active mt-20" id="character-summary" role="tabpanel">
       <%= render 'character_summary' %>
     </div>
