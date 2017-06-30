@@ -3,11 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // A94D2C
 
-.flex{
-	display: flex;
-	justify-content: space-around;
-}
-
 .characters-row {
   padding-top: 20px;
 }
@@ -24,6 +19,7 @@
   color: #C09448;
   font-family: 'Poller One', cursive;
   padding-top: 20px;
+  text-align: center;
 }
 
 .space_between_image {
@@ -37,4 +33,6 @@
 .xp {
 	text-align: center;
 	color: #806330;
+  display: flex;
+  justify-content: space-around;
 }

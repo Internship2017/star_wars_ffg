@@ -33,7 +33,7 @@ class Character < ApplicationRecord
   end
 
   def upgrade_skills(skills_names)
-    self.skills.where(name: skills_names).update_all("rank = rank + 1")
+    skills.where(name: skills_names).update_all("rank = rank + 1")
   end
 
   def set_rank(skill, status)
@@ -65,10 +65,6 @@ class Character < ApplicationRecord
   end
 
   def enough_xp?(xp_to_decrement)
-    if (self.available_xp - xp_to_decrement) > 0 
-      return true
-    else 
-      return false
-    end
+    (self.available_xp - xp_to_decrement) > 0 
   end
 end
