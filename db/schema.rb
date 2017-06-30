@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170628191843) do
     t.bigint "character_id"
     t.integer "damage"
     t.integer "crit"
-    t.text "special", default: "common"
+    t.text "special"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["character_id"], name: "index_character_weapons_on_character_id"

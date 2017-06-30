@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :skills, only: [:show]
   resources :home, only: [:index]
   devise_for :users
+  root 'application#index'
 end

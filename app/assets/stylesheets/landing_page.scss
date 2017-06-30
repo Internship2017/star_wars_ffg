@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+body {
+    background-size: cover;
+    background: url(space_bg.jpg) no-repeat center center fixed;
+    font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    top:0;
+    webkit-tap-highlight-color: #222;
+    width: 100%;
+    
+}
+
+.btn.btn-primary {
+    color:#FFFFFF;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    margin-top: 40px;
+    transition: all .35s;
+    
+}
+
+.btn.btn-primary:hover {
+    color:#000000;
+    opacity: 1.0;
+    
+}
+
+.heading {
+    min-height: auto;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.heading .header-content {
+    position: relative;
+    text-align: center;
+    width: 100%; 
+    z-index: 2;
+}
+
+.heading .header-image {
+    height: 100%;
+    width: 100%;
+}
+
+@media(min-width:34em) {
+    .icon-lg {
+        font-size: 80px;
+    }
+    
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        padding: 0 50px;
+        position: absolute;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    header .header-content .inner {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .inner h1 {
+        font-size: 53px;
+    }
+
+    header .header-content .inner p {
+        font-size: 18px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        
+    }
+    
+    section {
+        min-height: 600px;
+    }
+
+}
+
+p {
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size: 17px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    
+    
+}
+
+section {
+    padding: 70px 0;
+}
+
+.sign-in-btn {
+    background-color: transparent;
+    border:1px solid #007FFF;
+    color:#FFFFFF;
+    font-size: 20px;
+    padding: 25px 50px;
+}
+
+.sign-in-btn:hover {
+    background-color:#f1c743;
+    border:1px solid #f1c743;
+    color:#000000;
+    
+}
+
+.text {
+    color: #FFFFFF;
+}

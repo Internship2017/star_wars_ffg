@@ -1,0 +1,57 @@
+<head>
+  <meta charset="utf-8">
+  <title>Star Wars RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Codeply">
+</head>
+
+<body class="bg-space">
+    <section>
+      <div class="heading">
+        <div class="header-content">
+          <%= image_tag("StarWarsRPG.png", class: "header-image") %> <br>
+          <%= link_to "Log In", new_user_session_path, class: "btn access_button sign-in-btn" %>
+          <br>
+        </div>
+      </div>
+    </section>
+  <section id="one">
+    <div class="container wow fadeInUp">
+      <h2 class="text">The Star Wars Roleplaying Game by Fantasy Flight Games</h2>
+      <p class="text">
+        Are a tabletop role-playing game set in the Star Wars universe first published by Fantasy Flight Games in August 2012. It consists of three different standalone games, each one conceived to play a particular type of character:    
+      </p>
+      <div class="card-group">
+        <!-- card -->
+        <div class="card">
+          <%= image_tag("EdgeOfTheEmpire.png", class: "card-img-top img-fluid") %>
+          <div class="card-block">
+            <h4 class="card-title">Edge of the Empire</h4>
+            <p class="card-text">
+               Participate in grim and gritty adventures in places where morality is gray and nothing is certain. Ply your trade as a smuggler in the Outer Rim, collect bounties on the scum that live in the shadows of Coruscant, or try to establish a new colony on a planet beneath the Empire’s notice…
+            </p>
+          </div>
+        </div>
+        <!-- card -->
+        <div class="card">
+          <%= image_tag("AgeOfRebellion.png", class: "card-img-top img-fluid") %>
+          <div class="card-block">
+            <h4 class="card-title">Age of Rebellion</h4>
+            <p class="card-text">Take on the sinister Galactic Empire as a member of the Rebel Alliance. Wage guerilla warfare across the Star Wars galaxy as a solider, or provide crucial intelligence to the Rebels as a cunning spy. Face down legions of stormtroopers, steal secret plans and restricted codes, and stay on target in the fight against the ultimate power in the universe. No matter what role in the Rebellion you take, the fate of the galaxy rests in your hands. The Star Wars®: Age of Rebellion™ Core Rulebook provides everything you and your friends need to become heroes of the Rebel Alliance.</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div class="card">
+          <%= image_tag("ForceAndDestiny.png", class: "card-img-top img-fluid") %>
+          <div class="card-block">
+            <h4 class="card-title">Force and Destiny</h4>
+            <p class="card-text">A frequent problem occurs when you have multiple items in a row with content of varying height. Thanks to flexbox (and display:table) we now have equal height cards!</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+    
