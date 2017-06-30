@@ -1,0 +1,40 @@
+{
+  "Talents": {
+    "Talent": [
+      { "Name": "Adversary",
+        "Description": "Please see page 132 of the Edge of the Empire Core Rulebook, or page 142 of the Age of Rebellion Core Rulebook, for details.",
+        "Sources": {
+          "Source": [
+            {
+              "page": "132",
+              "book": "Edge of the Empire Core Rulebook"
+            },
+            {
+              "page": "142",
+              "book": "Age of Rebellion Core Rulebook"
+            }
+          ]
+        },
+        "Ranked": "true",
+        "ActivationValue": "taPassive"
+      },
+      { "Name": "Anatomy Lessons",
+        "Description": "Please see page 132 of the Edge of the Empire Core Rulebook, or page 142 of the Age of Rebellion Core Rulebook, for details.",
+        "Sources": {
+          "Source": [
+            {
+              "page": "132",
+              "book": "Edge of the Empire Core Rulebook"
+            },
+            {
+              "page": "142",
+              "book": "Age of Rebellion Core Rulebook"
+            }
+          ]
+        },
+        "Ranked": "false",
+        "ActivationValue": "taIncidental"
+      }
+    ]
+  }
+}

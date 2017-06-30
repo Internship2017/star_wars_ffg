@@ -1,5 +1,5 @@
 class TalentsController < ApplicationController
-  before_action :set_talent, except: [:index, :new, :create]
+  before_action :set_talent, except: [:index, :new, :create, :upload]
 
   def index
     @talents = Talent.all
@@ -33,6 +33,11 @@ class TalentsController < ApplicationController
   def destroy
     @talent.destroy
     redirect_to talents_path
+  end
+
+  def upload
+    Talent.upload(params[:upload][:file])
+    redirect_to talents_path, flash: { success: "File uploaded" }
   end
 
   private
