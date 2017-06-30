@@ -1,0 +1,25 @@
+<div class="row mt-5">
+  <div class="card col-md-12">
+    <h3 class="card-header"><%= @gear.name %></h3>
+    <div class="card-block">
+      <div class="card-text">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Type:</h5>
+            <p><%= @gear.gear_type %></p>
+            <h5>Price:</h5>
+            <p><%= @gear.price %></p>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Encum:</h5>
+            <p><%= @gear.encum %></p>
+            <h5>Rarity:</h5>
+            <p><%= @gear.rarity %></p>
+          </div>
+        </div>
+      </div>
+      <%= link_to 'Back', @character_gear.character, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

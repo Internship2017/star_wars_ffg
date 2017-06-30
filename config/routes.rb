@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :campaigns, except: [:delete]
   resources :characters do
     resources :character_weapons
+    resources :character_gears
   end
   resources :careers do
     post :upload, on: :collection

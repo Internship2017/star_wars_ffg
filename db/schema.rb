@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630151021) do
-
+ActiveRecord::Schema.define(version: 20170630195105) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "armors", force: :cascade do |t|
+    t.string "name"
+    t.string "category", default: [], array: true
+    t.integer "defense"
+    t.integer "soak"
+    t.integer "price"
+    t.integer "encum"
+    t.integer "hp"
+    t.integer "rarity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -30,6 +43,15 @@ ActiveRecord::Schema.define(version: 20170630151021) do
     t.string "career_skills", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "character_gears", force: :cascade do |t|
+    t.bigint "character_id"
+    t.bigint "gear_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_character_gears_on_character_id"
+    t.index ["gear_id"], name: "index_character_gears_on_gear_id"
   end
 
   create_table "character_weapons", force: :cascade do |t|
@@ -84,6 +106,16 @@ ActiveRecord::Schema.define(version: 20170630151021) do
     t.index ["campaign_id"], name: "index_characters_on_campaign_id"
     t.index ["career_id"], name: "index_characters_on_career_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
+  end
+
+  create_table "gears", force: :cascade do |t|
+    t.string "name"
+    t.integer "encum"
+    t.integer "price"
+    t.integer "rarity"
+    t.string "gear_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|
@@ -183,6 +215,8 @@ ActiveRecord::Schema.define(version: 20170630151021) do
     t.string "weapon_type", default: "normal"
   end
 
+  add_foreign_key "character_gears", "characters"
+  add_foreign_key "character_gears", "gears"
   add_foreign_key "character_weapons", "characters"
   add_foreign_key "character_weapons", "weapons"
   add_foreign_key "characters", "campaigns"
