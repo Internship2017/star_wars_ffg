@@ -11,7 +11,6 @@ RSpec.describe Talent, type: :model do
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:ranked) }
   it { should validate_presence_of(:activation_value) }
-  it { should validate_presence_of(:sources) }
   it { should have_many(:sources) }
   
 end

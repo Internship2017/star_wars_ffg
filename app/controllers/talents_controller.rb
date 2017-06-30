@@ -1,5 +1,5 @@
 class TalentsController < ApplicationController
-	before_action :set_talent, except: [:index, :new, :create]
+  before_action :set_talent, except: [:index, :new, :create]
 
   def index
     @talents = Talent.all
@@ -42,6 +42,6 @@ class TalentsController < ApplicationController
   end
 
   def talent_params
-    params.require(:talent).permit(:name, :description, :activation_value, :ranked, sources_attributes: [ :id, :page, :book, :_destroy ])
+    params.require(:talent).permit(:name, :description, :activation_value, :sources, :ranked, sources_attributes: [:id, :page, :book, :_destroy])
   end
 end

@@ -28,7 +28,7 @@
       </div>
     </div>
     <%= f.fields_for :sources do |s| %>
-      <%= render partial: 'source_fields', locals: { :s => s } %>
+      <%= render 'source_fields', s: s %>
     <% end %>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

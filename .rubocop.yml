@@ -50,6 +50,7 @@ Style/BlockLength:
     - spec/factories/*
     - spec/models/*
     - spec/services/*
+    - spec/controllers/*
 
 Style/CaseIndentation:
   Enabled: false
