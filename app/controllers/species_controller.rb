@@ -51,6 +51,6 @@ class SpeciesController < ApplicationController
   end
 
   def species_params
-    params.require(:species).permit(:name, :description, :source_page, :source_book, :brawn, :agility, :intellect, :cunning, :willpower, :presence, :wound_threshold, :strain_threshold, :experience, :skill_name, :skill_start_rank, :skill_limit_rank)
+    params.require(:species).permit(:id, :name, :description, :source_page, :source_book, :brawn, :agility, :intellect, :cunning, :willpower, :presence, :wound_threshold, :strain_threshold, :experience, :skill_name, :skill_start_rank, :skill_limit_rank)
   end
 end
