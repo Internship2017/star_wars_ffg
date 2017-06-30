@@ -36,33 +36,38 @@ class Character < ApplicationRecord
     skills.where(name: skills_names).update_all("rank = rank + 1")
   end
 
-  def verify_skill(skill, status)
-    if (self.career_skill?(skill.name))
-      self.set_rank(skill, skill.career_skill, status)
-    else 
-      self.set_rank(skill, skill.normal_skill, status)
-    end
-  end
-
-  def set_rank(skill, skill_xp, status)
-    if self.enough_xp?(skill_xp) || status == "decrement"
-      self.set_xp(skill, skill_xp, status)
-    end
-  end
-
   def career_skill?(skill_name)
     career.career_skills.include?(skill_name)
   end
 
-  def set_xp(skill, xp, operation)
-    if operation == "increment"
-      self.decrement!(:available_xp, by = xp)
-      self.increment!(:total_xp, by = xp)
-      skill.increment!(:rank, by = 1)
+  def increase_rank(skill)
+    if career_skill?(skill.name)
+      increase_xp(skill.career_skill)
     else
-      self.increment!(:available_xp, by = xp - 5)
-      self.decrement!(:total_xp, by = xp - 5)
-      skill.decrement!(:rank, by = 1)
+      increase_xp(skill.normal_skill)
+     end
+  end
+
+  def decrease_rank(skill)
+    if career_skill?(skill.name)
+      decrease_xp(skill.career_skill)
+    else
+      descrease_xp(skill.normal_skill)
+    end
+  end
+
+  def decrease_xp(xp)
+    xp -= 5
+    increment!(:available_xp, xp)
+    decrement!(:total_xp, xp)
+    skill.rank.decrement!
+  end
+
+  def increase_xp(xp)
+    if enough_xp?(skill_xp)
+      decrement!(:available_xp, xp)
+      increment!(:total_xp, xp)
+      skill.rank.increment!
     end
   end
 

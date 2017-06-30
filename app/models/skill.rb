@@ -25,5 +25,4 @@ class Skill < ApplicationRecord
   def normal_skill
     ((rank.to_i + 1) * 5) + 5
   end
-
 end

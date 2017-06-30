@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
 
   def skills_select
     career_skills = Career.find_by(name: params[:career]).career_skills
-    @skills = career_skills.map { |skill_name| Skill.find_by(name: skill_name) }.compact
+    @skills = Skill.where(name: career_skills)
   end
 
   def new
@@ -48,13 +48,13 @@ class CharactersController < ApplicationController
   def increment_rank
     @character = Character.find(params[:character_id])
     @skill = @character.skills.find_by(name: params[:skill_name])
-    @character.verify_skill(@skill, "increment")
+    @character.increase_rank(@skill)
   end
 
   def decrement_rank
     @character = Character.find(params[:character_id])
     @skill = @character.skills.find_by(name: params[:skill_name])
-    @character.verify_skill(@skill, "decrement")
+    @character.decrease_rank(@skill)
   end
 
   private
