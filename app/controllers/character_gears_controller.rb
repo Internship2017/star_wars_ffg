@@ -13,12 +13,12 @@ class CharacterGearsController < ApplicationController
   end
 
   def create
-  	current_character = Character.find(params[:character_id])
-  	current_gear = Gear.find(params[:gear_id])
-    @character_gear = CharacterGear.new(character: current_character, gear: current_gear)
+  	character = Character.find(params[:character_id])
+  	gear = Gear.find(params[:gear_id])
+    @character_gear = CharacterGear.new(character: character, gear: gear)
 
     if @character_gear.save
-      redirect_to current_character, notice: "Gear #{current_gear.name} was successfully created."
+      redirect_to character, notice: "Gear #{gear.name} was successfully created."
     else
       render :new, flash: { danger: @character_gear.errors }
     end
