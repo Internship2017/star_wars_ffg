@@ -2,51 +2,40 @@
 
 <html>
   <head>
-    <title>StarWarsFfg</title>
-    <%= csrf_meta_tags %>
-    
-        <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
-     <%= yield :head %>
+  <title>StarWarsFfg</title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
+   <%= yield :head %>
   </head>
-
   <body>
-    
-    <nav class="navbar navbar-expand-md navbar-light bg-faded">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            <a class="navbar-brand" href="#">Star Wars</a>
-            <div class="collapse navbar-collapse" id="navbarText" data-turbolinks="false">
-                <% if user_signed_in? %>
-                    <%= render 'user_navbar' %>
-                <% else %>
-                    <%= render 'guest_navbar' %>
-                <% end %>
+  <nav class="navbar navbar-expand-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <% if user_signed_in? %>
+          <%= render 'user_navbar' %>
+        <% else %>
+          <%= render 'guest_navbar' %>
+        <% end %>
+  </nav>
+  <br>
+  <div id='main' class='container'>
+    <div class='row'>
+      <div class='col-md-8 col-md-offset-2'>
+        <% flash.each do |name, msg| %>
+          <div class='alert alert-<%= name %>'>
+            <%= msg %>
           </div>
-    </nav>
-    <br>
-    <div id='main' class='container'>
-        <div class='row'>
-            <div class='col-md-8 col-md-offset-2'>
-                <% flash.each do |name, msg| %>
-                    <div class='alert alert-<%= name %>'>
-                        <%= msg %>
-                    </div>
-                <% end %>
-            </div>
-        </div>
-        
+        <% end %>
+      </div>
     </div>
-
-    <div class="container">
-        <%= yield %>
-    </div>
-    
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>  
   </body>
 </html>
