@@ -18,7 +18,7 @@ class CharacterGearsController < ApplicationController
     @character_gear = CharacterGear.new(character: current_character, gear: current_gear)
 
     if @character_gear.save
-      redirect_to current_character, notice: "Gear #{@character_gear.gear.name} was successfully created."
+      redirect_to current_character, notice: "Gear #{@current_gear.name} was successfully created."
     else
       render :new, flash: { danger: @character_gear.errors }
     end
