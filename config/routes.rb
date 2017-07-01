@@ -19,4 +19,4 @@ Rails.application.routes.draw do
     post :upload, on: :collection
   end
   devise_for :users
-end
+  root 'application#index'
