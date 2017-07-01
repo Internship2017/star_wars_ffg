@@ -9,3 +9,7 @@
 JsonWeapon.weapons.each do |json_weapon|
   Weapon.create(json_weapon.attributes)
 end
+
+JsonGear.gears.each do |json_gear|
+  Gear.create(json_gear.attributes)
+end
